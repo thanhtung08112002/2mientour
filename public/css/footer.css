@@ -1,30 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-@font-face {
-  font-family: navFont-bold;
-  src: url("../font/text/Ubuntu/Ubuntu-Bold.ttf");
-}
-@font-face {
-  font-family: navFont-light;
-  src: url("../font/text/Ubuntu/Ubuntu-Light.ttf");
-}
-:root {
-  --brand-color-secondary1: #374151;
-  --brand-color-secondary2: #fd4e5d;
-  --brand-color-secondary3: #000000;
-  --text-color: #182233;
-  --gray-color-black: #000000;
-  --gray-color-gray1: #1f2937;
-  --gray-color-gray2: #374151;
-  --gray-color-gray3: #4b5563;
-  --gray-color-gray4: #6b7280;
-  --gray-color-gray5: #9ca3af;
-  --gray-color-gray6: #d1d5db;
-  --gray-color-gray7: #f3f4f6;
-}
+
+
+
 footer {
   position: relative;
   background-color: var(--gray-color-gray1);

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="public/css/header.css" />
   <link rel="stylesheet" href="public/css/footer.css" />
   <link rel="stylesheet" href="public/css/article.css" />
+  <link rel="stylesheet" href="public/css/tour_detail.css" />
   <link rel="stylesheet" href="public/css/responsive.css" />
   <title><?= !isset($url) ? 'home' : $url ?></title>
 
