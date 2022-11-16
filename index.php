@@ -12,6 +12,7 @@ require_once 'app/controllers/admin/controllers_admin.php';
 #Controllers client
 require_once 'app/controllers/client/controllers.php';
 require_once 'app/controllers/client/page_home.php';
+require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/error_404.php';
 
 
@@ -33,9 +34,9 @@ switch ($url) {
     case 'home':
         showHome();
         break;
-        case 'tintuc':
-            getAllKhoaTour();
-            break;
+    case 'tourdetail':
+        showTourDetail();
+        break;
     default:
         error_404();
 }
