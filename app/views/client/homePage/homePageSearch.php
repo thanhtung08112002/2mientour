@@ -1,12 +1,12 @@
-<section>
-    <div class="search">
-      <form class="">
-        <select id="inputState" class="">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-        <input type="text" class="" placeholder="nhap thong tin  can tim kiếm   ">
-        <button type="submit" class="btn btn-danger">Tim Tour</button>
-      </form>
-    </div>
-  </section>
+<section class="search-main">
+        <div class="search container">
+          <form class="form_search">
+            <select id="inputState" class="search_input">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+            <input type="text" class="search_input" placeholder="  Nhập thông tin cần tìm...">
+            <button type="submit" class="btn btn-edit btn-danger">TÌM TOUR</button>
+          </form>
+        </div>
+      </section>

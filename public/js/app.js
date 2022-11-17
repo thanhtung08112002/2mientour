@@ -1,4 +1,6 @@
 const $$ = document.querySelectorAll.bind(document);
+var api = "http://localhost:3000/games";
+
 const behavior = document.querySelectorAll(".schedule-step-icon")
 
 behavior.forEach(element => {
