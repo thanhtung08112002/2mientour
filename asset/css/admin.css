@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: system-ui;
+    background:#fff;
+    color:#405C60;
+}
+
+
+form {
+    width: 300px;
+    padding: 15px 40px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 4% auto;
+}
+h3 {
+    text-align: center;
+    color:#405C60;
+    padding: 5px;
+}
+
