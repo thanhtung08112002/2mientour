@@ -1,5 +1,4 @@
 <?php
-//haha
 //session
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -20,7 +19,7 @@ require_once 'app/controllers/client/error_404.php';
 
 #Views client
 
-
+// fsaf
 
 #Models 
 require_once 'app/models/connect.php';

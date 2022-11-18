@@ -347,10 +347,6 @@
    animation: growDown 300ms ease-in-out forwards;
  }
 
- .schedule-step-start {
-   font-size: 14px;
- }
-
  .schedule-step-seemore>p {
    font-size: 14px;
 
