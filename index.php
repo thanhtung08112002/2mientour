@@ -1,5 +1,6 @@
 <?php
 session_start();
+//truong
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 #Controllers admin
