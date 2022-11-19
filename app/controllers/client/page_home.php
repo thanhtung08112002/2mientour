@@ -1,5 +1,6 @@
 <?php
 
 function showHome() {
-    render('homePage');
+    $getAllKhoaTour = getAllKhoaTour();
+    render('homePage',['getAllKhoaTour' => $getAllKhoaTour]);
 }

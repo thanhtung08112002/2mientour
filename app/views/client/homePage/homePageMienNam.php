@@ -1,8 +1,4 @@
-<?php
-$get = getAllKhoaTour();
 
-
-?>
 
 <section>
   <div class="tour-nam">
@@ -14,8 +10,8 @@ $get = getAllKhoaTour();
       <!-- cần render -->
       <div class="row">
         <?php 
-        foreach($get as $item){
-          
+        foreach($getAllKhoaTour as $item){
+          extract($item);
           ?>
      
          
@@ -24,22 +20,21 @@ $get = getAllKhoaTour();
             <a href=""><img src="asset/img/635f9d3f554e2.jpg " class="img-thumbnail" alt=""></a>
             <div class="caption">
               <a class="title-tour " href="">
-                <p>Du Lịch Hàn Quốc Miễn Visa: Yang Yang - Núi Seorak - Gangwon - Đảo Nami -
-                  Seoul 6N5Đ</p>
+                <p><?= $ten_tour?></p>
               </a>
               <div class="location">
                 <i class="fa fa-flag"></i>
-                <span>Ho Chi Minh</span>
+                <span><?= $ten_dia_diem_khoi_hanh?></span>
               </div>
-              <i class="fa fa-clock-o"></i>
-              <span>04/11/2022</span>
+              <!-- <i class="fa fa-clock-o"></i>
+              <span>04/11/2022</span> -->
             </div>
             <div class="bottom">
               <span>
                 <i class="fa fa-money"></i>
-                6.990.000 VND
+                <?= $gia_tien?> VND
               </span>
-              <a href="" class=""> dat ngay</a>
+              <a href="tourdetail?matour= <?= $ma_tour?> " class=""> Đặt ngay</a>
             </div>
           </div>
         </div>
