@@ -1,5 +1,13 @@
 
-
+<?php
+if (!function_exists('currency_format')) {
+  function currency_format($number, $suffix = 'VND') {
+      if (!empty($number)) {
+          return number_format($number, 0, ',', '.') ." ". "{$suffix}";
+      }
+  }
+}
+?>
 <section>
   <div class="tour-nam">
     <div class="container">
@@ -10,14 +18,13 @@
       <!-- cần render -->
       <div class="row">
         <?php 
+        $folder = './public/images/imgs_tour/';
         foreach($getAllKhoaTour as $item){
           extract($item);
           ?>
-     
-         
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="thumbnail block-tour shadow rounded-lg tour">
-            <a href=""><img src="asset/img/635f9d3f554e2.jpg " class="img-thumbnail" alt=""></a>
+            <a href=""><img src="<?= $folder.$anh_dai_dien_tour;  ?>" class="img-thumbnail" alt=""></a>
             <div class="caption">
               <a class="title-tour " href="">
                 <p><?= $ten_tour?></p>
@@ -32,7 +39,7 @@
             <div class="bottom">
               <span>
                 <i class="fa fa-money"></i>
-                <?= $gia_tien?> VND
+                <?= currency_format($gia_tien)?>
               </span>
               <a href="tourdetail?matour= <?= $ma_tour?> " class=""> Đặt ngay</a>
             </div>
