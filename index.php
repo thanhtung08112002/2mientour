@@ -4,6 +4,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 #Controllers admin
 require_once 'app/controllers/admin/controllers_admin.php';
+require_once 'app/controllers/admin/admin.php';
+
 
 #Views admin
 
@@ -24,6 +26,12 @@ require_once 'app/controllers/client/error_404.php';
 require_once 'app/models/connect.php';
 require_once 'app/models/thong_tin_cong_ty.php';
 require_once 'app/models/khoa_tour_chi_tiet.php';
+require_once 'app/models/thanh_pho.php';
+require_once 'app/models/slider.php';
+require_once 'app/models/mien.php';
+
+
+
 
 
 
@@ -37,6 +45,15 @@ switch ($url) {
     case 'tourdetail':
         showTourDetail();
         break;
+    case 'admin':
+        goToAdmin();
+        break;
+        //check
+    case 'mien':
+        mien();
+        break;
+        //check
+
     default:
         error_404();
 }

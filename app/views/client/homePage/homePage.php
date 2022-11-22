@@ -1,8 +1,16 @@
 <?php
-include_once 'homePageSlider.php';
-include_once 'homePageSearch.php';
+if (!function_exists('currency_format')) {
+  function currency_format($number, $suffix = 'VND')
+  {
+    if (!empty($number)) {
+      return number_format($number, 0, ',', '.') . " " . "{$suffix}";
+    }
+  }
+}
+include_once 'homePageSliderAndSearch.php';
 include_once 'homePageTourHot.php';
 include_once 'homePageMienBac.php';
 include_once 'homePageMienNam.php';
-echo '<pre>';
-var_dump($getAllKhoaTour);
+include_once 'homePageDangKyUuDai.php';
+
+
