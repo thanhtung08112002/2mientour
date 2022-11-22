@@ -21,39 +21,43 @@
 <body>
   <div class="container-fluid">
     <header class="container">
-      <a href="" class="header_logo"><img src="/public/images/logo_header.jpg" alt=""></a>
-      <input type="checkbox" id="menu-nav">
-      <label for="menu-nav"><i class="fa fa-bars"></i></label>
-      <nav class="header_nav">
-        <ul>
-          <li><a href="#">TRANG CHỦ</a></li>
-          <li><a href="#">DU LỊCH</a>
-            <ul class="menu">
-              <li><a href="#">Mien bac</a>
-                <ul class="menu_child">
-                  <li class="menu_child_li"><a href="">thanh pho 1</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho 1</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho 1</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho 1</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho 1</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Mien Nam</a>
-                <ul class="menu_child">
-                  <li class="menu_child_li"><a href="">thanh pho</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho</a></li>
-                  <li class="menu_child_li"><a href="">thanh pho</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#">TIN TỨC</a></li>
-          <li><a href="#">GIỚI THIỆU</a></li>
-          <li><a href="#">LIÊN HỆ</a></li>
-        </ul>
-      </nav>
+      <div>
+
+
+        <a href="" class="header_logo"><img src="/public/images/logo_header.jpg" alt=""></a>
+        <input type="checkbox" id="menu-nav">
+        <label for="menu-nav"><i class="fa fa-bars"></i></label>
+        <nav class="header_nav">
+          <ul>
+            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="#">DU LỊCH</a>
+              <ul class="menu">
+                <li><a href="#">Mien bac</a>
+                  <ul class="menu_child">
+                    <li class="menu_child_li"><a href="">thanh pho 1</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho 1</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho 1</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho 1</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho 1</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Mien Nam</a>
+                  <ul class="menu_child">
+                    <li class="menu_child_li"><a href="">thanh pho</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho</a></li>
+                    <li class="menu_child_li"><a href="">thanh pho</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#">TIN TỨC</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+            <li><a href="#">LIÊN HỆ</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     </section>
     <header>

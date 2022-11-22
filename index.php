@@ -4,7 +4,8 @@ session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 #Controllers admin
-require_once 'app/controllers/admin/controllers_admin.php';
+require_once 'app/controllers/admin/controllers_employee.php';
+require_once 'app/controllers/admin/list_employee.php';
 
 #Views admin
 
@@ -19,7 +20,6 @@ require_once 'app/controllers/client/error_404.php';
 
 #Views client
 
-// fsaf
 
 #Models 
 require_once 'app/models/connect.php';
@@ -38,6 +38,7 @@ switch ($url) {
     case 'tourdetail':
         showTourDetail();
         break;
+
     default:
         error_404();
 }
