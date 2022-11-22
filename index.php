@@ -31,6 +31,8 @@ require_once 'app/models/khoa_tour_chi_tiet.php';
 require_once 'app/models/thanh_pho.php';
 require_once 'app/models/slider.php';
 require_once 'app/models/mien.php';
+require_once 'app/models/account_admin.php';
+
 
 
 
@@ -50,12 +52,13 @@ switch ($url) {
     case 'admin':
         goToAdmin();
         break;
-        //check
-    case 'mien':
-        mien();
+    case 'check_login':
+        if (isset($_POST['btn-login'])) {
+            checkLogin();
+        }else{
+            error_404();
+        }
         break;
-        //check
-
     default:
         error_404();
 }

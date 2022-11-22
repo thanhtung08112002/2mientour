@@ -37,34 +37,29 @@
                 <li><a href="home">Trang chủ </a></li>
                 <li><a href="#">Du lịch</a>
                   <ul>
-                    <li><a href="#" class="header_nav-mien">Mien bac</a>
-                      <ul>
-                        <li><a href="">Du lịch thanh pho 1</a></li>
-                        <li><a href="">thanh pho 1</a></li>
-                        <li><a href="">thanh pho 1</a></li>
-                        <li><a href="">thanh pho 1</a></li>
-                        <li><a href="">thanh pho 1</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#" class="header_nav-mien">Mien Nam</a>
-                      <ul>
-                        <li><a href="">thanh pho</a></li>
-                        <li><a href="">thanh pho</a></li>
-                        <li><a href="">thanh pho</a></li>
-                        <li><a href="">thanh pho</a></li>
-                        <li><a href="">thanh pho</a></li>
-                      </ul>
-                    </li>
+                    <?php foreach ($mien as $item) : ?>
+                      <?php extract($item) ?>
+                      <li><a href="<?= $ma_mien?>" class="header_nav-mien"><?= $ten_mien ?></a>
+                        <ul>
+                          <?php foreach ($getAgetAllMienWithCity as $item_thanh_pho) : ?>
+                          <?php extract($item_thanh_pho) ?>
+                          <?php if ($item_thanh_pho['ma_mien'] == $item['ma_mien']) {
+                             echo "<li><a href=\"$ma_thanh_pho\"> $ten_thanh_pho</a></li>";
+                          }?>
+                        <?php endforeach ?>
+                        </ul>
+                      </li>
+                    <?php endforeach ?>
                   </ul>
                 </li>
                 <li><a href="tintuc">Tin tức</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="gioithieu">Giới thiệu</a></li>
+                <li><a href="lienhe">Liên hệ</a></li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
     </header>
-    
+
     <!-- end header -->

@@ -1,8 +1,8 @@
 <?php
-include 'header.php';
+include_once 'header.php';
 if ($path == 'error_404') {
-    include 'error_404.php';
+    include_once 'error_404.php';
 } else {
-    include 'article.php';
+    include_once 'article.php';
 }
-include 'footer.php';
+include_once 'footer.php';
