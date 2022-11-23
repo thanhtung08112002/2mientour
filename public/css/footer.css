@@ -3,7 +3,7 @@
 
 footer {
   position: relative;
-  background-color: var(--gray-color-gray1);
+  background-color: var( --primary-color);
   margin-left: -15px;
   margin-right: -15px;
   padding-top: 40px;
@@ -54,7 +54,7 @@ footer .row.col_3 {
 .footer_top_apps h3,
 .footer_top_games h3 {
   color: #fff;
-  font-size: 15px;
+  font-size: 1.8rem;
   font-family: navFont-bold;
   word-spacing: 2px;
   letter-spacing: 1px;
@@ -64,14 +64,24 @@ footer .row.col_3 {
   color: #fff;
   padding-left: 20px;
 }
+.footer_top_apps ul li,
+.footer_top_games ul li{
+  font-size: 1.5rem;
+
+}
+.footer_top_apps ul li strong,
+.footer_top_games ul li strong{
+  font-size: 1.5rem;
+
+}
 .footer_top_apps ul li a,
 .footer_top_games ul li a {
   color: #fff;
   /* text-decoration: none; */
   font-family: navFont-light;
-  font-size: 12px;
+  font-size: 1.5rem;
   word-spacing: 2px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px;  
 }
 .row.footer_nav {
   justify-content: center;
@@ -95,11 +105,11 @@ footer .row.col_3 {
 .row.footer_copy_rights {
   justify-content: center;
 }
-.footer_copy_rights {
+.footer_copy_rights span {
   color: #fff;
   margin-top: 10px;
   font-family: navFont-bold;
-  font-size: 12px;
+  font-size: 1.5rem   ;
   letter-spacing: 1px;
 }
 
