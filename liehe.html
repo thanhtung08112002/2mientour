@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./asset/css/lienhe.css" />
+    <link rel="stylesheet" href="./asset/css/responsive.css" />
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <a href="" class="header_logo"><img src="asset/img/logo_header.jpg" alt="" class="img-thumbnail"></a>
+            <input type="checkbox" id="menu-nav">
+            <label for="menu-nav"><i class="fa fa-bars"></i></label>
+            <nav class="header_nav">
+                <ul>
+                    <li><a href="#">trang chu </a></li>
+                    <li><a href="#">du lich</a>
+                        <ul>
+                            <li><a href="#">Mien bac</a>
+                                <ul>
+                                    <li><a href="">thanh pho 1</a></li>
+                                    <li><a href="">thanh pho 1</a></li>
+                                    <li><a href="">thanh pho 1</a></li>
+                                    <li><a href="">thanh pho 1</a></li>
+                                    <li><a href="">thanh pho 1</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Mien Nam</a>
+                                <ul>
+                                    <li><a href="">thanh pho</a></li>
+                                    <li><a href="">thanh pho</a></li>
+                                    <li><a href="">thanh pho</a></li>
+                                    <li><a href="">thanh pho</a></li>
+                                    <li><a href="">thanh pho</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">tin tuc</a></li>
+                    <li><a href="#">gioi thieu</a></li>
+                    <li><a href="#">lien he </a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <div class="banner"><img src="asset/img/mien-bac.jpg" alt="" class="img-fluid"></div>
+            <div class="web-contact">
+                <div class="container">
+                    <section class="contact">
+                        <div class="contact-page">
+                            <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="phone">
+                                        <div class="phone-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="phone-title">
+                                            <strong>0123844904</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="email">
+                                        <div class="email-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="email-title">
+                                            <strong>admin@gmail.com</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="address">
+                                        <div class="address-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="address-title">
+                                            <strong>Trường cao đẳng FPT </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section class="comments">
+                        <div class="user-comments">
+                            <h2>Ý KIẾN ĐÓNG GÓP CỦA KHÁCH HÀNG</h2>
+                            <form action="#" name="frn" onsubmit="return validete()">
+                                <div class="row contribute  ">
+                                    <div class="col-sm-4">
+                                        <div class="form-group ">
+                                            <input type="text" name="txtHoTen" class="form-control"
+                                                placeholder="Họ và Tên">
+                                            <p id="loiHoTen" style="color: red;"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="tntSoDT" class="form-control"
+                                                placeholder="Số Điện Thoại">
+                                            <p id="loiSoDT" style="color: red;"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="tgmail" class="form-control"
+                                                placeholder="Nhập email">
+                                            <p id="loigmail" style="color: red;"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8 purpose">
+                                        <textarea  name="note"  placeholder="Nội Dung" ></textarea>
+                                        <p id="loinote" style="color: red;"></p>
+                                    </div>
+                                    <div class="col-sm-12">
+                                         <button type="submit" class="btn btn-warning">Gửi</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
+
+
+
+        <footer>
+            <div class="container">
+                <div class="row  ">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer_contact_social_media">
+                            <a href="#"><img src="asset/img/logo_header.jpg" alt="" class="img-thumbnail" /></a>
+                            <p><a href="#">Follow <span>Nhom 7</span></a></p>
+                            <div class="footer_contact_social_media-icons">
+                                <a href="#"> <i class="	fa fa-facebook-square"></i></a>
+                                <a href="#"> <i class="fa fa-twitter-square"></i></a>
+                                <a href="#"> <i class="fa fa-instagram"></i></a>
+                                <a href="#"> <i class="	fa fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer_top_apps">
+                            <h3>Tour Bac</h3>
+                            <ul>
+                                <li><a href="#">Ha Noi</a></li>
+                                <li><a href="#">Quang Ninh</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="footer_top_games">
+                            <h3>Tour Nam</h3>
+                            <ul>
+                                <li><a href="#">Thanh Pho Ho Chi Minh </a></li>
+                                <li><a href="#">Vung Tau</a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer_nav">
+                    <nav class="footer_nav">
+                        <ul>
+                            <li><a href="#">Trang Chu</a></li>
+                            <li><a href="#">Du Lich</a></li>
+                            <li><a href="#">Tin Tuc </a></li>
+                            <li><a href="#">Gioi Thieu </a></li>
+                            <li><a href="#">Lien He </a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="row footer_copy_rights">
+                    <div class="footer_copy_rights">
+                        <span>© 2021 Name Web All rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./asset/js/lienhe.js"></script>
+</body>
+
+</html>
