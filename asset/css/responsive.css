@@ -41,9 +41,13 @@
     grid-template-columns: 100%;
     
   }
-  .cart-item{
+   .cart-item{
     display: grid;
     grid-template-columns: 100%;
+}
+.tour-package{
+  display: grid;
+  grid-template-columns: 100%;
 }
  }
 
@@ -89,9 +93,13 @@
     grid-template-columns: 100%;
     
   }
-  .cart-item{
+   .cart-item{
     display: grid;
     grid-template-columns: 100%;
+}
+.tour-package{
+  display: grid;
+  grid-template-columns: 100%;
 }
  }
 
@@ -138,9 +146,13 @@
     grid-template-columns: 100%;
     
   }
-  .cart-item{
+   .cart-item{
     display: grid;
     grid-template-columns: 100%;
+}
+.tour-package{
+  display: grid;
+  grid-template-columns: 100%;
 }
  }
 
