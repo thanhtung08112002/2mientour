@@ -3,10 +3,10 @@
 
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-
 #Controllers admin
 require_once 'app/controllers/admin/controllers_admin.php';
 require_once 'app/controllers/admin/admin.php';
+require_once 'app/controllers/admin/admin_page.php';
 
 
 #Views admin
@@ -52,10 +52,17 @@ switch ($url) {
     case 'admin':
         goToAdmin();
         break;
+    case 'admin_page':
+        if (isset($_SESSION['login_success'])) {
+            admin_page();
+        } else {
+            error_404();
+        }
+        break;
     case 'check_login':
         if (isset($_POST['btn-login'])) {
             checkLogin();
-        }else{
+        } else {
             error_404();
         }
         break;

@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-3">
             <div class="header_logo">
-              <a href="home" class="header_logo"><img src="public/images/logo_header.jpg" alt="" /></a>
+              <a href="home" class="header_logo"><img src="public/images/<?= $logo ?>" alt="" /></a>
               <input type="checkbox" id="menu-nav">
               <label for="menu-nav"><i class="fa fa-bars"></i></label>
             </div>

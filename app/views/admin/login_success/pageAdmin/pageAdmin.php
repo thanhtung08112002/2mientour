@@ -6,3 +6,4 @@
   <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
+<?php echo "<pre>";var_dump($_SESSION) ?>
