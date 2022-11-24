@@ -6,10 +6,6 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@font-face {
-  font-family: navFont-bold;
-  src: url("../font/text/Ubuntu/Ubuntu-Bold.ttf");
-}
 
 @font-face {
   font-family: navFont-light;
@@ -123,10 +119,6 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
-.row {
-  justify-content: space-between;
-  align-items: center;
-}
 
 .menu,
 .menu_child {
@@ -195,16 +187,4 @@ header label {
   display: none;
 }
 
-.search {
-  position: absolute;
-  top: 390px;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
 
-.search_input {
-  border-radius: 6px;
-  border: none;
-  padding: 10px;
-}

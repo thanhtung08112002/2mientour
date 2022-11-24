@@ -16,11 +16,7 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-<<<<<<< HEAD
-                                <img src="/public/images/chitet/5c0b37af4f715.jpg" class="d-block w-100" alt="...">
-=======
                                 <img src="asset/img/chitet/5c0b37af4f715.jpg" class="d-block w-100" alt="...">
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>TP.HCM - HÀ NỘI - NINH BÌNH</h5>
                                     <p>Cố đô Hoa Lư - là quần thể di tích lịch sử đất nước đặc biệt
@@ -31,11 +27,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-<<<<<<< HEAD
-                                <img src="/public/images/chitet/5c872443107d7.jpg" class="d-block w-100" alt="...">
-=======
                                 <img src="asset/img/chitet/5c872443107d7.jpg" class="d-block w-100" alt="...">
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>HẠ LONG - YÊN TỬ - HÀ NỘI</h5>
                                     <p>di sản thiên nhiên thế giới được UNESSCO công nhận, chiêm
@@ -46,11 +38,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-<<<<<<< HEAD
-                                <img src="/public/images/chitet/61a04ce204d1b.jpg" class="d-block w-100" alt="...">
-=======
                                 <img src="asset/img/chitet/61a04ce204d1b.jpg" class="d-block w-100" alt="...">
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>HẠ LONG - YÊN TỬ - HÀ NỘI</h5>
                                     <p>àn cư trú của người H'Mông, ngắm cảnh hùng vĩ của núi rừng
@@ -71,11 +59,7 @@
                 </div>
                 <div class="schedule-heading">
                     <i class="fa fa-list-ol"></i>
-<<<<<<< HEAD
-                    <span style="font-size: 20px;">CHƯƠNG TRÌNH TOUR</span>
-=======
                     <span>CHƯƠNG TRÌNH TOUR</span>
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                 </div>
                 <div class="div-content">
                     <div class="schedule-icon">
@@ -106,11 +90,7 @@
                             </div>
                         </div>
                         <div class="schedule-step-seemore">
-<<<<<<< HEAD
-                            <p class="schedule-step-start"><strong style="font-size: 14px;">21:00</strong> Quý khách tập trung tại
-=======
                             <p class="schedule-step-start"><strong>21:00</strong> Quý khách tập trung tại
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                 sân
                                 bay
                                 Tân Sơn Nhất ga đi quốc
@@ -118,11 +98,7 @@
                                 hướng dẫn làm thủ tục check in đón chuyến bay <strong>4V254</strong> đi Yang
                                 Yang.</p>
                             <div class="schedule-step-note">
-<<<<<<< HEAD
-                                <strong style="font-size: 14px;">
-=======
                                 <strong>
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                     Lưu ý: Trên máy bay không phục vụ ăn uống (hot meal), và không bao gồm
                                     chăn
                                     đắp, gối cổ trên máy bay. Quý khách nên mang theo chăn đắp vì nhiệt độ
@@ -277,11 +253,7 @@
                         <div class="other-schedule">
                             <div class="other-schedule-heading schedule-heading">
                                 <i class="fa fa-check-square-o"></i>
-<<<<<<< HEAD
-                                <span style="font-size: 20px;">
-=======
                                 <span>
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                     NGÀY KHỞI HÀNH KHÁC
                                 </span>
                             </div>
@@ -296,11 +268,7 @@
                                             <td style="width:15%;">&nbsp;</td>
                                         </tr>
                                         <tr>
-<<<<<<< HEAD
-                                            <td colspan="4" style="font-size: 16px; text-align: center; ">Hiện tại chưa có
-=======
                                             <td colspan="4" style="text-align: center;">Hiện tại chưa có
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
                                                 lịch khởi hành khác!</td>
                                         </tr>
                                     </tbody>
@@ -458,8 +426,4 @@
             <!-- End tour liên quan -->
         </div>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> c76378cc6b3959f733327241234e0402f6f13496
 </div>

@@ -6,7 +6,6 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 #Controllers admin
 require_once 'app/controllers/admin/controllers_admin.php';
 require_once 'app/controllers/admin/admin.php';
-
 #Views admin
 
 
@@ -16,7 +15,6 @@ require_once 'app/controllers/client/controllers.php';
 require_once 'app/controllers/client/page_home.php';
 require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/error_404.php';
-
 
 #Views client
 
@@ -31,7 +29,6 @@ require_once 'app/models/mien.php';
 require_once 'app/models/account_admin.php';
 
 
-
 $url = $_GET['ctr'] ?? '/';
 switch ($url) {
     case '/':
@@ -44,7 +41,7 @@ switch ($url) {
     case 'check_login':
         if (isset($_POST['btn-login'])) {
             checkLogin();
-        }else{
+        } else {
             error_404();
         }
         break;
