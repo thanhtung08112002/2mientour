@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+/* .banner {
+    padding-top: 64px;
+} */
+article{
+    background: #f5f5f5;
+}
+section {
+    padding: 10px;
+}
+.payment-success{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+.payment-success-title{
+    background: #003d71;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.payment-successp-body{
+    font-size: 16px;
+    padding: 15px;
+}
+.payment-successp-body .thanks{
+    font-size: 16px;
+    color: #ffc10e;
+    font-weight: 700;
+}
+.payment-successp-body strong{
+    font-size: 16px;
+    font-weight: 700;
+}
+.payment-successp-body p{
+    font-size: 13px;
+}
+.payment-successp-body-tour .title-tour,.item-price{
+    font-size: 16px;
+}
+.payment-successp-body .money-tour{
+    text-align: right;
+}
+.payment-successp-body .money-tour .money{
+    font-size: 16px;
+}
