@@ -5,145 +5,18 @@
     font-size: 10px;
 }
 
-@font-face {
-    font-family: navFont-bold;
-    src: url("../font/text/Ubuntu/Ubuntu-Bold.ttf");
-}
-
-@font-face {
-    font-family: navFont-light;
-    src: url("../font/text/Ubuntu/Ubuntu-Light.ttf");
-}
-
-:root {
-    --brand-color-secondary1: #374151;
-    --brand-color-secondary2: #fd4e5d;
-    --brand-color-secondary3: #000000;
-    --text-color: #182233;
-    --gray-color-black: #000000;
-    --gray-color-gray1: #1f2937;
-    --gray-color-gray2: #374151;
-    --gray-color-gray3: #4b5563;
-    --gray-color-gray4: #6b7280;
-    --gray-color-gray5: #9ca3af;
-    --gray-color-gray6: #d1d5db;
-    --gray-color-gray7: #f3f4f6;
-}
-
-header {
-    position: fixed;
-    background-color: rgb(28, 190, 230);
-    margin-left: -15px;
-    margin-right: -15px;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-}
-
-.header_logo {
-    padding: 5px 0px;
-}
-
-.header_logo img {
-    max-width: 150px;
-    height: auto;
-}
-
-.header_nav ul {
-    list-style: none;
-}
-
-.header_nav ul li {
-    position: relative;
-    float: left;
-}
-
-.header_nav ul li a {
-    font-size: 15px;
-    padding: 20px;
-    color: #000000;
-    display: block;
-    text-decoration: none;
-    font-family: navFont-bold;
-}
-
-.header_nav ul li a:hover {
-    color: #e5d419;
-}
-
-.header_nav li a::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0.175rem;
-    left: 0;
-    bottom: 0;
-    background-color: #ddf40f;
-    transform: scale(0, 1);
-    /*(độ lớn,độ cao)*/
-    transform-origin: 0 100%;
-    /*đi từ vị trí 0 -> 100%*/
-    transition: all 0.3s ease-in-out;
-}
-
-.header_nav li a:hover::after {
-    transform: scale(1, 1);
-    transition: all 0.3s ease-in-out;
-}
-
-.header_nav ul li ul {
-    position: absolute;
-    left: 0;
-    width: 150px;
-    background: #f2f4f9;
-    display: none;
-}
-
-.header_nav ul li ul li {
-    width: 100%;
-    border-top: 1px solid rgb(126, 117, 117);
-}
-
-.header_nav ul li ul li ul {
-    left: 150px;
-    top: 0;
-}
-
-.header_nav ul li:focus-within>ul,
-.header_nav ul li:hover>ul {
-    display: initial;
-}
-
-#menu-nav {
-    display: none;
-}
-
-header label {
-    font-size: 20px;
-    color: #e5d419;
-    cursor: pointer;
-    display: none;
-}
-
-.banner {
+/* .banner {
     padding-top: 64px;
-}
+} */
 
 section {
     padding: 10px;
 }
-
-.panel {
+.tour-book-info {
     padding-bottom: 10px;
 }
 
-.panel-heading {
+.tour-book-info-title,.cart-list-title {
     background: #003d71;
     padding: 10px;
     border: 1px solid rgb(126, 117, 117);
@@ -156,43 +29,70 @@ section {
     /* 8px */
 }
 
-.panel-body {
+.tour-book-info-body,.cart-list-body {
     padding-top: 10px;
     border: 1px solid rgb(242, 233, 233);
     padding: 5px;
     background: #fff;
 }
-
+.tour-book-info-body strong,span{
+    font-size: 16px;
+}
+.tour-book-info-body .form-group input,p{
+    font-size: 14px;
+}
+.payment-item input,label{
+    font-size: 14px;
+}
 .payment_info {
     margin: 0 0 10px;
     padding: 10px;
     background: #cad2d6e1;
+    
 }
-
-.caption {
-    padding: 15px;
- 
+.payment_info a{
+    font-size: 15px;
 }
+.tour-book-info-body .btn{
+  font-size: 14px;
+  color: #fff;
+}
+.tour-book-info-body .btn:hover{
+    color: #000;
+}
+.cart-list-body .info-tour .caption {
+padding: 15px;
 
+}
 .caption a {
     text-decoration: none;
 }
 
-.title-tour {
+.cart-list-body .info-tour .caption .title-tour {
     padding-bottom: 10px;
     margin-bottom: 10px;
-    color: #1a4cdf;
-    font-size: 1.25rem;
-    /* 20px */
+    color: #003d71;
+    font-weight: 700;
     line-height: 1.75rem;
-    /* 28px */
-    font-weight: 600;
 }
-
-.cart-detail {
-    padding: 5px;
+.cart-list-body .info-tour .caption .title-tour p{
+    font-size: 18px;
 }
-
+.cart-list-body .info-tour .caption p,strong{
+    font-size: 16px;
+}
+.cart-list-body .info-tour .caption .cart-detail .line-price strong{
+    font-size: 13px;
+}
+.cart-list-body .info-tour .caption .cart-detail .line-price input{
+    color: #FFC10E;
+    width: 45px;
+    text-align: center;
+    font-size: 13px;
+}
+.cart-list-body .info-tour .caption .cart-detail .line-price .item-price{
+    font-size: 13px;
+}
 .cart-item {
     display: flex;
 }
@@ -206,127 +106,12 @@ section {
     font-weight: 700;
     font-size: 18px;
 }
-
-footer {
-    position: relative;
-    background-color: rgb(28, 190, 230);
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+.cart-total button{
+    font-size: 14px;
 }
-
-.container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-footer .row.col_3 {
-    justify-content: space-between;
-}
-
-.footer_contact_social_media {
-    text-align: center;
-}
-
-.footer_contact_social_media a img {
-    width: 100%;
-    height: 100%;
-}
-
-.footer_contact_social_media p {
-    margin-top: 1rem;
-}
-
-.footer_contact_social_media p a {
-    text-decoration: none;
-    color: #fff;
-    font-family: navFont-bold;
+.cart-total p{
     font-size: 18px;
-    word-spacing: 2px;
-    letter-spacing: 1px;
-
 }
-
-.footer_contact_social_media p a span {
-    transition: all 0.3s ease-in-out;
-}
-
-.footer_contact_social_media p a:hover span {
-    color: var(--brand-color-secondary2);
-}
-
-.footer_contact_social_media-icons i {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 10px 15px 0 15px;
-    transition: all 0.3s ease-in-out;
-}
-
-.footer_contact_social_media-icons a:hover i {
-    color: var(--brand-color-secondary2);
-}
-
-.footer_top_apps {
-    padding-left: 40px;
-}
-
-.footer_top_apps h3,
-.footer_top_games h3 {
-    color: #fff;
-    font-size: 15px;
-    font-family: navFont-bold;
-    word-spacing: 2px;
-    letter-spacing: 1px;
-}
-
-.footer_top_apps ul,
-.footer_top_games ul {
-    color: #fff;
-    padding-left: 20px;
-}
-
-.footer_top_apps ul li a,
-.footer_top_games ul li a {
-    color: #fff;
-    /* text-decoration: none; */
-    font-family: navFont-light;
-    font-size: 12px;
-    word-spacing: 2px;
-    letter-spacing: 0.5px;
-}
-
-.row.footer_nav {
-    justify-content: center;
-}
-
-.footer_nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.footer_nav ul li a {
-    color: #fff;
-    font-family: navFont-bold;
-    text-decoration: none;
-    padding: 22px;
-    transition: all 0.3s ease-in-out;
-}
-
-.footer_nav ul li a:hover {
-    color: var(--brand-color-secondary2);
-}
-
-.row.footer_copy_rights {
-    justify-content: center;
-}
-
-.footer_copy_rights {
-    color: #fff;
-    margin-top: 10px;
-    font-family: navFont-bold;
-    font-size: 12px;
-    letter-spacing: 1px;
+.cart-total p span{
+    color: red;
 }

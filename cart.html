@@ -14,44 +14,9 @@
 
 <body>
     <div class="container-fluid">
-        <header>
-            <a href="" class="header_logo"><img src="asset/img/logo_header.jpg" alt="" class="img-thumbnail"></a>
-            <input type="checkbox" id="menu-nav">
-            <label for="menu-nav"><i class="fa fa-bars"></i></label>
-            <nav class="header_nav">
-                <ul>
-                    <li><a href="#">trang chu </a></li>
-                    <li><a href="#">du lich</a>
-                        <ul>
-                            <li><a href="#">Mien bac</a>
-                                <ul>
-                                    <li><a href="">thanh pho 1</a></li>
-                                    <li><a href="">thanh pho 1</a></li>
-                                    <li><a href="">thanh pho 1</a></li>
-                                    <li><a href="">thanh pho 1</a></li>
-                                    <li><a href="">thanh pho 1</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Mien Nam</a>
-                                <ul>
-                                    <li><a href="">thanh pho</a></li>
-                                    <li><a href="">thanh pho</a></li>
-                                    <li><a href="">thanh pho</a></li>
-                                    <li><a href="">thanh pho</a></li>
-                                    <li><a href="">thanh pho</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">tin tuc</a></li>
-                    <li><a href="#">gioi thieu</a></li>
-                    <li><a href="#">lien he </a></li>
-                </ul>
-            </nav>
-        </header>
 
         <article>
-            <img src="asset/img/mien-bac.jpg" alt="" class="img-fluid banner">
+            <!-- <img src="asset/img/mien-bac.jpg" alt="" class="img-fluid banner"> -->
 
             <section>
                 <div class="container">
@@ -59,16 +24,17 @@
                         <form action="thanhtoan.html" name="frn" onsubmit="return validete()">
                             <div class="row">
                                 <div class="col-lg-4 col-sm-5">
-                                    <div class="panel">
-                                        <div class="panel-heading">
+                                    <div class="tour-book-info">
+                                        <div class=" tour-book-info-title">
                                             <i class=" fa fa-credit-card"></i>
                                             THÔNG TIN NGƯỜI ĐẶT
                                         </div>
-                                        <div class="panel-body">
-
-                                            <strong class="total money" style="color: red; " >Tổng Cộng: 31,990,000 vnd</strong>
+                                        <div class=" tour-book-info-body">
+                                            <strong style="color: red; ">Tổng Cộng: <span  class="total money"> 31,990,000
+                                                vnd</span></strong>
                                             <div class="form-group">
-                                                <input type="text" name="txtHoTen" class="form-control" placeholder="Họ và Tên">
+                                                <input type="text" name="txtHoTen" class="form-control"
+                                                    placeholder="Họ và Tên">
                                                 <p id="loiHoTen" style="color: red;"></p>
                                             </div>
                                             <div class="form-group">
@@ -77,17 +43,19 @@
                                                 <p id="loiSoDT" style="color: red;"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="tgmail" class="form-control" placeholder="Nhập email">
+                                                <input type="text" name="tgmail" class="form-control"
+                                                    placeholder="Nhập email">
                                                 <p id="loigmail" style="color: red;"></p>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="txtDiaChi" class="form-control" placeholder="Nhập địa chỉ">
+                                                <input type="text" name="txtDiaChi" class="form-control"
+                                                    placeholder="Nhập địa chỉ">
                                                 <p id="loiDiaChi" style="color: red;"></p>
                                             </div>
                                             <div class="form-group row promotion-code">
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" placeholder="Nhập mã giảm giá"
-                                                        name="code_promotion">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Nhập mã giảm giá" name="code_promotion">
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <a class="btn btn-secondary" href="#" role="button">Kiểm Tra</a>
@@ -95,10 +63,12 @@
                                             </div>
                                             <div class="payment">
                                                 <div class="payment-item">
-                                                    <input type="radio" onclick="yesnoCheck();" name="payment_method" id="transfer" />
+                                                    <input type="radio" onclick="yesnoCheck();" name="payment_method"
+                                                        id="transfer" />
                                                     <label for="">Chuyển khoản ngân hàng</label>
-                                                    <div id="payment_transfer" style="display:none" class=" payment_info">
-                                                        <p>THÔNG TIN THANH TOÁN 
+                                                    <div id="payment_transfer" style="display:none"
+                                                        class=" payment_info">
+                                                        <p>THÔNG TIN THANH TOÁN
                                                             <br>
                                                             <strong>Trụ Sở:</strong>
                                                             " Trường Cao Đẳng tại Hà Nội"
@@ -107,15 +77,17 @@
                                                             <a href=""> 012365879</a>
                                                             <br>
                                                             <strong> Email:</strong>
-                                                            <a href="">admin@gmail.com</a> 
+                                                            <a href="">admin@gmail.com</a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="payment-item">
-                                                    <input type="radio" onclick="yesnoCheck();" name="payment_method" id="payoffice" />
+                                                    <input type="radio" onclick="yesnoCheck();" name="payment_method"
+                                                        id="payoffice" />
                                                     <label for="">Thanh Toán Tại Văn Phòng</label>
-                                                    <div id="payment_payoffice" style="display:none" class=" payment_info">
-                                                        <p>THÔNG TIN THANH TOÁN 
+                                                    <div id="payment_payoffice" style="display:none"
+                                                        class=" payment_info">
+                                                        <p>THÔNG TIN THANH TOÁN
                                                             <br>
                                                             <strong>Trụ Sở:</strong>
                                                             " Trường Cao Đẳng tại Hà Nội"
@@ -124,15 +96,17 @@
                                                             <a href=""> 012365879</a>
                                                             <br>
                                                             <strong> Email:</strong>
-                                                            <a href="">admin@gmail.com</a> 
+                                                            <a href="">admin@gmail.com</a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="payment-item">
-                                                    <input type="radio" onclick="yesnoCheck();" name="payment_method" id="payonline" />
+                                                    <input type="radio" onclick="yesnoCheck();" name="payment_method"
+                                                        id="payonline" />
                                                     <label for="">Thanh Toán Online</label>
-                                                    <div id="payment_payonline" style="display:none" class=" payment_info">
-                                                        <p>THÔNG TIN THANH TOÁN 
+                                                    <div id="payment_payonline" style="display:none"
+                                                        class=" payment_info">
+                                                        <p>THÔNG TIN THANH TOÁN
                                                             <br>
                                                             <strong>Trụ Sở:</strong>
                                                             " Trường Cao Đẳng tại Hà Nội"
@@ -141,7 +115,7 @@
                                                             <a href=""> 012365879</a>
                                                             <br>
                                                             <strong> Email:</strong>
-                                                            <a href="">admin@gmail.com</a>  
+                                                            <a href="">admin@gmail.com</a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -155,11 +129,11 @@
                                 </div>
                                 <div class="col-lg-8 col-sm-7">
                                     <div class="cart-list">
-                                        <div class="panel-heading">
+                                        <div class="cart-list-title">
                                             <i class="fa fa-shopping-cart"></i>
                                             THÔNG TIN VỀ SẢN PHẨM / DỊCH VỤ
                                         </div>
-                                        <div class="panel-body">
+                                        <div class="cart-list-body">
                                             <div class="cart-item ">
                                                 <div class="img-tour">
                                                     <a href=""><img src="asset/img/635f9d3f554e2.jpg "
@@ -187,16 +161,18 @@
                                                             <div class="line-price">
                                                                 <strong>người lớn</strong>
                                                                 <input type="number" min="1" value="1" name="adult"
-                                                                    max="8" style="color: #FFC10E; padding: 1px; width: 10%;"  id="qty"  onclick="calculate()" >
-                                                                <span class="item-price" id="pro" data-price=" 31990000">*31,990,000=</span>
-                                                                <strong class="line-total money" > 31,990,000vnd
-                                                                    </strong>
+                                                                    max="8" id="qty" onclick="calculate()">
+                                                                <span class="item-price" id="pro"
+                                                                    data-price=" 31990000">*31,990,000=</span>
+                                                                <strong class="line-total money"> 31,990,000vnd
+                                                                </strong>
                                                             </div>
                                                         </div>
                                                         <hr>
                                                         <div class="cart-item-total d-flex justify-content-between">
                                                             <span>Tổng</span>
-                                                            <strong class="total money" style="color: #FFC10E;" > 31,990,000vnd </strong>
+                                                            <strong class="total money" style="color: #FFC10E;">
+                                                                31,990,000vnd </strong>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -207,9 +183,9 @@
                                                 <div class="">
                                                     <button type="submit" class="btn btn-primary">Thanh Toán </button>
                                                 </div>
-                                                <div class="money">
-                                                    Tổng Cộng:
-                                                    <span>31,990,000</span>
+                                                <div >
+                                                    <p> Tổng Cộng:
+                                                    <span class="money">31,990,000</span></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -221,67 +197,6 @@
                 </div>
             </section>
         </article>
-        <footer>
-            <div class="container">
-                <div class="row  ">
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer_contact_social_media">
-                            <a href="#"><img src="asset/img/logo_header.jpg" alt="" class="img-thumbnail" /></a>
-                            <p><a href="#">Follow <span>Nhom 7</span></a></p>
-                            <div class="footer_contact_social_media-icons">
-                                <a href="#"> <i class="	fa fa-facebook-square"></i></a>
-                                <a href="#"> <i class="fa fa-twitter-square"></i></a>
-                                <a href="#"> <i class="fa fa-instagram"></i></a>
-                                <a href="#"> <i class="	fa fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer_top_apps">
-                            <h3>Tour Bac</h3>
-                            <ul>
-                                <li><a href="#">Ha Noi</a></li>
-                                <li><a href="#">Quang Ninh</a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer_top_games">
-                            <h3>Tour Nam</h3>
-                            <ul>
-                                <li><a href="#">Thanh Pho Ho Chi Minh </a></li>
-                                <li><a href="#">Vung Tau</a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row footer_nav">
-                    <nav class="footer_nav">
-                        <ul>
-                            <li><a href="#">Trang Chu</a></li>
-                            <li><a href="#">Du Lich</a></li>
-                            <li><a href="#">Tin Tuc </a></li>
-                            <li><a href="#">Gioi Thieu </a></li>
-                            <li><a href="#">Lien He </a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="row footer_copy_rights">
-                    <div class="footer_copy_rights">
-                        <span>© 2021 Name Web All rights reserved.</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- end footer -->
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
