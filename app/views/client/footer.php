@@ -24,9 +24,11 @@
           <ul>
             <?php foreach ($getAgetAllMienWithCity as $item_thanh_pho) : ?>
               <?php extract($item_thanh_pho) ?>
-              <?php if ($item_thanh_pho['ma_mien'] == $item['ma_mien']) {
-                echo "<li><a href=\"$ma_thanh_pho\"> $ten_thanh_pho</a></li>";
-              } ?>
+              <?php if ($item_thanh_pho['ma_mien'] == $item['ma_mien']) {?>
+                <!-- fixing -->
+               <li><a href=<?= $ma_mien.$ma_thanh_pho?>> <?= $ten_thanh_pho?></a></li>
+                <!-- fixing -->
+              <?php } ?>
             <?php endforeach ?>
           </ul>
         </div>
