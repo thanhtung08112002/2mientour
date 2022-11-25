@@ -16,7 +16,7 @@
             <div class="thumbnail block-tour shadow rounded-lg tour">
               <a href="tourdetail?matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"><img src="<?= $folder . $anh_dai_dien_tour;  ?>" class="img-thumbnail" alt="" style="height: 240px; width: 340px;"></a>
               <div class="caption">
-                <a class="title-tour " href="tourdetail?matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>">
+                <a class="title-tour " href="tourdetail?mamien= <?=$ma_mien?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>">
                   <p><?= $ten_tour ?></p>
                 </a>
                 <div class="location">

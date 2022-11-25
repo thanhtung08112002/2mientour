@@ -33,6 +33,9 @@ require_once 'app/models/slider.php';
 require_once 'app/models/mien.php';
 require_once 'app/models/account_admin.php';
 
+require_once 'app/config.php';
+
+
 
 
 
@@ -47,7 +50,11 @@ switch ($url) {
         showHome();
         break;
     case 'tourdetail':
-        showTourDetail();
+        if (isset($_GET['matour'])) {
+            showTourDetail($_GET['matour']);
+        } else {
+            error_404();
+        }
         break;
     case 'admin':
         goToAdmin();
