@@ -30,12 +30,12 @@
           <td><?= $bql['ten_chuc_vu'] ?></td>
           <td><?= $bql['ngay_thang_nam_sinh'] ?></td>
           <td>
-            <a href="edit-nhan-vien&id=<?= $bql['ma_quan_ly_mien'] ?>" class="link-action btn-default" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a> |
-            <a href="delete-nhan-vien&id=<?= $bql['ma_quan_ly_mien'] ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+            <a href="edit_nhan_vien&id=<?= $bql['ma_quan_ly_mien'] ?>" class="link-action btn-default" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a> |
+            <a href="delete_nhan_vien&id=<?= $bql['ma_quan_ly_mien'] ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
           </td>
         </tr>
       <?php endforeach ?>
     </tbody>
   </table>
-  <button class="btn" type="submit" name="btn_insert"><a href="admin">Thêm</a></button>
+  <button class="btn" type="submit" name="btn_insert"><a href="add_nhan_vien">Thêm</a></button>
 </article>

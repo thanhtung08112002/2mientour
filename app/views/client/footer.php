@@ -1,4 +1,3 @@
-
 <footer>
   <div class="container">
     <div class="row col_3">
@@ -16,24 +15,24 @@
           </div>
         </div>
       </div>
-      <div class="col-3">
-        <div class="footer_top_apps">
-          <h3>Du lịch miền Bắc:</h3>
-          <ul>
-            <li><a href="#">Du lịch Hạ Long</a></li>
-            <li><a href="#">Du lịch Hà Nội</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-3">
+
+      <?php foreach ($mien as $item) : ?>
         <div class="footer_top_games">
-          <h3>Du lịch miền Nam:</h3>
+          <?php extract($item) ?>
+          <h3>Du lịch <?= $ten_mien ?></h3>
+
           <ul>
-            <li><a href="#">Du lịch Hồ Chí Minh</a></li>
-            <li><a href="#">Du lịch Côn Đảo</a></li>
+            <?php foreach ($getAgetAllMienWithCity as $item_thanh_pho) : ?>
+              <?php extract($item_thanh_pho) ?>
+              <?php if ($item_thanh_pho['ma_mien'] == $item['ma_mien']) {?>
+                <!-- fixing -->
+               <li><a href=<?= $ma_mien.$ma_thanh_pho?>> <?= $ten_thanh_pho?></a></li>
+                <!-- fixing -->
+              <?php } ?>
+            <?php endforeach ?>
           </ul>
         </div>
-      </div>
+      <?php endforeach ?>
       <div class="col-3">
         <div class="footer_top_games">
           <h3>Liên hệ:</h3>

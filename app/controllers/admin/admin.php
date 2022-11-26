@@ -10,7 +10,11 @@ function checkLogin() {
 
 function data_check($result_data_check) {
     if ($result_data_check) {
-        render_admin('pageAdmin');
+        $_SESSION['login_success'] = 'login_success';
+        if (isset($_SESSION['error_login'])) {
+           unset($_SESSION['error_login']);
+        }
+        header('Location: admin_page');
     }else{
         $_SESSION['error_login'] = 'Sai tài khoản hoặc mật khẩu';
         header('Location: admin');

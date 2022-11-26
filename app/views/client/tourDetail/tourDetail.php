@@ -7,54 +7,26 @@
                     HÌNH ẢNH
                 </div>
                 <div class="panel-img">
-                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active">
-                            </li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                        </ol>
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="asset/img/chitet/5c0b37af4f715.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>TP.HCM - HÀ NỘI - NINH BÌNH</h5>
-                                    <p>Cố đô Hoa Lư - là quần thể di tích lịch sử đất nước đặc biệt
-                                        quan
-                                        trọng của nước ta. Đây cũng là một trong bốn vùng lõi của
-                                        quần
-                                        thể di sản thế giới Tràng An đã được UNESCO công nhận..</p>
-                                </div>
+                                <img class="d-block" src="<?= ROOT ?>public/images/imgs_tour/catba3.jpg" width="750px" height="480x">
                             </div>
-                            <div class="carousel-item">
-                                <img src="asset/img/chitet/5c872443107d7.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>HẠ LONG - YÊN TỬ - HÀ NỘI</h5>
-                                    <p>di sản thiên nhiên thế giới được UNESSCO công nhận, chiêm
-                                        ngưỡng
-                                        vẻ đẹp huyền bí của hàng ngàn đảo đá và các hang động kỳ
-                                        thú.
-                                    </p>
+                            <?php foreach ($getKhoaTourWithMaTour as $item) : ?>
+                                <?php extract($item) ?>
+                                <div class="carousel-item ">
+                                    <img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh ?>" width="750px" height="480x">
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="asset/img/chitet/61a04ce204d1b.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>HẠ LONG - YÊN TỬ - HÀ NỘI</h5>
-                                    <p>àn cư trú của người H'Mông, ngắm cảnh hùng vĩ của núi rừng
-                                        Tây
-                                        Bắc, thăm quan Thác Thuỷ Điện do Pháp xây dựng.</p>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="schedule-heading">

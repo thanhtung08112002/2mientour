@@ -24,11 +24,11 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name='account_admin'>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name='account_admin' required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="pass_admin">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="pass_admin" required>
                 </div>
                 <span class="error_login" style="color: red;font-weight: bold; "><?= isset($_SESSION['error_login']) ? $_SESSION['error_login']: ""?></span>
                 <!-- nếu sai tk hoặc mk thì in ra -->
