@@ -3,6 +3,9 @@
 
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+require_once 'app/config.php';
+
 #Controllers admin
 require_once 'app/controllers/admin/controllers_admin.php';
 require_once 'app/controllers/admin/admin.php';
@@ -17,6 +20,7 @@ require_once 'app/controllers/admin/admin_page.php';
 require_once 'app/controllers/client/controllers.php';
 require_once 'app/controllers/client/page_home.php';
 require_once 'app/controllers/client/tour_detail.php';
+require_once 'app/controllers/client/list_tour.php';
 require_once 'app/controllers/client/error_404.php';
 
 
@@ -33,7 +37,6 @@ require_once 'app/models/slider.php';
 require_once 'app/models/mien.php';
 require_once 'app/models/account_admin.php';
 
-require_once 'app/config.php';
 
 
 
@@ -72,6 +75,19 @@ switch ($url) {
         } else {
             error_404();
         }
+        break;
+
+        case 'search_tour':
+            if (isset($_POST['btn_search_tour'])) {
+                searchTour();
+            } else {
+                error_404();
+            }
+            break;
+
+        //fix
+    case 'fix':
+        fix();
         break;
     default:
         error_404();

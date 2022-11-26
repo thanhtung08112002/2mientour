@@ -99,6 +99,7 @@ a p {
   text-decoration: none;
   font-size: 1.8rem;
   color: #f2f4f9;
+  text-transform: uppercase;
 }
 .bottom a:hover {
   color: #000000;

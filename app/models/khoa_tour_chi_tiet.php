@@ -49,3 +49,14 @@ function getKhoaTourWithMaTour($ma_tour)
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//tìm kiếm tour theo tên thành phố và dữ liệu nhập vào
+function search_tour($data) {
+    extract($data);
+    $conn = connection();
+    $sql = "SELECT dltn.ma_mien,ma_tour, ten_tour,ktct.ma_thanh_pho, ten_dia_diem_khoi_hanh, anh_dai_dien_tour, gia_tien FROM du_lich_trong_nuoc dltn JOIN du_lich_theo_thanh_pho dltp ON dltn.ma_mien = dltp.ma_mien JOIN khoa_tour_chi_tiet ktct ON ktct.ma_thanh_pho = dltp.ma_thanh_pho JOIN dia_diem_khoi_hanh ddkh ON ddkh.ma_dia_diem_khoi_hanh = ktct.ma_dia_diem_khoi_hanh WHERE ktct.ma_thanh_pho like '%$valueCity%' And ten_tour like '%$valueSearch%';";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

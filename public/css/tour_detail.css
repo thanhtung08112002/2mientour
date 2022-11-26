@@ -19,6 +19,7 @@
   }
   
   .title-tour>p {
+    text-transform: uppercase;
     color: #003d71;
     font-weight: 700;
     display: block;
