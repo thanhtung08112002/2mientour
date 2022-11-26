@@ -9,7 +9,7 @@
                                 Tìm Tuor
                             </div>
                             <div class="search-tour-content">
-                                <form action="" name="frn" onsubmit="return validete()">
+                                <form action="#" name="frn" onsubmit="return validete()">
                                     <div class="form-group ">
                                         <input type="text" class="form-control" id="exampleFormControlInput1" name="nhaptext" placeholder="Nhập tên, Vị trí, Địa danh,...">
                                         <p id="loinhaptext" style="color: red;"></p>
@@ -64,13 +64,23 @@
                                 Lien he
                             </div>
                             <div class="contact-content">
-                                <strong>Nhom 7</strong>
-                                <br>
-                                <strong>Tru so:</strong>
-                                <br>
-                                <strong>So dien thoai:</strong>
-                                <br>
-                                <strong>Email:</strong>
+                                <ul style="list-style: none; padding-left: 0">
+                                    <li>
+                                        <?= $ten_cong_ty ?>
+                                    </li>
+                                    <li>
+                                        <strong> Trụ sở:</strong> <?= $dia_chi ?>
+                                    </li>
+                                    <li>
+                                        <strong>Tel: </strong><a href="tel:<?= $tel ?>"><?= $tel ?></a>
+                                    </li>
+                                    <li>
+                                        <strong>Fax: </strong><a href="tel:<?= $fax ?>"><?= $fax ?></a>
+                                    </li>
+                                    <li>
+                                        <strong>Email: </strong><a href="mailto:<?= $email ?>"><?= $email ?></a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
