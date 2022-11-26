@@ -23,7 +23,6 @@ require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/list_tour.php';
 require_once 'app/controllers/client/error_404.php';
 
-
 #Views client
 
 
@@ -36,10 +35,18 @@ require_once 'app/models/thanh_pho.php';
 require_once 'app/models/slider.php';
 require_once 'app/models/mien.php';
 require_once 'app/models/account_admin.php';
+require_once 'app/models/dang_ky_nhan_uu_dai.php';
 
 
 
-
+//chuyển giá tiền có dấu , .
+if (!function_exists('currency_format')) {
+    function currency_format($number, $suffix = 'VND') {
+        if (!empty($number)) {
+            return number_format($number, 0, ',', '.') . "{$suffix}";
+        }
+    }
+}
 
 
 
@@ -77,14 +84,20 @@ switch ($url) {
         }
         break;
 
-        case 'search_tour':
-            if (isset($_POST['btn_search_tour'])) {
-                searchTour();
-            } else {
-                error_404();
-            }
-            break;
-
+    case 'tour/result-search':
+        if (isset($_POST['btn_search_tour'])) {
+            searchTour();
+        } else {
+            header("Location: " . ROOT);
+        }
+        break;
+    case 'register_promotion':
+        if (isset($_POST['btn-register-promotion'])) {
+            addEmailRegiterPromotion();
+        } else {
+            header("Location: " . ROOT);
+        }
+        break;
         //fix
     case 'fix':
         fix();

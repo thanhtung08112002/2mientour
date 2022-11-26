@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="<?= ROOT?>public/css/article.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/homePage.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/tour_detail.css" />
+  <link rel="stylesheet" href="<?= ROOT?>public/css/resultSearch.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/responsive.css" />
   <title><?= !isset($url) ? 'home' : $url ?></title>
 
@@ -26,7 +27,7 @@
         <div class="row">
           <div class="col-3">
             <div class="header_logo">
-              <a href="home" class="header_logo"><img src="public/images/<?= $logo ?>" alt="" /></a>
+              <a href="<?= ROOT?>" class="header_logo"><img src="<?= ROOT?>public/images/<?= $logo ?>" alt="" /></a>
               <input type="checkbox" id="menu-nav">
               <label for="menu-nav"><i class="fa fa-bars"></i></label>
             </div>
@@ -34,7 +35,7 @@
           <div class="col-9">
             <nav class="header_nav">
               <ul>
-                <li><a href="home">Trang chủ </a></li>
+                <li><a href="<?= ROOT?>">Trang chủ </a></li>
                 <li><a href="#">Du lịch</a>
                   <ul>
                     <?php foreach ($mien as $item) : ?>

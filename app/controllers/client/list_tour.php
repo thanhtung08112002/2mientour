@@ -13,5 +13,5 @@ function searchTour()
         'valueSearch' => $valueSearch
     ];
     $resultSearch = search_tour($data);
-    var_dump($resultSearch);
+    render("resultSearch", ['resultSearch' => $resultSearch]);
 }

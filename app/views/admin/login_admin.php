@@ -28,7 +28,7 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="pass_admin" required>
                 </div>
-                <span class="error_login" style="color: red;font-weight: bold; "><?= isset($_SESSION['error_login']) ? $_SESSION['error_login']: ""?></span>
+                <span class="error_login" style="color: red;font-weight: bold; "><?= isset($_COOKIE['error_login']) ? $_COOKIE['error_login']: ""?></span>
                 <!-- nếu sai tk hoặc mk thì in ra -->
                 <button type="submit" name="btn-login" class="btn btn-primary">Đăng Nhập</button>
 

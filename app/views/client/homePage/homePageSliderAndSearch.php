@@ -25,7 +25,7 @@
   </div>
   <section class="search-main">
     <div class="search container">
-      <form class="form_search" method="POST" action="search_tour">
+      <form class="form_search" method="POST" action="tour/result-search">
         <select id="inputState" class="search_input" name="listCity">
           <option value="">Thành phố</option>
           <?php
