@@ -1,5 +1,6 @@
+<div class="banner banner_details "><img src="<?= ROOT ?>public/images/banner_search.jpg" alt="" class="img-fluid"></div>
 <div class="container">
-    <div class="row align-items-start">
+    <div class="row align-items-start" style="margin-top: 5rem;">
         <div class="col-lg-8 m-15px-tb">
             <div class="tour-content">
                 <div class="tour-heading">

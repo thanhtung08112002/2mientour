@@ -1,7 +1,8 @@
 <?php
 function searchTour()
 {
-    extract($_POST);
+    $getAllThanhPho = getAllThanhPho();
+    extract($_GET);
     if ($listCity == "") {
         $listCity = "%";
     }
@@ -13,5 +14,5 @@ function searchTour()
         'valueSearch' => $valueSearch
     ];
     $resultSearch = search_tour($data);
-    render("resultSearch", ['resultSearch' => $resultSearch]);
+    render("resultSearch", ['resultSearch' => $resultSearch, 'getAllThanhPho' => $getAllThanhPho]);
 }

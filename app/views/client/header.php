@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="<?= ROOT?>public/css/homePage.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/tour_detail.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/resultSearch.css" />
+  <link rel="stylesheet" href="<?= ROOT?>public/css/contact.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/responsive.css" />
   <title><?= !isset($url) ? 'home' : $url ?></title>
 
@@ -36,7 +37,7 @@
             <nav class="header_nav">
               <ul>
                 <li><a href="<?= ROOT?>">Trang chủ </a></li>
-                <li><a href="#">Du lịch</a>
+                <li><a href="javascript:void(0)">Du lịch</a>
                   <ul>
                     <?php foreach ($mien as $item) : ?>
                       <?php extract($item) ?>

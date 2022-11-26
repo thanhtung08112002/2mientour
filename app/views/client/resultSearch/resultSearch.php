@@ -1,4 +1,4 @@
-    <div class="banner_serach"><img src="<?= ROOT ?>public/images/banner_search.jpg" alt="" class="img-fluid"></div>
+    <div class="banner banner_serach"><img src="<?= ROOT ?>public/images/banner_search.jpg" alt="" class="img-fluid"></div>
     <section>
         <div class="container">
             <div class="tour-catalog">
@@ -9,50 +9,21 @@
                                 Tìm Tuor
                             </div>
                             <div class="search-tour-content">
-                                <form action="#" name="frn" onsubmit="return validete()">
+                                <form method="GET" action="result-search" name="frn" onsubmit="return validete()">
                                     <div class="form-group ">
-                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="nhaptext" placeholder="Nhập tên, Vị trí, Địa danh,...">
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" name="valueSearch" placeholder="Nhập tên, Vị trí, Địa danh,...">
                                         <p id="loinhaptext" style="color: red;"></p>
                                     </div>
-                                    <div class="form-group ">
-                                        <select class="form-control" name="loaitour">
-                                            <option value="chonloaitour">Loại tour</option>
-                                            <option value="Tourmienbac">Tour Miền Bắc</option>
-                                            <option value="Tourmiennam">Tour Miền Nam</option>
-                                        </select>
-                                        <p id="loiloaitour" style="color: red;"></p>
-                                    </div>
-                                    <div class="form-group ">
-                                        <select class="form-control" name="noidi">
-                                            <option value="noikhoihanh">Nơi Khởi Hành</option>
-                                            <option value="mienbac"> Miền Bắc</option>
-                                            <option value="miennam"> Miền Nam</option>
-                                        </select>
-                                        <p id="loinoidi" style="color: red;"></p>
-                                    </div>
-                                    <div class="form-group ">
-                                        <select class="form-control" name="noiden">
-                                            <option value="diemden">Nơi Đến</option>
-                                            <option value="dlmienbac"> Du Lịch Miền Bắc</option>
-                                            <option value="dlmiennam"> Du Lịch Miền Nam</option>
-                                        </select>
-                                        <p id="loinoiden" style="color: red;"></p>
-                                    </div>
-                                    <div class="form-group ">
-                                        <select class="form-control" name="dongtour">
-                                            <option value="dldongtour">Dòng Tour</option>
-                                            <option value="muadong"> Tour Mùa Đông</option>
-                                            <option value="muahe"> Tour Mùa Hè</option>
-                                            <option value="muathu"> Tour Mùa Thu</option>
-                                            <option value="muaxuan"> Tour Mùa Xuân</option>
-                                        </select>
-                                        <p id="loidongtour" style="color: red;"></p>
-                                    </div>
-                                    <div class="form-group">
-                                        <input placeholder="Ngày Đi" type="date" name="date" id="" class="form-control">
-                                        <p id="loidate" style="color: red;"></p>
-                                    </div>
-                                    <button type="submit" class="btn btn-warning  btn-lg btn-block">
+                                    <select id="inputState" class="form-control" name="listCity">
+                                        <option value="">Thành phố</option>
+                                        <?php
+                                        foreach ($getAllThanhPho as $item) :
+                                        ?>
+                                            <?php extract($item) ?>
+                                            <option value="<?= $ma_thanh_pho ?>"><?= $ten_thanh_pho ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                    <button type="submit" class="btn btn-warning  btn-lg btn-block" name="btn_search_tour">
                                         <i class="fa fa-search">Tìm Kiếm</i>
                                     </button>
                                 </form>
@@ -93,11 +64,11 @@
                                     <?php extract($item) ?>
                                     <div class="tour-package">
                                         <div class="img-tour">
-                                            <a href=""><img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh_dai_dien_tour ?>" class=" img-thumbnail" alt=""></a>
+                                            <a href="tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"><img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh_dai_dien_tour ?>" class=" img-thumbnail" alt=""></a>
                                         </div>
                                         <div class="info-tour ">
                                             <div class="caption">
-                                                <a class="title-tour " href=""> Du lịch
+                                                <a class="title-tour " href="tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"> Du lịch
                                                     <?= $ten_tour ?>
                                                 </a>
                                                 <p>

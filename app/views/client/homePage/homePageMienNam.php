@@ -15,9 +15,9 @@
 
             <div class="col-md-4 col-sm-6 col-xs-12">
               <div class="thumbnail block-tour shadow rounded-lg tour">
-                <a href="tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"><img src="<?= $folder . $anh_dai_dien_tour;  ?>" class="img-thumbnail" alt="" style="height: 240px; width: 340px;"></a>
+                <a href="tour/tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"><img src="<?= $folder . $anh_dai_dien_tour;  ?>" class="img-thumbnail" alt="" style="height: 240px; width: 340px;"></a>
                 <div class="caption">
-                  <a class="title-tour " href="tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>">
+                  <a class="title-tour " href="tour/tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>">
                     <p><?= $ten_tour ?></p>
                   </a>
                   <div class="location">
@@ -30,7 +30,7 @@
                     <i class="fa fa-money"></i>
                     <?= currency_format($gia_tien) ?>
                   </span>
-                  <a href="tourdetail?matour= <?= $ma_tour ?> " class=""> Đặt ngay</a>
+                  <a href="tour/tourdetail?matour= <?= $ma_tour ?> " class=""> Đặt ngay</a>
                 </div>
               </div>
             </div>

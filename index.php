@@ -21,6 +21,7 @@ require_once 'app/controllers/client/controllers.php';
 require_once 'app/controllers/client/page_home.php';
 require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/list_tour.php';
+require_once 'app/controllers/client/contact.php';
 require_once 'app/controllers/client/error_404.php';
 
 #Views client
@@ -41,7 +42,8 @@ require_once 'app/models/dang_ky_nhan_uu_dai.php';
 
 //chuyển giá tiền có dấu , .
 if (!function_exists('currency_format')) {
-    function currency_format($number, $suffix = 'VND') {
+    function currency_format($number, $suffix = 'VND')
+    {
         if (!empty($number)) {
             return number_format($number, 0, ',', '.') . "{$suffix}";
         }
@@ -59,7 +61,10 @@ switch ($url) {
     case 'home':
         showHome();
         break;
-    case 'tourdetail':
+    case 'lienhe':
+        showContact();
+        break;
+    case 'tour/tourdetail':
         if (isset($_GET['matour'])) {
             showTourDetail($_GET['matour']);
         } else {
@@ -85,7 +90,7 @@ switch ($url) {
         break;
 
     case 'tour/result-search':
-        if (isset($_POST['btn_search_tour'])) {
+        if (isset($_GET['btn_search_tour'])) {
             searchTour();
         } else {
             header("Location: " . ROOT);
