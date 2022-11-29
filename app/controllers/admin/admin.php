@@ -16,7 +16,7 @@ function data_check($result_data_check) {
         }
         header('Location: admin_page');
     }else{
-        $_SESSION['error_login'] = 'Sai tài khoản hoặc mật khẩu';
+        setcookie('error_login','Sai tài khoản hoặc mật khẩu', time() +1) ;
         header('Location: admin');
     }
 }

@@ -13,12 +13,13 @@
                 </div>
             </div>
             <div class="col-6">
-                <form action="" class=" form-inline form_register_promotion ">
+                <form action="register_promotion" class=" form-inline form_register_promotion " method="POST">
                     <div class="form-group-email">
-                        <input type="text" class="form-control " placeholder="Email">
+                        <input type="email" class="form-control " placeholder="Email" name="email" required>
                     </div>
-                    <button type="submit" class="btn btn-danger btn-register">Đăng ký</button>
+                    <button type="submit" class="btn btn-danger btn-register" name="btn-register-promotion">Đăng ký</button>
                 </form>
+                <h2 class="<?= isset($_COOKIE['error_register'])?"register_fail":"register_success"?>"><?= isset($_COOKIE['error_register'])?$_COOKIE['error_register']:""?><?= isset($_COOKIE['register_success'])?$_COOKIE['register_success']:""?></h2>
             </div>
         </div>
     </div>

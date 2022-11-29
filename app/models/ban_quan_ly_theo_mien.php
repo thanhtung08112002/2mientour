@@ -18,36 +18,36 @@ function nhan_vien_delete($id)
     $stmt->execute();
 }
 
-// function insert hàng hóa
+// function insert nhân viên
 function nhan_vien_insert($data = [])
 {
     $conn = connection();
-    $sql = "INSERT INTO ban_quan_ly_theo_mien(ten_quan_ly_mien, sdt, que_quan, anh_dai_dien, ma_chuc_vu, ngay_thang_nam_sinh) VALUES(?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES(?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
-        header("location:danh_sach_nhan_vien");
+        header("location:admin_page");
     }
 }
 
 function add_number($valueAddNumber)
 {
     $conn = connection();
-    $sql = "INSERT INTO ban_quan_ly_theo_mien(ten_quan_ly_mien, sdt, que_quan, anh_dai_dien, ma_chuc_vu, ngay_thang_nam_sinh) VALUES(?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES (?, ?, ?, ?, ?, ?,?)";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($valueAddNumber)) {
-        // header("Location:danh_sach_nhan_vien");
-        echo "ọk";
+        header("Location:admin_page");
+
     }
 }
 // fuction save edit nhân viên
 function save_edit_list($data = [], $id)
 {
     $conn = connection();
-    $sql =  "UPDATE `ban_quan_ly_theo_mien` SET `ten_quan_ly_mien`='?',`sdt`='?',`que_quan`='?',`anh_dai_dien`='?',`ma_chuc_vu`='?',`ngay_thang_nam_sinh`='?' WHERE `ban_quan_ly_theo_mien`.`ma_chuc_vu` = $id";
+    $sql =  "UPDATE `ban_quan_ly_theo_mien` SET `ten_quan_ly_mien`=?,`sdt`=?,`que_quan`=?,`anh_dai_dien`=?,`ma_chuc_vu`=?,`ngay_thang_nam_sinh` = ? WHERE `ban_quan_ly_theo_mien`.`ma_quan_ly_mien` = $id";
+
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
-        header("Location:danh_sach_nhan_vien");
-        // echo "ọk";
-
+        header("Location:admin_page");
+     
     }
 }

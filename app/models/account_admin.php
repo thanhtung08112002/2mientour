@@ -3,7 +3,7 @@
 function getAllAccountAdmin()
 {
     $conn = connection();
-    $sql = "SELECT * FROM `acount_admin`";
+    $sql = "SELECT * FROM `account_admin`";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -29,5 +29,34 @@ function check_account($data_account = [])
         data_check($data_check);
     }else{
         data_check($data_check);
+    }
+}
+// delete nhân viên
+function account_delete($id)
+{
+    $conn = connection();
+    $sql = "DELETE FROM account_admin WHERE id_account = $id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+}
+// function insert nhân viên
+function account_insert($data = [])
+{
+    $conn = connection();
+    $sql = "INSERT INTO `account_admin` (`tai_khoan`,`mat_khau`) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute($data)) {
+        header("location:list_accounts");
+    }
+}
+
+function add_account($valueAddAccount)
+{
+    $conn = connection();
+    $sql = "INSERT INTO `account_admin` (`tai_khoan`,`mat_khau`) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute($valueAddAccount)) {
+        header("Location:list_accounts");
+
     }
 }

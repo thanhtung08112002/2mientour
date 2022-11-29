@@ -79,7 +79,6 @@
                                 </strong>
                             </div>
                         </div>
-
                     </div>
                     <div class="schedule-step">
                         <div class="schedule-step-content">
@@ -124,7 +123,6 @@
                                 an toi tai nha hang
                             </p>
                         </div>
-
                     </div>
                     <div class="schedule-step">
                         <div class="schedule-step-content">
@@ -169,7 +167,6 @@
                                 an toi tai nha hang
                             </p>
                         </div>
-
                     </div>
                     <div class="schedule-step ">
                         <div class="schedule-step-content">
@@ -215,101 +212,101 @@
                                 an toi tai nha hang
                             </p>
                         </div>
-                        <div class="buy-now">
-                            <span class="buy-now-price">
-                                <i class="fa fa-money"></i>
-                                6.990.000 VND
+                    </div>
+                    <div class="buy-now">
+                        <span class="buy-now-price">
+                            <i class="fa fa-money"></i>
+                            6.990.000 VND
+                        </span>
+                        <a href="" class="buy-now-link"> Đặt ngay</a>
+                    </div>
+                    <div class="other-schedule">
+                        <div class="other-schedule-heading schedule-heading">
+                            <i class="fa fa-check-square-o"></i>
+                            <span>
+                                NGÀY KHỞI HÀNH KHÁC
                             </span>
-                            <a href="" class="buy-now-link"> Đặt ngay</a>
                         </div>
-                        <div class="other-schedule">
-                            <div class="other-schedule-heading schedule-heading">
-                                <i class="fa fa-check-square-o"></i>
-                                <span>
-                                    NGÀY KHỞI HÀNH KHÁC
-                                </span>
-                            </div>
-                            <div class="other-schedule-content">
-                                <table class="other-schedule-list">
-                                    <tbody>
-                                        <tr class="list">
-                                            <td style="width:23%;">Mã tour</td>
-                                            <td style="width:20%; text-align: center;">Ngày khởi
-                                                hành</td>
-                                            <td style="width:18%; text-align: center;">Giá</td>
-                                            <td style="width:15%;">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4" style="text-align: center;">Hiện tại chưa có
-                                                lịch khởi hành khác!</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-                        <div class="schedule-note">
-                            <div class="schedule-note-heading">
-                                <i class="fa fa-check-square-o"></i>
-                                Lưu ý
-                            </div>
-                            <div class="schedule-note-content">
-                                <p>
-                                    <strong>Sang:</strong>
-                                    Xe máy lạnh, đưa đón khách đi theo chương trình trong tour.
-                                    Vé máy bay khứ hồi SGN-HAN-SGN
-                                    Hành lý : 07kg xách tay + 15kg ký gửi
-                                    Vé tham quan theo chương trình tour:
-                                    Thuyền thăm quan vịnh Hạ Long, thuyền thăm KDL Tràng An
-                                    Vé vào cửa tham quan các điểm theo chương trình
-                                    Ăn uống theo chương trình, được đổi món thường xuyên theo ẩm thực địa
-                                    phương.
-                                    05 bữa sáng: tại khách sạn
-                                    11 bữa chính: theo thực đơn Setmenu
-                                    Khách sạn tiêu chuẩn 2-3 khách/phòng, tivi, tủ lạnh, điện thoại, nước
-                                    nóng
-                                    vệ sinh
-                                    riêng.
-                                    HDV thuyết minh và phục vụ đoàn suốt tuyến.
-                                    Quà tặng nón du lịch.
-                                    Khăn lạnh, nước uống trên đường (01 khăn, 01 chai/ ngày).
-                                    Bảo hiểm du lịch trọn tour: mức bồi thường tối đa
-                                    100.000.000đ/khách/trường
-                                    hợp, bồi
-                                    thường theo quy tắc và tỉ lệ thương tật của công ty BH Hàng Không
-                                    Thuế VAT
-                                </p>
-                                <p>
-                                    <strong>Trua:</strong>
-                                    Đoàn dùng bữa trưa tại nhà hàng
-                                </p>
-                                <p>
-                                    <strong>Chieu</strong>
-                                    Doan di tham quan
-                                </p>
-                                <p><strong>Cố đô Hoa Lư</strong>
-                                    là quần thể di tích lịch sử đất nước đặc biệt quan trọng của nước ta.
-                                    Đây
-                                    cũng là một trong bốn vùng lõi của quần thể di sản thế giới Tràng An đã
-                                    được
-                                    UNESCO công nhận.</p>
-                                <p> <strong>Tuyệt tình cốc </strong>
-                                    địa danh thắng cảnh này là Động An Tiêm thuộc quần thể hang động của di
-                                    tích
-                                    Cố đô Hoa Lư. Khi bước chân đến khu vực chùa An Tiêm, du khách sẽ cảm
-                                    nhận
-                                    được vẻ đẹp đầy tĩnh mịch. Từ trên cao, bạn sẽ được chiêm ngưỡng vẻ đẹp
-                                    sơn
-                                    thủy hoang sơ nhưng không kém phần thơ mộng
-                                </p>
-                                <p>
-                                    <strong>Toi:</strong>
-                                    an toi tai nha hang
-                                </p>
-                                </p>
-                            </div>
+                        <div class="other-schedule-content">
+                            <table class="other-schedule-list">
+                                <tbody>
+                                    <tr class="list">
+                                        <td style="width:23%;">Mã tour</td>
+                                        <td style="width:20%; text-align: center;">Ngày khởi
+                                            hành</td>
+                                        <td style="width:18%; text-align: center;">Giá</td>
+                                        <td style="width:15%;">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: center;">Hiện tại chưa có
+                                            lịch khởi hành khác!</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                    <div class="schedule-note">
+                        <div class="schedule-note-heading">
+                            <i class="fa fa-check-square-o"></i>
+                            Lưu ý
+                        </div>
+                        <div class="schedule-note-content">
+                            <p>
+                                <strong>Sáng:</strong>
+                                Xe máy lạnh, đưa đón khách đi theo chương trình trong tour.
+                                Vé máy bay khứ hồi SGN-HAN-SGN
+                                Hành lý : 07kg xách tay + 15kg ký gửi
+                                Vé tham quan theo chương trình tour:
+                                Thuyền thăm quan vịnh Hạ Long, thuyền thăm KDL Tràng An
+                                Vé vào cửa tham quan các điểm theo chương trình
+                                Ăn uống theo chương trình, được đổi món thường xuyên theo ẩm thực địa
+                                phương.
+                                05 bữa sáng: tại khách sạn
+                                11 bữa chính: theo thực đơn Setmenu
+                                Khách sạn tiêu chuẩn 2-3 khách/phòng, tivi, tủ lạnh, điện thoại, nước
+                                nóng
+                                vệ sinh
+                                riêng.
+                                HDV thuyết minh và phục vụ đoàn suốt tuyến.
+                                Quà tặng nón du lịch.
+                                Khăn lạnh, nước uống trên đường (01 khăn, 01 chai/ ngày).
+                                Bảo hiểm du lịch trọn tour: mức bồi thường tối đa
+                                100.000.000đ/khách/trường
+                                hợp, bồi
+                                thường theo quy tắc và tỉ lệ thương tật của công ty BH Hàng Không
+                                Thuế VAT
+                            </p>
+                            <p>
+                                <strong>Trua:</strong>
+                                Đoàn dùng bữa trưa tại nhà hàng
+                            </p>
+                            <p>
+                                <strong>Chieu</strong>
+                                Doan di tham quan
+                            </p>
+                            <p><strong>Cố đô Hoa Lư</strong>
+                                là quần thể di tích lịch sử đất nước đặc biệt quan trọng của nước ta.
+                                Đây
+                                cũng là một trong bốn vùng lõi của quần thể di sản thế giới Tràng An đã
+                                được
+                                UNESCO công nhận.</p>
+                            <p> <strong>Tuyệt tình cốc </strong>
+                                địa danh thắng cảnh này là Động An Tiêm thuộc quần thể hang động của di
+                                tích
+                                Cố đô Hoa Lư. Khi bước chân đến khu vực chùa An Tiêm, du khách sẽ cảm
+                                nhận
+                                được vẻ đẹp đầy tĩnh mịch. Từ trên cao, bạn sẽ được chiêm ngưỡng vẻ đẹp
+                                sơn
+                                thủy hoang sơ nhưng không kém phần thơ mộng
+                            </p>
+                            <p>
+                                <strong>Toi:</strong>
+                                an toi tai nha hang
+                            </p>
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

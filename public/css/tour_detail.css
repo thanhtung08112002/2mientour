@@ -7,6 +7,7 @@
    background-color: #f5f5f5;
  }
 
+<<<<<<< HEAD
 
 
  .mgt-15px {
@@ -65,6 +66,67 @@
  }
 
  /* Blog Sidebar
+=======
+  
+  .blog-listing {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .gray-bg {
+    background-color: #f5f5f5;
+  }
+  
+  
+  
+  .mgt-15px {
+    margin-top: -15px;
+  }
+  
+  .title-tour>p {
+    text-transform: uppercase;
+    color: #003d71;
+    font-weight: 700;
+    display: block;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tour {
+    padding: 10px;
+    line-height: 40px;
+  }
+  
+  .tour-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .schedule-buy-now {
+    display: block;
+    color: white;
+    padding: 0 10px 0 10px;
+    background-color: #ffc10e;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+  .tour-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price {
+    margin-left: 5px;
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Blog Sidebar
+>>>>>>> 55f3639d625422dca75f3dd38f07716459c2a29d
   -------------------*/
  .blog-aside .widget {
    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);

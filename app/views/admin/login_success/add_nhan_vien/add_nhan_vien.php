@@ -12,8 +12,15 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label for="">Mã miền</label>
-                    <input class="form-control" type="text" name="ma_mien" disabled placeholder="Mã miền">
+                    <label for="">Loại mã miền</label>
+                    <select class="form-control" name="ma_mien" id="">
+                        <option value="0">Chọn loại mã miền</option>
+                        <?php foreach ($du_lich_trong_nuoc as $dltn) : ?>
+                            <option value="<?= $dltn['ma_mien'] ?>">
+                                <?= $dltn['ten_mien'] ?>
+                            </option>
+                        <?php endforeach ?>
+                    </select>
                 </div>
             </div>
             <div class="col">
@@ -44,7 +51,7 @@
                 <div class="form-group">
                     <label for="">Loại chức vụ</label>
                     <select class="form-control" name="ma_chuc_vu" id="">
-                        <option value="0">Chọn loại hàng</option>
+                        <option value="0">Chọn loại chức vụ</option>
                         <?php foreach ($chuc_vu as $cv) : ?>
                             <option value="<?= $cv['ma_chuc_vu'] ?>">
                                 <?= $cv['ten_chuc_vu'] ?>
