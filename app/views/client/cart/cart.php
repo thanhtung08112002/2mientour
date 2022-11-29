@@ -1,6 +1,5 @@
 <article>
-    <!-- <img src="asset/img/mien-bac.jpg" alt="" class="img-fluid banner"> -->
-
+<div class="banner banner_serach"><img src="<?= ROOT ?>public/images/thanh_toan.jpg" alt="" class="img-fluid"></div>
     <section>
         <div class="container">
             <div class="cart-page">

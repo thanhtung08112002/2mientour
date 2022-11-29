@@ -56,9 +56,9 @@
                     <?php endforeach ?>
                   </ul>
                 </li>
-                <li><a href="tintuc">Tin tức</a></li>
-                <li><a href="gioithieu">Giới thiệu</a></li>
-                <li><a href="lienhe">Liên hệ</a></li>
+                <li><a href="<?= ROOT?>tintuc">Tin tức</a></li>
+                <li><a href="<?= ROOT?>gioithieu">Giới thiệu</a></li>
+                <li><a href="<?= ROOT?>lienhe">Liên hệ</a></li>
               </ul>
             </nav>
           </div>

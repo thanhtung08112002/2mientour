@@ -1,38 +1,35 @@
-<div class="pay_success">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="pay_success--title">
-                    <h2><i class="fa fa-map-signs"></i>đặt tour thành công</h2>
+<div class="banner banner_serach"><img src="<?= ROOT ?>public/images/thanh_toan.jpg" alt="" class="img-fluid"></div>
+<div class="container">
+    <div class="payment-success">
+        <div class="payment-success-title">
+            <i class="fa fa-map-signs"> </i> Đặt Tour Thành Công 
+        </div>
+        <?php foreach ($getThanhToanTourGanNhat as $item) : ?>
+            <?php extract($item) ?>
+            <div class="payment-successp-body">
+                <h2 class="thanks">Cảm ơn bạn đã đặt tour thành công! </h2>
+                <strong>Vui lòng kiểm tra email, chúng tôi sẽ liên lạc với bạn sớm nhất có thể.</strong>
+                <div class="break_line"></div>
+                <strong>Thông tin đơn hàng của bạn gồm:</strong>
+                <div class="payment-successp-body-tour">
+                    <div class="title-tour">Du lịch <?= ucwords($ten_tour)?></div>
+                    <div class="title-tour">Ngày khởi hành: <?= date_handler($ngay_khoi_hanh)?></div>
+                    <div class=" item-price">Số lượng: <?= $so_luong ?> người</div>
                 </div>
+                <div class="money-tour">
+                    <strong>Tổng: <span class="money"><?= currency_format($thanh_tien) ?></span></strong>
+                </div>
+                <div class="break_line"></div>
+                <strong>Thông tin liên hệ</strong>
+                <p>Họ và tên: <?= $ho_ten ?></p>
+                <p>Điện thoại: <?= $sdt ?></p>
+                <p> Email: <?= $email ?></p>
+                <p> Địa chỉ: <?= $dia_chi ?></p>
+                <div class="break_line"></div>
+                <strong>Phương Thức Thanh Toán:</strong>
+                <p> <?= $ten_phuong_thuc ?></p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <?php foreach ($getThanhToanTourGanNhat as $item) : ?>
-                    <?php extract($item) ?>
-                    <div class="pay_success--thanks">
-                        <h3>Cảm ơn bạn đã đặt tour thành công!</h3>
-                        <p class="note_line">Vui lòng kiểm tra email, chúng tôi sẽ liên hệ với bạn sớm nhất có thể</p>
-                    </div>
+        <?php endforeach ?>
 
-                    <div class="pay_success--information-tour">
-                        <p class="note_line">Thông tin đơn hàng của bạn gồm:</p>
-                        <span></span>
-                    </div>
-                    <div class="pay_success--information-contact">
-                    <p class="note_line">Thông tin liên hệ:</p>
-                        <span>Họ và tên: <?= $ho_ten ?></span>
-                        <span>Điện thoại: <?= $sdt ?></span>
-                        <span>Email: <?= $email ?></span>
-                        <span>Địa chỉ: <?= $dia_chi ?></span>
-                    </div>
-                    <div class="pay_success--method">
-                    <p class="note_line">Phương thức thanh toán:</p>
-                    <span><?= $ten_phuong_thuc ?></span>
-                    </div>
-                <?php endforeach ?>
-            </div>
-        </div>
     </div>
 </div>
