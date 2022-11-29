@@ -29,7 +29,7 @@
                   <i class="fa fa-money"></i>
                   <?= currency_format($gia_tien) ?>
                 </span>
-                <a href="tour/tourdetail?matour= <?= $ma_tour ?> " class=""> Đặt ngay</a>
+                <a href="cart/?matour=<?= $ma_tour ?> " class=""> Đặt ngay</a>
               </div>
             </div>
           </div>

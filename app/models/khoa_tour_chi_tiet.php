@@ -43,18 +43,69 @@ function get3KhoaTourHot()
 function getKhoaTourWithMaTour($ma_tour)
 {
     $conn = connection();
-    $sql = "SELECT ktct.ma_tour, ma_thanh_pho, ten_tour, phuong_tien, ten_dia_diem_khoi_hanh,ngay_khoi_hanh, thoi_gian_di,anh,ngay,noi_dung_ngay_tour_chi_tiet, so_cho, gia_tien FROM `khoa_tour_chi_tiet` ktct JOIN dia_diem_khoi_hanh ddkh on ktct.ma_dia_diem_khoi_hanh = ddkh.ma_dia_diem_khoi_hanh JOIN khoa_tour_lite ktl ON ktct.ma_tour = ktl.ma_tour WHERE ktct.ma_tour = '$ma_tour'; ";
+    $sql = "SELECT ktct.ma_tour, ma_thanh_pho, ten_tour, phuong_tien, ten_dia_diem_khoi_hanh,ngay_khoi_hanh, thoi_gian_di,so_cho, gia_tien FROM `khoa_tour_chi_tiet` ktct JOIN dia_diem_khoi_hanh ddkh on ktct.ma_dia_diem_khoi_hanh = ddkh.ma_dia_diem_khoi_hanh JOIN khoa_tour_lite ktl ON ktct.ma_tour = ktl.ma_tour WHERE ktct.ma_tour = '$ma_tour'; ";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+// lấy ảnh theo  ma_tour
+function getImgWithMaTour($ma_tour)
+{
+    $conn = connection();
+    $sql = "SELECT anh FROM `khoa_tour_chi_tiet` ktct join anh_tour atour on ktct.ma_tour = atour.ma_tour WHERE ktct.ma_tour = '$ma_tour' ";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+//tìm kiếm tour theo tên thành phố và dữ liệu nhập vào
+function search_tour($data) {
+    extract($data);
+    $conn = connection();
+    $sql = "SELECT dltn.ma_mien,ma_tour, ten_tour,ktct.ma_thanh_pho, ten_dia_diem_khoi_hanh, anh_dai_dien_tour, gia_tien FROM du_lich_trong_nuoc dltn JOIN du_lich_theo_thanh_pho dltp ON dltn.ma_mien = dltp.ma_mien JOIN khoa_tour_chi_tiet ktct ON ktct.ma_thanh_pho = dltp.ma_thanh_pho JOIN dia_diem_khoi_hanh ddkh ON ddkh.ma_dia_diem_khoi_hanh = ktct.ma_dia_diem_khoi_hanh WHERE ktct.ma_thanh_pho like '%$valueCity%' And ten_tour like '%$valueSearch%';";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
 
-//tìm kiếm tour theo tên thành phố và dữ liệu nhập vào
-function search_tour($data) {
-    extract($data);
+
+//thông tin tour
+function informationTour($ma_tour) {
     $conn = connection();
-    $sql = "SELECT dltn.ma_mien,ma_tour, ten_tour,ktct.ma_thanh_pho, ten_dia_diem_khoi_hanh, anh_dai_dien_tour, gia_tien FROM du_lich_trong_nuoc dltn JOIN du_lich_theo_thanh_pho dltp ON dltn.ma_mien = dltp.ma_mien JOIN khoa_tour_chi_tiet ktct ON ktct.ma_thanh_pho = dltp.ma_thanh_pho JOIN dia_diem_khoi_hanh ddkh ON ddkh.ma_dia_diem_khoi_hanh = ktct.ma_dia_diem_khoi_hanh WHERE ktct.ma_thanh_pho like '%$valueCity%' And ten_tour like '%$valueSearch%';";
+    $sql = "SELECT ktct.ma_tour, ma_thanh_pho, ten_tour, phuong_tien, ddkh.ten_dia_diem_khoi_hanh,ktct.ma_dia_diem_khoi_hanh, thoi_gian_di, gia_tien, so_cho, ngay_khoi_hanh   FROM `khoa_tour_chi_tiet` ktct JOIN dia_diem_khoi_hanh ddkh on ktct.ma_dia_diem_khoi_hanh = ddkh.ma_dia_diem_khoi_hanh JOIN khoa_tour_lite ktl ON ktct.ma_tour = ktl.ma_tour   WHERE ktct.ma_tour = '$ma_tour' ORDER BY ngay_khoi_hanh ASC limit 1;";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+//tourdetail
+function tourDetail($ma_tour) {
+    $conn = connection();
+    $sql = "SELECT * FROM khoa_tour_lite ktl join chi_tiet_tour_lite cttl on ktl.id_tour_lite = cttl.id_tour_lite WHERE ktl.ma_tour = '$ma_tour' and .cttl.id_tour_lite = 1;";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+
+//tour lien quan
+function tourLienQuan($ma_kh,$ma_tour) {
+    $conn = connection();
+    $sql = "SELECT ktct.ma_tour, ma_thanh_pho,anh_dai_dien_tour, ten_tour, phuong_tien, ten_dia_diem_khoi_hanh, thoi_gian_di, gia_tien FROM `khoa_tour_chi_tiet` ktct JOIN dia_diem_khoi_hanh ddkh on ktct.ma_dia_diem_khoi_hanh = ddkh.ma_dia_diem_khoi_hanh  WHERE ddkh.ma_dia_diem_khoi_hanh = '$ma_kh' and ktct.ma_tour != '$ma_tour';";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+//ngày khởi hành khác
+function khoiHanhKhac($ma_tour,$ngay_khoi_hanh) {
+    $conn = connection();
+    $sql = "SELECT ktct.ma_tour,ngay_khoi_hanh, gia_tien FROM `khoa_tour_chi_tiet` ktct JOIN khoa_tour_lite ktl ON ktct.ma_tour = ktl.ma_tour WHERE ktct.ma_tour = '$ma_tour' and ngay_khoi_hanh != '$ngay_khoi_hanh';";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

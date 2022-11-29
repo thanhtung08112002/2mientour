@@ -12,19 +12,19 @@ require_once 'app/controllers/admin/admin.php';
 require_once 'app/controllers/admin/admin_page.php';
 
 
-#Views admin
-
 
 
 #Controllers client
+require_once 'app/controllers/client/phpMailer.php';
 require_once 'app/controllers/client/controllers.php';
 require_once 'app/controllers/client/page_home.php';
 require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/list_tour.php';
+require_once 'app/controllers/client/list_diem_den.php';
 require_once 'app/controllers/client/contact.php';
+require_once 'app/controllers/client/cart.php';
+require_once 'app/controllers/client/pay_success.php';
 require_once 'app/controllers/client/error_404.php';
-
-#Views client
 
 
 
@@ -37,6 +37,9 @@ require_once 'app/models/slider.php';
 require_once 'app/models/mien.php';
 require_once 'app/models/account_admin.php';
 require_once 'app/models/dang_ky_nhan_uu_dai.php';
+require_once 'app/models/cart.php';
+require_once 'app/models/thanh_toan_tour.php';
+
 
 
 
@@ -45,9 +48,15 @@ if (!function_exists('currency_format')) {
     function currency_format($number, $suffix = 'VND')
     {
         if (!empty($number)) {
-            return number_format($number, 0, ',', '.') . "{$suffix}";
+            return number_format($number, 0, ',', ',') . "{$suffix}";
         }
     }
+}
+
+function date_handler($date_value)
+{
+    $date_resutl = date_create($date_value);
+    return date_format($date_resutl, "d/m/Y");
 }
 
 
@@ -64,9 +73,35 @@ switch ($url) {
     case 'lienhe':
         showContact();
         break;
+        // đang xử lý danh sách điểm đến
+        // case "diem-den/" . $_GET['mamien']:
+        //     switch ($_GET['mamien']) {
+        //         case 'MB':
+        //             showDiemDen();
+        //             break;
+        //     }
+
+        //     break;
+
+        // đang xử lý danh sách điểm đến
+
     case 'tour/tourdetail':
         if (isset($_GET['matour'])) {
             showTourDetail($_GET['matour']);
+        } else {
+            showHome();
+        }
+        break;
+    case 'cart/':
+        if (isset($_GET['matour'])) {
+            showCart($_GET['matour']);
+        } else {
+            error_404();
+        }
+        break;
+    case 'cart/pay-success':
+        if (isset($_POST['btn-pay'])) {
+            showPaySuccess();
         } else {
             error_404();
         }

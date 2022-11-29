@@ -1,0 +1,1 @@
+<div class="banner banner_serach"><img src="<?= ROOT ?>public/images/banner_search.jpg" alt="" class="img-fluid"></div>
