@@ -36,14 +36,10 @@
                                             <div id="payment_transfer" style="display:none" class=" payment_info">
                                                 <p>THÔNG TIN THANH TOÁN
                                                     <br>
-                                                    <strong>Trụ Sở:</strong>
-                                                    " Trường Cao Đẳng tại Hà Nội"
-                                                    <br>
-                                                    <strong> Số Điện Thoại:</strong>
-                                                    <a href=""> 012365879</a>
-                                                    <br>
-                                                    <strong> Email:</strong>
-                                                    <a href="">admin@gmail.com</a>
+                                                    <p>- Ngân hàng TMCP Ngoại Thương Việt Nam - CN TP.HN (VCB)</p>
+                                                    <p>- Tên đơn vị hưởng: CÔNG TY CỔ PHẦN DỊCH VỤ DU LỊCH 2 MIỀN TOUR</p>
+                                                    <p>- Số tài khoản VNĐ: 007.1001204617</p>
+                                                    <p>- Tại Ngân Hàng VCB - CN TP.HN</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -54,13 +50,13 @@
                                                 <p>THÔNG TIN THANH TOÁN
                                                     <br>
                                                     <strong>Trụ Sở:</strong>
-                                                    " Trường Cao Đẳng tại Hà Nội"
+                                                   <?= $dia_chi_cong_ty?>
                                                     <br>
                                                     <strong> Số Điện Thoại:</strong>
-                                                    <a href=""> 012365879</a>
+                                                    <a href="tel:<?= $fax?>"> <?= $fax?></a>
                                                     <br>
                                                     <strong> Email:</strong>
-                                                    <a href="">admin@gmail.com</a>
+                                                    <a href="mailto:<?= $email_cong_ty?>"><?= $email_cong_ty?></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -68,16 +64,16 @@
                                             <input type="radio" onclick="yesnoCheck();" name="payment_method" value="3" id="payonline" />
                                             <label for="">Thanh Toán Online</label>
                                             <div id="payment_payonline" style="display:none" class=" payment_info">
-                                                <p>THÔNG TIN THANH TOÁN
+                                            <p>THÔNG TIN THANH TOÁN
                                                     <br>
                                                     <strong>Trụ Sở:</strong>
-                                                    " Trường Cao Đẳng tại Hà Nội"
+                                                   <?= $dia_chi_cong_ty?>
                                                     <br>
                                                     <strong> Số Điện Thoại:</strong>
-                                                    <a href=""> 012365879</a>
+                                                    <a href="tel:<?= $fax?>"> <?= $fax?></a>
                                                     <br>
                                                     <strong> Email:</strong>
-                                                    <a href="">admin@gmail.com</a>
+                                                    <a href="mailto:<?= $email_cong_ty?>"><?= $email_cong_ty?></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -96,7 +92,7 @@
                                     THÔNG TIN VỀ SẢN PHẨM / DỊCH VỤ
                                 </div>
                                 <!-- handle -->
-                                <?php foreach ($informationTourDefautFromPage as $item) : ?>
+                                <?php foreach ($informationTourDefautFromPage ?? $informationTourHasCode as $item) : ?>
                                     <?php extract($item) ?>
                                     <div class="cart-list-body">
                                         <div class="cart-item ">
@@ -105,7 +101,7 @@
                                             </div>
                                             <div class="info-tour">
                                                 <div class="caption">
-                                                    <a class="title-tour-cart title-tour " href="">
+                                                    <a class="title-tour-cart title-tour " href="<?= ROOT?>tour/tourdetail?mamien=<?= $ma_mien?>&&matour=<?= $ma_tour?>&&tentour=<?= $ten_tour?>">
                                                         <p>Du Lịch <?= $ten_tour ?></p>
                                                     </a>
                                                     <p><strong>Ngày Khởi Hành:</strong>

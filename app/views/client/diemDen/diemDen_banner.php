@@ -1,1 +1,1 @@
-<div class="banner banner_serach"><img src="<?= ROOT ?>public/images/banner_search.jpg" alt="" class="img-fluid"></div>
+<div class="banner banner_list"><img src="<?= ROOT ?>public/images/banner_search.jpg" alt="" class="img-fluid"><h2>Tour du lịch <?= isset($_GET['tenmien']) ? $_GET['tenmien'] : "hot" ?></h2></div>

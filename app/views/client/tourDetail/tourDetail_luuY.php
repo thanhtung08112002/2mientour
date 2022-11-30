@@ -4,7 +4,7 @@
             <i class="fa fa-money"></i>
             <?= currency_format($gia_tien) ?>
         </span>
-        <a href="" class="buy-now-link"> Đặt ngay</a>
+        <a href="<?= ROOT?>cart/?matour=<?= $ma_tour ?>" class="buy-now-link"> Đặt ngay</a>
     </div>
     <div class="other-schedule">
         <div class="other-schedule-heading schedule-heading">
@@ -39,7 +39,7 @@
                                 <td><?= $ma_tour ?></td>
                                 <td><?= date_handler($ngay_khoi_hanh) ?></td>
                                 <td><?= currency_format($gia_tien) ?></td>
-                                <td><a href="" class="btn btn-warning" style="color: #fff;"> Đặt ngay</a></td>
+                                <td><a href="<?= ROOT?>cart/?matour=<?= $ma_tour ?>&&id-tour-lite=<?= $id_tour_lite ?>" class="btn btn-warning" style="color: #fff;"> Đặt ngay</a></td>
                             </tr>
                         <?php  } ?>
                     <?php endforeach ?>

@@ -6,7 +6,7 @@
         <div class="footer_contact_social_media">
           <a href="<?= ROOT?>"><img src="<?= ROOT?>public/images/<?= $logo ?>" alt="" /></a>
           <p>
-            <a href="#">Follow <span>webname.com</span></a>
+            <a href="<?=ROOT?>">Follow <span>2mientour.com</span></a>
           </p>
           <div class="footer_contact_social_media-icons">
             <a href="#"> <i class="fa-brands fa-facebook"></i></a>

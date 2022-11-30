@@ -25,3 +25,14 @@ function getThanhToanTourGanNhat() {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//get all thanh toan tour 
+
+function getAllThanhToanTour() {
+    $conn = connection();
+    $sql = "SELECT ten_tour, ngay_khoi_hanh, so_luong, thanh_tien, ho_ten, sdt, email, dia_chi, ten_phuong_thuc FROM `thanh_toan_tour` JOIN phuong_thuc_thanh_toan ON thanh_toan_tour.phuong_thuc_thanh_toan = phuong_thuc_thanh_toan.phuong_thuc_thanh_toan JOIN khoa_tour_lite ON khoa_tour_lite.id_tour_lite = thanh_toan_tour.id_tour_lite JOIN khoa_tour_chi_tiet ON khoa_tour_chi_tiet.ma_tour = thanh_toan_tour.ma_tour ";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

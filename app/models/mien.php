@@ -18,3 +18,24 @@ function getAllMienWithCity() {
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//lấy thông tin với mã miền
+function getInforWithMaMien($mamien) {
+    $conn = connection();
+    $sql = "SELECT * from du_lich_trong_nuoc WHERE ma_mien = '$mamien'";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+
+//lọc tour với mã miền
+function filterTourWithMaMien($mamien) {
+    $conn = connection();
+    $sql = "SELECT * FROM du_lich_theo_thanh_pho JOIN khoa_tour_chi_tiet ON du_lich_theo_thanh_pho.ma_thanh_pho = khoa_tour_chi_tiet.ma_thanh_pho WHERE ma_mien = '$mamien'";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

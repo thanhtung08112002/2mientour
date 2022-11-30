@@ -40,7 +40,7 @@
         ?>
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="view-all">
-            <a href="MB" class="">Xem tất cả</a>
+            <a href="<?= ROOT?>diemden/?mamien=<?= $ma_mien?>&&tenmien=<?= $ten_mien?>" class="">Xem tất cả</a>
           </div>
         </div>
       </div>

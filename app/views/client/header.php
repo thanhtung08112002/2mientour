@@ -43,7 +43,7 @@
                   <ul>
                     <?php foreach ($mien as $item) : ?>
                       <?php extract($item) ?>
-                      <li><a href="<?= ROOT?>diemden/mamien=<?= $ma_mien?>" class="header_nav-mien"><?= $ten_mien ?></a>
+                      <li><a href="<?= ROOT?>diemden/?mamien=<?= $ma_mien?>&&tenmien=<?= $ten_mien?>" class="header_nav-mien"><?= $ten_mien ?></a>
                         <ul>
                           <?php foreach ($getAgetAllMienWithCity as $item_thanh_pho) : ?>
                           <?php extract($item_thanh_pho) ?>

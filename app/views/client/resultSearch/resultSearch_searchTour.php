@@ -34,7 +34,7 @@
                                         <?= $ten_cong_ty ?>
                                     </li>
                                     <li>
-                                        <strong> Trụ sở:</strong> <?= $dia_chi ?>
+                                        <strong> Trụ sở:</strong> <?= $dia_chi_cong_ty ?>
                                     </li>
                                     <li>
                                         <strong>Tel: </strong><a href="tel:<?= $tel ?>"><?= $tel ?></a>
@@ -43,7 +43,7 @@
                                         <strong>Fax: </strong><a href="tel:<?= $fax ?>"><?= $fax ?></a>
                                     </li>
                                     <li>
-                                        <strong>Email: </strong><a href="mailto:<?= $email ?>"><?= $email ?></a>
+                                        <strong>Email: </strong><a href="mailto:<?= $email_cong_ty ?>"><?= $email_cong_ty ?></a>
                                     </li>
                                 </ul>
                             </div>

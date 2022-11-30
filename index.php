@@ -73,28 +73,20 @@ switch ($url) {
     case 'lienhe':
         showContact();
         break;
-        // đang xử lý danh sách điểm đến
-        // case "diem-den/" . $_GET['mamien']:
-        //     switch ($_GET['mamien']) {
-        //         case 'MB':
-        //             showDiemDen();
-        //             break;
-        //     }
-
-        //     break;
-
-        // đang xử lý danh sách điểm đến
-
     case 'tour/tourdetail':
         if (isset($_GET['matour'])) {
             showTourDetail($_GET['matour']);
         } else {
-            showHome();
+            header("location: " . ROOT);
         }
         break;
     case 'cart/':
         if (isset($_GET['matour'])) {
-            showCart($_GET['matour']);
+            if (!isset($_GET['id-tour-lite'])) {
+                showCart($_GET['matour']);
+            } else {
+                showCartSameCode($_GET['matour'], $_GET['id-tour-lite']);
+            }
         } else {
             error_404();
         }
@@ -103,7 +95,7 @@ switch ($url) {
         if (isset($_POST['btn-pay'])) {
             showPaySuccess();
         } else {
-            error_404();
+            header("location: " . ROOT);
         }
         break;
     case 'admin':
@@ -137,6 +129,19 @@ switch ($url) {
         } else {
             header("Location: " . ROOT);
         }
+        break;
+
+    case 'diemden/':
+
+        if (isset($_GET['mamien'])) {
+            showDiemDen($_GET['mamien']);
+        } else  if (isset($_GET['tourhot'])) {
+            showDiemDenHot($_GET['tourhot']);
+        } else {
+            header("Location: " . ROOT);
+        }
+
+
         break;
         //fix
     case 'fix':

@@ -26,7 +26,7 @@
                         <i class="fa fa-money"></i>
                         <span class="price"><?= currency_format($gia_tien) ?></span>
                     </div>
-                    <a href="" class="schedule-buy-now">ĐẶT NGAY</a>
+                    <a href="<?= ROOT?>cart/?matour=<?= $ma_tour ?>" class="schedule-buy-now">ĐẶT NGAY</a>
                 </div>
             </div>
         </div>

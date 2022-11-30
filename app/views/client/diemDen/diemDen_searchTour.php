@@ -3,7 +3,7 @@
                                 Tìm Tuor
                             </div>
                             <div class="search-tour-content">
-                                <form method="GET" action="result-search" name="frn" onsubmit="return validete()">
+                                <form method="GET" action="<?=ROOT?>tour/result-search" name="frn" onsubmit="return validete()">
                                     <div class="form-group ">
                                         <input type="text" class="form-control" id="exampleFormControlInput1" name="valueSearch" placeholder="Nhập tên, Vị trí, Địa danh,...">
                                         <p id="loinhaptext" style="color: red;"></p>
@@ -34,7 +34,7 @@
                                         <?= $ten_cong_ty ?>
                                     </li>
                                     <li>
-                                        <strong> Trụ sở:</strong> <?= $dia_chi ?>
+                                        <strong> Trụ sở:</strong> <?= $dia_chi_cong_ty ?>
                                     </li>
                                     <li>
                                         <strong>Tel: </strong><a href="tel:<?= $tel ?>"><?= $tel ?></a>
@@ -43,7 +43,7 @@
                                         <strong>Fax: </strong><a href="tel:<?= $fax ?>"><?= $fax ?></a>
                                     </li>
                                     <li>
-                                        <strong>Email: </strong><a href="mailto:<?= $email ?>"><?= $email ?></a>
+                                        <strong>Email: </strong><a href="mailto:<?= $email_cong_ty ?>"><?= $email_cong_ty ?></a>
                                     </li>
                                 </ul>
                             </div>

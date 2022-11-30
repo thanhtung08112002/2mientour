@@ -132,6 +132,20 @@ span {
   border-radius: 0 0 4px 0;
   color: #fff;
 }
+.banner_list {
+  position: relative;
+}
+.banner_list > h2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .tour-package .img-tour {

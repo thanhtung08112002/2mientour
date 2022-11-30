@@ -37,7 +37,7 @@
         ?>
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="view-all">
-            <a href="tour/TourDangHot" class="">Xem tất cả</a>
+            <a href="<?= ROOT?>diemden/?tourhot=1" class="">Xem tất cả</a>
           </div>
         </div>
       </div>
