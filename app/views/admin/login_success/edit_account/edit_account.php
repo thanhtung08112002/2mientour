@@ -2,24 +2,24 @@
     <div class="headline">
         <h2>Thêm tài khoản</h2>
     </div>
-    <form action="save_account" method="post" enctype="multipart/form-data">
+    <form action="save_edit_account&id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <label for="">Mã account</label>
-                    <input class="form-control" type="text" name="id_account" readonly placeholder="Auto number" disabled>
+                    <label for="">Mã quản lý miền</label>
+                    <input class="form-control" type="text" name="ma_quan_ly_mien" readonly placeholder="Auto number" disabled>
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="">Tài Khoản</label>
-                    <input class="form-control" type="text" name="tai_khoan"  >
+                    <input class="form-control" type="text" name="tai_khoan" >
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="">Mật khẩu</label>
-                    <input class="form-control" type="text" name="mat_khau"  >
+                    <input class="form-control" type="text" name="mat_khau" >
                 </div>
             </div>
         </div>

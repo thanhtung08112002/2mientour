@@ -25,7 +25,7 @@ function nhan_vien_insert($data = [])
     $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES(?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
-        header("location:admin_page");
+        header("location:list_nhan_vien");
     }
 }
 
@@ -35,7 +35,7 @@ function add_number($valueAddNumber)
     $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES (?, ?, ?, ?, ?, ?,?)";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($valueAddNumber)) {
-        header("Location:admin_page");
+        header("Location:list_nhan_vien");
 
     }
 }
@@ -43,11 +43,11 @@ function add_number($valueAddNumber)
 function save_edit_list($data = [], $id)
 {
     $conn = connection();
-    $sql =  "UPDATE `ban_quan_ly_theo_mien` SET `ten_quan_ly_mien`=?,`sdt`=?,`que_quan`=?,`anh_dai_dien`=?,`ma_chuc_vu`=?,`ngay_thang_nam_sinh` = ? WHERE `ban_quan_ly_theo_mien`.`ma_quan_ly_mien` = $id";
+    $sql =  "UPDATE `ban_quan_ly_theo_mien` SET `ma_mien`=?,`ten_quan_ly_mien`=?,`sdt`=?,`que_quan`=?,`anh_dai_dien`=?,`ma_chuc_vu`=?,`ngay_thang_nam_sinh` = ? WHERE `ban_quan_ly_theo_mien`.`ma_quan_ly_mien` = $id";
 
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
-        header("Location:admin_page");
+        header("Location:list_nhan_vien");
      
     }
 }

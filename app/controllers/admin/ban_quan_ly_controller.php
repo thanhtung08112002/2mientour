@@ -61,7 +61,7 @@ function save_edit_nhan_vien($id)
     //upload 
     move_uploaded_file($image['tmp_name'], "public/images/" . $anh_dai_dien);
     // tạo mảng
-    $data = [$ten_quan_ly_mien, $sdt, $que_quan, $anh_dai_dien, $ma_chuc_vu, $ngay_thang_nam_sinh];
+    $data = [$ma_mien,$ten_quan_ly_mien, $sdt, $que_quan, $anh_dai_dien, $ma_chuc_vu, $ngay_thang_nam_sinh];
     // insert dữ liệu
     save_edit_list($data, $id);
     // var_dump($_POST);

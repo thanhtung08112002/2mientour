@@ -161,27 +161,43 @@ switch ($url) {
             error_404();
         }
         break;
-        // trang thêm nhân viên
-        // case 'add_nhan_vien':
-        //     if (isset($_SESSION['login_success'])) {
-        //         show_them_nhan_vien();
-        //     } else {
-        //         error_404();
-        //     }
-        //     break;
-        // thêm tài khoản
-    case 'save_account':
-        if (isset($_SESSION['login_success'])) {
-            save_add_account();
-        } else {
-            error_404();
-        }
-        break;
-        // xóa tài khoản
+        // xóa tài khoản accounts
     case 'delete_tai_khoan':
         if (isset($_SESSION['login_success'])) {
             $id = $_GET['id'];
             delete_account($id);
+        } else {
+            error_404();
+        }
+        break;
+        // trang sửa accounts
+    case 'edit_account':
+        if (isset($_SESSION['login_success'])) {
+            show_edit_account();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_edit_account':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            save_edit_account($id);
+        } else {
+            error_404();
+        }
+        break;
+        // trang thêm accounts
+    case 'add_account':
+        if (isset($_SESSION['login_success'])) {
+            show_add_account();
+        } else {
+            error_404();
+        }
+        break;
+        // thêm lưu nhân viên
+    case 'save_account':
+        if (isset($_SESSION['login_success'])) {
+            save_add_account();
         } else {
             error_404();
         }

@@ -27,7 +27,7 @@ function check_account($data_account = [])
     }
     if ($data_check) {
         data_check($data_check);
-    }else{
+    } else {
         data_check($data_check);
     }
 }
@@ -57,6 +57,16 @@ function add_account($valueAddAccount)
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($valueAddAccount)) {
         header("Location:list_accounts");
-
+    }
+}
+// fuction save edit nhân viên
+function save_edit_list_account($data = [], $id)
+{
+    $conn = connection();
+    $sql =  "UPDATE `account_admin` SET `tai_khoan`=?,`mat_khau`=? WHERE `account_admin`.`id_account` = $id";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute($data)) {
+        header("Location:list_accounts");
+        // echo "hello";
     }
 }

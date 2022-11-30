@@ -25,5 +25,5 @@
             <?php endforeach ?>
         </tbody>
     </table>
-    <button class="btn" type="submit" name="btn_insert"><a href="add_nhan_vien">Thêm</a></button>
+    <button class="btn" type="submit" name="btn_insert"><a href="add_account">Thêm</a></button>
 </article>
