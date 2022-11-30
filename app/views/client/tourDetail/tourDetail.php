@@ -1,39 +1,24 @@
+<?php include_once "tourDetail_banner.php" ?>
+
 <div class="container">
-    <div class="row align-items-start">
+    <div class="row align-items-start" style="margin-top: 5rem;">
         <div class="col-lg-8 m-15px-tb">
             <div class="tour-content">
                 <div class="tour-heading">
                     <i class="fa fa-image"></i>
                     HÌNH ẢNH
                 </div>
-                <div class="panel-img">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block" src="<?= ROOT ?>public/images/imgs_tour/catba3.jpg" width="750px" height="480x">
-                            </div>
-                            <?php foreach ($getKhoaTourWithMaTour as $item) : ?>
-                                <?php extract($item) ?>
-                                <div class="carousel-item ">
-                                    <img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh ?>" width="750px" height="480x">
-                                </div>
-                            <?php endforeach ?>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
+                <!-- slider -->
+                <?php include_once "tourDetail_slider.php" ?>
+                <!-- slider -->
+
                 <div class="schedule-heading">
                     <i class="fa fa-list-ol"></i>
                     <span>CHƯƠNG TRÌNH TOUR</span>
                 </div>
+
                 <div class="div-content">
+<<<<<<< HEAD
                     <div class="schedule-icon">
                         <p>
                             <i class="fa fa-plane"></i>
@@ -306,92 +291,27 @@
                             </p>
                         </div>
                     </div>
+=======
+                    <!-- ngay -->
+                    <?php include_once "tourDetail_ngay.php" ?>
+                    <!-- ngay -->
+                    <!-- luu y -->
+                    <?php include_once "tourDetail_luuY.php" ?>
+                    <!-- luu y -->
+>>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
 
                 </div>
+
             </div>
         </div>
         <div class="col-lg-4 m-15px-tb blog-aside mgt-15px">
+            <!-- thông tin tour -->
+            <?php include_once "tourDetail_infor.php" ?>
+
+            <!-- thông tin tour -->
+
             <!-- tour liên quan -->
-            <div class="widget widget-tour">
-                <div class="widget-title">
-                    <div class="tour-heading">
-                        <i class="fa fa-link"></i>
-                        TOUR LIÊN QUAN
-                    </div>
-                </div>
-                <div class="widget-body">
-                    <div class="thumbnail block-tour shadow rounded-lg tour">
-                        <a href=""><img src="asset/img/635f9d3f554e2.jpg " class="img-thumbnail" alt=""></a>
-                        <div class="caption">
-                            <a class="title-tour " href="">
-                                <p>Du Lịch Hàn Quốc Miễn Visa: Yang Yang - Núi Seorak - Gangwon - Đảo Nami -
-                                    Seoul 6N5Đ</p>
-                            </a>
-                            <div class="location">
-                                <i class="fa fa-flag"></i>
-                                <span>Ho Chi Minh</span>
-                            </div>
-                            <i class="fa fa-clock-o"></i>
-                            <span>04/11/2022</span>
-                        </div>
-                        <div class="tour-bottom">
-                            <div class="tour-price">
-                                <i class="fa fa-money"></i>
-                                <span class="price">6.990.000 VND</span>
-                            </div>
-                            <a href="" class="schedule-buy-now">ĐẶT NGAY</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget-body">
-                    <div class="thumbnail block-tour shadow rounded-lg tour">
-                        <a href=""><img src="asset/img/635f9d3f554e2.jpg " class="img-thumbnail" alt=""></a>
-                        <div class="caption">
-                            <a class="title-tour " href="">
-                                <p>Du Lịch Hàn Quốc Miễn Visa: Yang Yang - Núi Seorak - Gangwon - Đảo Nami -
-                                    Seoul 6N5Đ</p>
-                            </a>
-                            <div class="location">
-                                <i class="fa fa-flag"></i>
-                                <span>Ho Chi Minh</span>
-                            </div>
-                            <i class="fa fa-clock-o"></i>
-                            <span>04/11/2022</span>
-                        </div>
-                        <div class="tour-bottom">
-                            <div class="tour-price">
-                                <i class="fa fa-money"></i>
-                                <span class="price">6.990.000 VND</span>
-                            </div>
-                            <a href="" class="schedule-buy-now">ĐẶT NGAY</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget-body">
-                    <div class="thumbnail block-tour shadow rounded-lg tour">
-                        <a href=""><img src="asset/img/635f9d3f554e2.jpg " class="img-thumbnail" alt=""></a>
-                        <div class="caption">
-                            <a class="title-tour " href="">
-                                <p>Du Lịch Hàn Quốc Miễn Visa: Yang Yang - Núi Seorak - Gangwon - Đảo Nami -
-                                    Seoul 6N5Đ</p>
-                            </a>
-                            <div class="location">
-                                <i class="fa fa-flag"></i>
-                                <span>Ho Chi Minh</span>
-                            </div>
-                            <i class="fa fa-clock-o"></i>
-                            <span>04/11/2022</span>
-                        </div>
-                        <div class="tour-bottom">
-                            <div class="tour-price">
-                                <i class="fa fa-money"></i>
-                                <span class="price">6.990.000 VND</span>
-                            </div>
-                            <a href="" class="schedule-buy-now">ĐẶT NGAY</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php include_once "tourDetail_lienquan.php" ?>
             <!-- End tour liên quan -->
         </div>
     </div>

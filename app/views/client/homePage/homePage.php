@@ -11,6 +11,6 @@ include_once 'homePageSliderAndSearch.php';
 include_once 'homePageTourHot.php';
 include_once 'homePageMienBac.php';
 include_once 'homePageMienNam.php';
-include_once 'homePageDangKyUuDai.php';
+// include_once 'homePageDangKyUuDai.php';
 
 

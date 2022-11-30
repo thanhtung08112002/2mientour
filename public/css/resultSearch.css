@@ -1,7 +1,7 @@
 .tour-catalog {
   padding: 10px;
 }
-.banner_serach {
+.banner {
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -52,63 +52,137 @@ option {
   padding: 8px;
   font-size: 15px;
 }
+/* các tour */
 .tour-package {
-  padding-bottom: 5px;
-  /* display: grid;
-    grid-template-columns: 50% 50%; */
+  margin-bottom: 10px;
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.img-tour {
-  background: #f2f4f9;
-  border: 1px;
-  border-color: #f2f4f9;
-  border-top-left-radius: 0.5rem; /* 8px */
-  border-bottom-left-radius: 0.5rem; /* 8px */
-}
-.info-tour {
-  background: #f2f4f9;
-  border: 1px;
-  border-color: #f2f4f9;
-  border-top-right-radius: 0.5rem; /* 8px */
-  border-bottom-right-radius: 0.5rem; /* 8px */
-}
-.info-tour .caption {
-  padding: 5px 15px 5px 15px;
-}
-.info-tour .caption .title-tour {
-  text-transform: uppercase;
-  color: #003d71;
-  font-weight: 700;
-  font-size: 20px;
-  text-decoration: none;
-}
-.info-tour .caption p i {
-  font-size: 15px;
-}
-.info-tour .caption p span {
-  font-size: 15px;
-}
-.info-tour .caption p a {
-  font-size: 15px;
-}
-.info-tour .bottom {
-  padding: 2px;
-  background: rgb(232, 203, 203);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom-right-radius: 0.5rem; /* 8px */
-  border-bottom-left-radius: 0.5rem; /* 8px */
 }
 
-.info-tour .bottom span {
-  color: red;
+.tour-package .img-tour {
+  position: relative;
+  border-radius: 6px 0 0 6px;
+  width: 360px;
+}
+
+.tour-package .img-tour a {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px 0 0 6px;
+}
+
+.tour-package .img-tour a img {
+  max-width: none;
+  max-height: 115%;
+  margin-left: 0;
+}
+
+.tour-package .info-tour {
+  width: calc(100% - 360px);
+}
+
+.tour-package .info-tour .caption {
+  padding: 5px 15px 5px 15px;
+}
+
+.tour-package .info-tour .caption a.title-tour {
+  height: auto;
+  font-size: 19px;
+  color: #003d71;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.tour-package .info-tour .caption p,
+span {
   font-size: 15px;
 }
-.info-tour .bottom a {
-  font-size: 18px;
+
+.tour-package .info-tour .bottom {
+  padding: 5px 0 5px 15px;
+  height: 34px;
+  background: #f2f2f2;
+  position: relative;
+  border-radius: 0 0 4px 4px;
+}
+.tour-package .info-tour .bottom i{
+  font-size: 15px;
+}
+.tour-package .info-tour .bottom span{
+  font-size: 15px;
+  color: red;
+  font-weight: 700;
+}
+.tour-package .info-tour .bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: normal;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  font-weight: 700;
+  border-radius: 0 0 4px 0;
   color: #fff;
 }
+.banner_list {
+  position: relative;
+}
+.banner_list > h2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .tour-package .img-tour {
+      width: 100%;
+
+  }
+
+  .tour-package .info-tour {
+      width: auto;
+      float: none;
+
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .tour-package .img-tour {
+      width: 100%;
+
+  }
+
+  .tour-package .info-tour {
+      width: auto;
+      float: none;
+
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .tour-package .img-tour {
+      width: 360px;
+
+  }
+
+  .tour-package .info-tour {
+      width: 100%;
+      float: none;
+  }
+}
+/* end các tour */

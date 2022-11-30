@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="<?= ROOT?>public/css/homePage.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/tour_detail.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/resultSearch.css" />
+  <link rel="stylesheet" href="<?= ROOT?>public/css/contact.css" />
+  <link rel="stylesheet" href="<?= ROOT?>public/css/cart.css" />
+  <link rel="stylesheet" href="<?= ROOT?>public/css/pay_success.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/responsive.css" />
   <title><?= !isset($url) ? 'home' : $url ?></title>
 
@@ -36,11 +39,11 @@
             <nav class="header_nav">
               <ul>
                 <li><a href="<?= ROOT?>">Trang chủ </a></li>
-                <li><a href="#">Du lịch</a>
+                <li><a href="javascript:void(0)">Du lịch</a>
                   <ul>
                     <?php foreach ($mien as $item) : ?>
                       <?php extract($item) ?>
-                      <li><a href="<?= $ma_mien?>" class="header_nav-mien"><?= $ten_mien ?></a>
+                      <li><a href="<?= ROOT?>diemden/?mamien=<?= $ma_mien?>&&tenmien=<?= $ten_mien?>" class="header_nav-mien"><?= $ten_mien ?></a>
                         <ul>
                           <?php foreach ($getAgetAllMienWithCity as $item_thanh_pho) : ?>
                           <?php extract($item_thanh_pho) ?>
@@ -53,9 +56,9 @@
                     <?php endforeach ?>
                   </ul>
                 </li>
-                <li><a href="tintuc">Tin tức</a></li>
-                <li><a href="gioithieu">Giới thiệu</a></li>
-                <li><a href="lienhe">Liên hệ</a></li>
+                <li><a href="<?= ROOT?>tintuc">Tin tức</a></li>
+                <li><a href="<?= ROOT?>gioithieu">Giới thiệu</a></li>
+                <li><a href="<?= ROOT?>lienhe">Liên hệ</a></li>
               </ul>
             </nav>
           </div>
