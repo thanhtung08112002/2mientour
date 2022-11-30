@@ -47,19 +47,7 @@
                     <input class="form-control" type="text" name="dia_chi">
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="">Loại mã giảm giá</label>
-                    <select class="form-control" name="id_ma_giam_gia" id="">
-                        <option value="0">Chọn loại mã giảm giá</option>
-                        <?php foreach ($ma_giam_gia as $mgg) : ?>
-                            <option value="<?= $mgg['id_ma_giam_gia'] ?>">
-                                <?= $mgg['ma_giam_gia'] ?>
-                            </option>
-                        <?php endforeach ?>
-                    </select>
-                </div>
-            </div>
+            
             <div class="col">
                 <div class="form-group">
                     <label for="">Loại thanh toán</label>
@@ -87,6 +75,6 @@
             </div>
         </div>
         <button class="btn" type="submit" name="btn_insert">Sửa</button>
-        <button class="btn"><a href="danh_sach_nhan_vien">Danh sách</a></button>
+        <button class="btn"><a href="list_thanh_toan_tour">Danh sách</a></button>
     </form>
 </article>

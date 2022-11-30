@@ -1,18 +1,9 @@
-<!-- <<<<<<< HEAD -->
-<?php 
-//lấy toàn bộ bảng account_admin
-// function getALLthanhtoantour()
-// {
-//     $conn = connection();
-//     $sql = "SELECT * FROM `thanh_toan_tour`";
-// // =======
-// }
 
+<?php 
 //get all thanh toan tour
 function getThanhToanTour($id_thanh_toan) {
     $conn = connection();
     $sql = "SELECT * FROM `thanh_toan_tour` WHERE `id_thanh_toan` = $id_thanh_toan";
-// >>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,7 +23,7 @@ function thanh_toan_tour_delete($id)
 function save_edit_list_thanh_toan($data = [], $id)
 {
     $conn = connection();
-    $sql =  "UPDATE `thanh_toan_tour` SET `ma_tour`=?,`ho_ten`=?,`sdt`=?,`email`=?,`dia_chi`=?,`id_ma_giam_gia`=?,`phuong_thuc_thanh_toan`=?,`so_luong`=?,`thanh_tien`=? WHERE `thanh_toan_tour`.`id_thanh_toan` = $id";
+    $sql =  "UPDATE `thanh_toan_tour` SET `ma_tour`=?,`ho_ten`=?,`sdt`=?,`email`=?,`dia_chi`=?,`phuong_thuc_thanh_toan`=?,`so_luong`=?,`thanh_tien`=? WHERE `thanh_toan_tour`.`id_thanh_toan` = $id";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
         header("Location:list_thanh_toan_tour");
@@ -61,7 +52,7 @@ function getThanhToanTourGanNhat() {
 
 function getAllThanhToanTour() {
     $conn = connection();
-    $sql = "SELECT ten_tour, ngay_khoi_hanh, so_luong, thanh_tien, ho_ten, sdt, email, dia_chi, ten_phuong_thuc FROM `thanh_toan_tour` JOIN phuong_thuc_thanh_toan ON thanh_toan_tour.phuong_thuc_thanh_toan = phuong_thuc_thanh_toan.phuong_thuc_thanh_toan JOIN khoa_tour_lite ON khoa_tour_lite.id_tour_lite = thanh_toan_tour.id_tour_lite JOIN khoa_tour_chi_tiet ON khoa_tour_chi_tiet.ma_tour = thanh_toan_tour.ma_tour ";
+    $sql = "SELECT id_thanh_toan,ten_tour, ngay_khoi_hanh, so_luong, thanh_tien, ho_ten, sdt, email, dia_chi, ten_phuong_thuc FROM `thanh_toan_tour` JOIN phuong_thuc_thanh_toan ON thanh_toan_tour.phuong_thuc_thanh_toan = phuong_thuc_thanh_toan.phuong_thuc_thanh_toan JOIN khoa_tour_lite ON khoa_tour_lite.id_tour_lite = thanh_toan_tour.id_tour_lite JOIN khoa_tour_chi_tiet ON khoa_tour_chi_tiet.ma_tour = thanh_toan_tour.ma_tour ORDER BY id_thanh_toan DESC ";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

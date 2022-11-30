@@ -222,7 +222,7 @@ switch ($url) {
         // edit thanh toán tour
     case 'edit_thanh_toan':
         if (isset($_SESSION['login_success'])) {
-            show_edit_thanh_toan();
+            show_edit_thanh_toan($_GET['id']);
         } else {
             error_404();
         }
