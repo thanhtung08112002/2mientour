@@ -1,23 +1,24 @@
-<<<<<<< HEAD
-<?php
-//lấy toàn bộ bảng account_admin
-function getALLthanhtoantour()
-{
-    $conn = connection();
-    $sql = "SELECT * FROM `thanh_toan_tour`";
-=======
+<!-- <<<<<<< HEAD -->
 <?php 
+//lấy toàn bộ bảng account_admin
+// function getALLthanhtoantour()
+// {
+//     $conn = connection();
+//     $sql = "SELECT * FROM `thanh_toan_tour`";
+// // =======
+// }
+
 //get all thanh toan tour
 function getThanhToanTour($id_thanh_toan) {
     $conn = connection();
     $sql = "SELECT * FROM `thanh_toan_tour` WHERE `id_thanh_toan` = $id_thanh_toan";
->>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
+// >>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // delete thanh_toan_tour
 function thanh_toan_tour_delete($id)
 {
@@ -37,7 +38,7 @@ function save_edit_list_thanh_toan($data = [], $id)
         header("Location:list_thanh_toan_tour");
     }
 }
-=======
+// =======
 //thanh toan tour
 function payTour($data) {
     $conn = connection();
@@ -66,4 +67,4 @@ function getAllThanhToanTour() {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
->>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
+// >>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
