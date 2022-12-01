@@ -12,6 +12,8 @@ require_once 'app/controllers/admin/ban_quan_ly_controller.php';
 require_once 'app/controllers/admin/account_admin_controller.php';
 require_once 'app/controllers/admin/account_admin_controller.php';
 require_once 'app/controllers/admin/thanh_toan_tour_controller.php';
+require_once 'app/controllers/admin/thong_ke_controller.php';
+
 
 
 
@@ -47,6 +49,9 @@ require_once 'app/models/du_lich_trong_nuoc.php';
 require_once 'app/models/thanh_toan_tour.php';
 require_once 'app/models/ma_giam_gia.php';
 require_once 'app/models/phuong_thuc_thanh_toan.php';
+require_once 'app/models/thong_ke.php';
+
+
 
 
 
@@ -236,7 +241,38 @@ switch ($url) {
             error_404();
         }
         break;
+        // thống kê
+    case 'thong_ke':
+        if (isset($_SESSION['login_success'])) {
+            showAllThongKe();
+        } else {
+            error_404();
+        }
+        break;
+        // thống kê theo miền
+    case 'thong_ke_theo_mien':
+        if (isset($_SESSION['login_success'])) {
+            showAllThongKeTheoMien();
+        } else {
+            error_404();
+        }
+        break;
+    case 'danh_sach_thong_ke_tour_chi_tiet':
+        if (isset($_SESSION['login_success'])) {
+            showAllDanhSachThongKeChiTiet();
+        } else {
+            error_404();
+        }
+        break;
 
+    case 'thong_ke_theo_mien_chi_tiet':
+        if (isset($_SESSION['login_success'])) {
+            $ma_thanh_pho = $_GET['ma_thanh_pho'];
+            danh_sach_tour_chi_tiet($ma_thanh_pho);
+        } else {
+            error_404();
+        }
+        break;
 
 
 
