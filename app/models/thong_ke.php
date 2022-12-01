@@ -30,7 +30,7 @@ function danh_sach_thong_ke_tour_chi_tiet()
     return $result;
 }
 
-function danh_sach_tour_with_id($ma_mien)
+function danh_sach_tour_with_ma_mien($ma_mien)
 {
     $conn = connection();
     $sql = "SELECT khoa_tour_chi_tiet.ma_tour, ma_thanh_pho, ten_tour, thanh_toan_tour.ho_ten, so_luong FROM khoa_tour_chi_tiet JOIN thanh_toan_tour ON khoa_tour_chi_tiet.ma_tour = thanh_toan_tour.ma_tour WHERE khoa_tour_chi_tiet.ma_tour = $ma_mien";

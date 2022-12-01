@@ -16,6 +16,6 @@ function showAllDanhSachThongKeChiTiet()
 }
 function danh_sach_tour_chi_tiet($ma_mien)
 {
-    $danh_sach_tour_with_id = danh_sach_tour_with_id($ma_mien);
-    render_admin('danh_sach_tour_chi_tiet', ['danh_sach_tour_with_id' => $danh_sach_tour_with_id]);
+    $danh_sach_tour_with_ma_mien = danh_sach_tour_with_ma_mien($ma_mien);
+    render_admin('danh_sach_tour_chi_tiet', ['danh_sach_tour_with_ma_mien' => $danh_sach_tour_with_ma_mien]);
 }
