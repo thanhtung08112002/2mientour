@@ -10,6 +10,13 @@ require_once 'app/config.php';
 require_once 'app/controllers/admin/controllers_admin.php';
 require_once 'app/controllers/admin/admin.php';
 require_once 'app/controllers/admin/admin_page.php';
+require_once 'app/controllers/admin/mien.php';
+require_once 'app/controllers/admin/thanhpho.php';
+require_once 'app/controllers/admin/list.php';
+
+
+
+
 
 
 
@@ -24,6 +31,7 @@ require_once 'app/controllers/client/list_diem_den.php';
 require_once 'app/controllers/client/contact.php';
 require_once 'app/controllers/client/cart.php';
 require_once 'app/controllers/client/error_404.php';
+// require_once 'app/controllers/client/congthanhtoan.php';
 
 
 
@@ -91,6 +99,11 @@ switch ($url) {
         }
         break;
     case 'cart/pay-success':
+        // if (isset($_POST['btn-pay']) && $_POST['payment_method'] == '3') {
+        //     echo "<pre>";
+        //     var_dump($_POST);
+            
+        // } else
         if (isset($_POST['btn-pay'])) {
             showPaySuccess();
         } else {
@@ -99,7 +112,7 @@ switch ($url) {
         break;
     case 'cart/cancel-success':
         if (isset($_POST['btn-cancel'])) {
-            cancelTour($_GET['idthanhtoan'],$_GET['email']);
+            cancelTour($_GET['idthanhtoan'], $_GET['email']);
         } else {
             header("location: " . ROOT);
         }
@@ -146,8 +159,34 @@ switch ($url) {
         } else {
             header("Location: " . ROOT);
         }
+        break;
 
 
+
+
+        //admin
+    case "admin_page/mien":
+        showMien();
+        break;
+
+    case "admin_page/thanhpho":
+        if (isset($_GET['mamien'])) {
+            showThanhphoThuoc($_GET['mamien']);
+        } else if (isset($_GET['matour'])) {
+            showThoiGianTour($_GET['matour']);
+        }
+        break;
+
+    case "admin_page/list":
+        showListWithMien();
+        break;
+    case "admin_page/listdetail":
+        if (isset($_GET['mamien'])) {
+            showlistdetail($_GET['mamien']);
+        } else if (isset($_GET['matour'])) {
+            showListThanhToan($_GET['matour']);
+        }
+        break;
         break;
         //fix
     case 'fix':
