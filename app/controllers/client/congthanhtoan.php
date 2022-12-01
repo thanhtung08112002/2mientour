@@ -1,4 +1,6 @@
 <?php
+function goVNPay($value) {
+extract($value);
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,7 +11,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 $vnp_TmnCode = "LVBGWK85"; //Website ID in VNPAY System
 $vnp_HashSecret = "AJWILPTTOVUZKQBYLCBVDAOIOEPOBKIS"; //Secret key
 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "http://localhost/vnpay_php/vnpay_return.php";
+$vnp_Returnurl = "http://localhost/2mientour/cart/pay-success";
 $vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
 //Config input format
 //Expire
@@ -20,7 +22,7 @@ $expire = date('YmdHis', strtotime('+15 minutes', strtotime($startTime)));
 $vnp_TxnRef = time(); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
 $vnp_OrderInfo = 'Thanh toán tour bằng vnpay';
 $vnp_OrderType = 'other';
-$vnp_Amount = 250000 * 100;
+$vnp_Amount =  $tien_none* 100;
 $vnp_Locale = 'vn';
 $vnp_BankCode = 'NCB';
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
@@ -59,22 +61,22 @@ $inputData = array(
     "vnp_OrderInfo" => $vnp_OrderInfo,
     "vnp_OrderType" => $vnp_OrderType,
     "vnp_ReturnUrl" => $vnp_Returnurl,
-    "vnp_TxnRef" => $vnp_TxnRef,
-    "vnp_ExpireDate" => $vnp_ExpireDate,
-    "vnp_Bill_Mobile" => $vnp_Bill_Mobile,
-    "vnp_Bill_Email" => $vnp_Bill_Email,
-    "vnp_Bill_FirstName" => $vnp_Bill_FirstName,
-    "vnp_Bill_LastName" => $vnp_Bill_LastName,
-    "vnp_Bill_Address" => $vnp_Bill_Address,
-    "vnp_Bill_City" => $vnp_Bill_City,
-    "vnp_Bill_Country" => $vnp_Bill_Country,
-    "vnp_Inv_Phone" => $vnp_Inv_Phone,
-    "vnp_Inv_Email" => $vnp_Inv_Email,
-    "vnp_Inv_Customer" => $vnp_Inv_Customer,
-    "vnp_Inv_Address" => $vnp_Inv_Address,
-    "vnp_Inv_Company" => $vnp_Inv_Company,
-    "vnp_Inv_Taxcode" => $vnp_Inv_Taxcode,
-    "vnp_Inv_Type" => $vnp_Inv_Type
+    "vnp_TxnRef" => $vnp_TxnRef
+    // "vnp_ExpireDate" => $vnp_ExpireDate,
+    // "vnp_Bill_Mobile" => $vnp_Bill_Mobile,
+    // "vnp_Bill_Email" => $vnp_Bill_Email,
+    // "vnp_Bill_FirstName" => $vnp_Bill_FirstName,
+    // "vnp_Bill_LastName" => $vnp_Bill_LastName,
+    // "vnp_Bill_Address" => $vnp_Bill_Address,
+    // "vnp_Bill_City" => $vnp_Bill_City,
+    // "vnp_Bill_Country" => $vnp_Bill_Country,
+    // "vnp_Inv_Phone" => $vnp_Inv_Phone,
+    // "vnp_Inv_Email" => $vnp_Inv_Email,
+    // "vnp_Inv_Customer" => $vnp_Inv_Customer,
+    // "vnp_Inv_Address" => $vnp_Inv_Address,
+    // "vnp_Inv_Company" => $vnp_Inv_Company,
+    // "vnp_Inv_Taxcode" => $vnp_Inv_Taxcode,
+    // "vnp_Inv_Type" => $vnp_Inv_Type
 );
 
 if (isset($vnp_BankCode) && $vnp_BankCode != "") {
@@ -107,9 +109,10 @@ if (isset($vnp_HashSecret)) {
 $returnData = array(
     'code' => '00', 'message' => 'success', 'data' => $vnp_Url
 );
-if (isset($_POST['redirect'])) {
+if (isset($_POST['payment_method'])) {
     header('Location: ' . $vnp_Url);
     die();
 } else {
     echo json_encode($returnData);
+}
 }

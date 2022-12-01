@@ -2,13 +2,13 @@
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin: 0 -15px">
     <div class="carousel-inner ">
       <!-- handlers -->
-      <div class="carousel-item active">
-          <a href="#tour"><img class="d-block w-100 m-15" src="<?= ROOT ?>public/images/binh-lieu.jpg" alt="First slide"></a>
-        </div>
+  <?php $i = 0?>
       <?php foreach ($getAllSlider as $item) : ?>
         <?php extract($item) ?>
-        <div class="carousel-item ">
-          <a href="#<?= $url?>"><img class="d-block w-100 m-15" src="<?= ROOT ?>public/images/<?= $anh?>" alt="First slide"></a>
+        <?php $i++; ?>
+        <?php $active = 'active' ?>
+        <div class="carousel-item <?= $i == 1 ? $active : "" ?>">
+          <a href="#<?= $url ?>"><img class="d-block w-100 m-15" src="<?= ROOT ?>public/images/<?= $anh ?>" alt="First slide"></a>
         </div>
       <?php endforeach ?>
 
@@ -35,7 +35,7 @@
             <option value="<?= $ma_thanh_pho ?>"><?= $ten_thanh_pho ?></option>
           <?php endforeach ?>
         </select>
-        <input type="text" class="search_input" placeholder="  Nhập thông tin cần tìm..." name="valueSearch"> 
+        <input type="text" class="search_input" placeholder="  Nhập thông tin cần tìm..." name="valueSearch">
         <button type="submit" class="btn btn-search-tour btn-danger" name="btn_search_tour">TÌM TOUR</button>
       </form>
     </div>

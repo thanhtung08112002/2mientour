@@ -31,7 +31,7 @@ require_once 'app/controllers/client/list_diem_den.php';
 require_once 'app/controllers/client/contact.php';
 require_once 'app/controllers/client/cart.php';
 require_once 'app/controllers/client/error_404.php';
-// require_once 'app/controllers/client/congthanhtoan.php';
+require_once 'app/controllers/client/congthanhtoan.php';
 
 
 
@@ -99,11 +99,9 @@ switch ($url) {
         }
         break;
     case 'cart/pay-success':
-        // if (isset($_POST['btn-pay']) && $_POST['payment_method'] == '3') {
-        //     echo "<pre>";
-        //     var_dump($_POST);
-            
-        // } else
+        if (isset($_POST['btn-pay']) && $_POST['payment_method'] == '3') {
+            goVNPay($_POST);
+        } else
         if (isset($_POST['btn-pay'])) {
             showPaySuccess();
         } else {
