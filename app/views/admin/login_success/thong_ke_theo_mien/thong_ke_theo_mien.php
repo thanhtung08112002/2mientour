@@ -8,6 +8,7 @@
                 <th>STT</th>
                 <th>Tên miền</th>
                 <th>Số lượng tour du lịch theo thành phố</th>
+                <th>Tên thành phố</th>
                 <th>Chức năng</th>
             </tr>
         </thead>
@@ -19,8 +20,9 @@
                     <td><?= $i++ ?></td>
                     <td><?= $ten_mien ?></td>
                     <td><?= $soluong ?></td>
+                    <td><?= $ten_thanh_pho ?></td>
                     <td>
-                        <a href="thong_ke_theo_mien_chi_tiet?ma_mien=<?= $ma_mien ?>" class="link-action btn-default">Chi tiết</a>
+                        <a href="thong_ke_theo_mien_chi_tiet" class="link-action btn-danger">Chi tiết</a>
                     </td>
                 </tr>
             <?php endforeach ?>

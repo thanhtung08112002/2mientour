@@ -2,7 +2,8 @@
 function showAllThongKe()
 {
     $thong_ke_theo_ma_mien = thong_ke_theo_ma_mien();
-    render_admin('thong_ke', ['thong_ke_theo_ma_mien' => $thong_ke_theo_ma_mien]);
+    $thong_ke_theo_thanh_toan_tour = thong_ke_theo_thanh_toan_tour();
+    render_admin('thong_ke', ['thong_ke_theo_ma_mien' => $thong_ke_theo_ma_mien, 'thong_ke_theo_thanh_toan_tour' => $thong_ke_theo_thanh_toan_tour]);
 }
 function showAllThongKeTheoMien()
 {
@@ -14,8 +15,8 @@ function showAllDanhSachThongKeChiTiet()
     $danh_sach_thong_ke_tour_chi_tiet = danh_sach_thong_ke_tour_chi_tiet();
     render_admin('thong_ke_chi_tiet', ['danh_sach_thong_ke_tour_chi_tiet' => $danh_sach_thong_ke_tour_chi_tiet]);
 }
-function danh_sach_tour_chi_tiet($ma_mien)
+function danh_sach_tour_chi_tiet($id)
 {
-    $danh_sach_tour_with_ma_mien = danh_sach_tour_with_ma_mien($ma_mien);
-    render_admin('danh_sach_tour_chi_tiet', ['danh_sach_tour_with_ma_mien' => $danh_sach_tour_with_ma_mien]);
+    $danh_sach_tour_with_id = danh_sach_tour_with_id($id);
+    render_admin('danh_sach_tour_chi_tiet', ['danh_sach_tour_with_id' => $danh_sach_tour_with_id]);
 }

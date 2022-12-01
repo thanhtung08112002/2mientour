@@ -7,6 +7,7 @@
             <tr>
                 <th>STT</th>
                 <th>Tên miền</th>
+                <th>Tên thành phố</th>
                 <th>Số lượng tour du lịch theo thành phố</th>
                 <th>Chức năng</th>
             </tr>
@@ -17,7 +18,8 @@
                 <?php extract($dstct) ?>
                 <tr>
                     <td><?= $i++ ?></td>
-                    <td><?= $ma_thanh_pho ?></td>
+                    <td><?= $ma_mien ?></td>
+                    <td><?= $ten_thanh_pho ?></td>
                     <td><?= $ten_tour ?></td>
 
                 </tr>

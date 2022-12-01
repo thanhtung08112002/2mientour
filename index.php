@@ -266,8 +266,8 @@ switch ($url) {
 
     case 'thong_ke_theo_mien_chi_tiet':
         if (isset($_SESSION['login_success'])) {
-            $ma_thanh_pho = $_GET['ma_thanh_pho'];
-            danh_sach_tour_chi_tiet($ma_thanh_pho);
+            $id = $_GET['id'];
+            danh_sach_tour_chi_tiet($id);
         } else {
             error_404();
         }

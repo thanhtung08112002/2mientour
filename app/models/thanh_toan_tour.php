@@ -58,4 +58,3 @@ function getAllThanhToanTour() {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
-// >>>>>>> cbc2860f00a4bb5d1eb58bc88f0a2ee1ae1a9ad8
