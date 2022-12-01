@@ -10,7 +10,6 @@ require_once 'app/controllers/admin/controllers_admin.php';
 require_once 'app/controllers/admin/admin.php';
 require_once 'app/controllers/admin/ban_quan_ly.php';
 require_once 'app/controllers/admin/account_admin.php';
-require_once 'app/controllers/admin/account_admin.php';
 require_once 'app/controllers/admin/thanh_toan_tour.php';
 require_once 'app/controllers/admin/thong_ke.php';
 
