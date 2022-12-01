@@ -1,14 +1,16 @@
 <div class="panel-img">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block" src="<?= ROOT ?>public/images/imgs_tour/catba3.jpg" width="750px" height="480x">
-                            </div>
+                            <?php $i = 0;?>
                             <?php foreach ($getImgWithMaTour as $item) : ?>
                                 <?php extract($item) ?>
-                                <div class="carousel-item ">
+                                <?php $i++;?>
+                                <?php $active = 'active'?>
+                                
+                                <div class="carousel-item <?= $i == 1?$active:""?>">
                                     <img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh ?>" width="750px" height="480x">
                                 </div>
+                                
                             <?php endforeach ?>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

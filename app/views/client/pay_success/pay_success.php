@@ -2,7 +2,7 @@
 <div class="container">
     <div class="payment-success">
         <div class="payment-success-title">
-            <i class="fa fa-map-signs"> </i> Đặt Tour Thành Công 
+            <i class="fa fa-map-signs"> </i> Đặt Tour Thành Công
         </div>
         <?php foreach ($getThanhToanTourGanNhat as $item) : ?>
             <?php extract($item) ?>
@@ -12,8 +12,8 @@
                 <div class="break_line"></div>
                 <strong>Thông tin đơn hàng của bạn gồm:</strong>
                 <div class="payment-successp-body-tour">
-                    <div class="title-tour">Du lịch <?= ucwords($ten_tour)?></div>
-                    <div class="title-tour">Ngày khởi hành: <?= date_handler($ngay_khoi_hanh)?></div>
+                    <div class="title-tour">Du lịch <?= ucwords($ten_tour) ?></div>
+                    <div class="title-tour">Ngày khởi hành: <?= date_handler($ngay_khoi_hanh) ?></div>
                     <div class=" item-price">Người lớn: <?= $nguoi_lon ?> người</div>
                     <div class=" item-price">Trẻ em: <?= $tre_em ?> người</div>
 
@@ -33,5 +33,18 @@
             </div>
         <?php endforeach ?>
 
+    </div>
+    <div class="funtion_tour">
+        <div class="cancel_form">
+            <?php foreach ($getThanhToanTourGanNhat as $item) : ?>
+                <form action="cancel-success?idthanhtoan=<?= $id_thanh_toan ?>&&email=<?= $email ?>" method="POST">
+                    <input type="text" name="content_cancel" placeholder="Vui lòng nhập lý do" required>
+                    <button type="submit" name="btn-cancel" class="btn btn-danger">Hủy</button>
+                </form>
+            <?php endforeach ?>
+        </div>
+        <div class="confirm_tour">
+            <a href="<?= ROOT ?>" class="btn btn-primary">Xác nhận</a>
+        </div>
     </div>
 </div>

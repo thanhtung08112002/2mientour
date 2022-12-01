@@ -1,5 +1,5 @@
 <article>
-<div class="banner banner_serach"><img src="<?= ROOT ?>public/images/thanh_toan.jpg" alt="" class="img-fluid"></div>
+    <div class="banner banner_serach"><img src="<?= ROOT ?>public/images/thanh_toan.jpg" alt="" class="img-fluid"></div>
     <section>
         <div class="container">
             <div class="cart-page">
@@ -12,7 +12,7 @@
                                     THÔNG TIN NGƯỜI ĐẶT
                                 </div>
                                 <div class=" tour-book-info-body">
-                                    
+
                                     <div class="form-group">
                                         <input type="text" name="txtHoTen" class="form-control" placeholder="Họ và Tên">
                                         <p id="loiHoTen" style="color: red;"></p>
@@ -36,10 +36,10 @@
                                             <div id="payment_transfer" style="display:none" class=" payment_info">
                                                 <p>THÔNG TIN THANH TOÁN
                                                     <br>
-                                                    <p>- Ngân hàng TMCP Ngoại Thương Việt Nam - CN TP.HN (VCB)</p>
-                                                    <p>- Tên đơn vị hưởng: CÔNG TY CỔ PHẦN DỊCH VỤ DU LỊCH 2 MIỀN TOUR</p>
-                                                    <p>- Số tài khoản VNĐ: 007.1001204617</p>
-                                                    <p>- Tại Ngân Hàng VCB - CN TP.HN</p>
+                                                <p>- Ngân hàng TMCP Ngoại Thương Việt Nam - CN TP.HN (VCB)</p>
+                                                <p>- Tên đơn vị hưởng: CÔNG TY CỔ PHẦN DỊCH VỤ DU LỊCH 2 MIỀN TOUR</p>
+                                                <p>- Số tài khoản VNĐ: 007.1001204617</p>
+                                                <p>- Tại Ngân Hàng VCB - CN TP.HN</p>
                                                 </p>
                                             </div>
                                         </div>
@@ -50,13 +50,13 @@
                                                 <p>THÔNG TIN THANH TOÁN
                                                     <br>
                                                     <strong>Trụ Sở:</strong>
-                                                   <?= $dia_chi_cong_ty?>
+                                                    <?= $dia_chi_cong_ty ?>
                                                     <br>
                                                     <strong> Số Điện Thoại:</strong>
-                                                    <a href="tel:<?= $fax?>"> <?= $fax?></a>
+                                                    <a href="tel:<?= $fax ?>"> <?= $fax ?></a>
                                                     <br>
                                                     <strong> Email:</strong>
-                                                    <a href="mailto:<?= $email_cong_ty?>"><?= $email_cong_ty?></a>
+                                                    <a href="mailto:<?= $email_cong_ty ?>"><?= $email_cong_ty ?></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -64,16 +64,16 @@
                                             <input type="radio" onclick="yesnoCheck();" name="payment_method" value="3" id="payonline" />
                                             <label for="">Thanh Toán Online</label>
                                             <div id="payment_payonline" style="display:none" class=" payment_info">
-                                            <p>THÔNG TIN THANH TOÁN
+                                                <p>THÔNG TIN THANH TOÁN
                                                     <br>
                                                     <strong>Trụ Sở:</strong>
-                                                   <?= $dia_chi_cong_ty?>
+                                                    <?= $dia_chi_cong_ty ?>
                                                     <br>
                                                     <strong> Số Điện Thoại:</strong>
-                                                    <a href="tel:<?= $fax?>"> <?= $fax?></a>
+                                                    <a href="tel:<?= $fax ?>"> <?= $fax ?></a>
                                                     <br>
                                                     <strong> Email:</strong>
-                                                    <a href="mailto:<?= $email_cong_ty?>"><?= $email_cong_ty?></a>
+                                                    <a href="mailto:<?= $email_cong_ty ?>"><?= $email_cong_ty ?></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -97,11 +97,11 @@
                                     <div class="cart-list-body">
                                         <div class="cart-item ">
                                             <div class="img-tour">
-                                                <a href="<?= ROOT?>tour/tourdetail?mamien=<?= $ma_mien?>&&matour=<?= $ma_tour?>&&tentour=<?= $ten_tour?>"><img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh_dai_dien_tour ?> " class=" img-thumbnail" alt=""></a>
+                                                <a href="<?= ROOT ?>tour/tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"><img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh_dai_dien_tour ?> " class=" img-thumbnail" alt=""></a>
                                             </div>
                                             <div class="info-tour">
                                                 <div class="caption">
-                                                    <a class="title-tour-cart title-tour " href="<?= ROOT?>tour/tourdetail?mamien=<?= $ma_mien?>&&matour=<?= $ma_tour?>&&tentour=<?= $ten_tour?>">
+                                                    <a class="title-tour-cart title-tour " href="<?= ROOT ?>tour/tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>">
                                                         <p>Du Lịch <?= $ten_tour ?></p>
                                                     </a>
                                                     <p><strong>Ngày Khởi Hành:</strong>
@@ -110,14 +110,21 @@
                                                     <p>
                                                         <i class="fa fa-users"></i>
                                                         Số chỗ còn:
-                                                        <span><?= $so_cho ?></span>
+                                                        <span id="so_cho" data-so-cho="<?= $so_cho ?>"><?= $so_cho ?></span>
                                                     </p>
                                                     <div class="cart-detail">
                                                         <div class="line-price">
-                                                            <strong>người </strong>
-                                                            <input type="number" min="1" value="1" name="so_nguoi" max="<?= $so_cho ?>" id="qty" onclick="calculate()">
-                                                            <span class="item-price" id="pro" data-price=" <?= $gia_tien?>">*<?= currency_format($gia_tien)?>=</span>
-                                                            <strong class="line-total money"> <?= currency_format($gia_tien)?>
+                                                            <strong>Người lớn </strong>
+                                                            <input type="number" min="1" value="1" name="nguoi_lon" max="<?= $so_cho ?>" id="qtyLon" onclick="calculateLon()">
+                                                            <span class="item-price" id="proLon" data-price=" <?= $gia_tien ?>">*<?= currency_format($gia_tien) ?>=</span>
+                                                            <strong class="line-total money"> <?= currency_format($gia_tien) ?>
+                                                            </strong>
+                                                        </div>
+                                                        <div class="line-price">
+                                                            <strong>Trẻ em (< 11 tuổi) </strong>
+                                                            <input type="number" min="0" value="0" name="tre_em" max="<?= $so_cho ?>" id="qtyNho" onclick="calculateNho()">
+                                                            <span class="item-price" id="proNho" data-price="0">*0VND=</span>
+                                                            <strong class="line-total">0VND
                                                             </strong>
                                                         </div>
                                                     </div>
@@ -125,29 +132,29 @@
                                                     <div class="cart-item-total d-flex justify-content-between">
                                                         <span>Tổng</span>
                                                         <strong class="total money" style="color: #FFC10E;">
-                                                        <?= currency_format($gia_tien)?></strong>
+                                                            <?= currency_format($gia_tien) ?></strong>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                <!-- handle -->
+                                    <!-- handle -->
 
-                                <div class="to" style="padding-top: 10px;">
-                                    <div class="cart-total">
-                                        <div class="">
-                                            <button type="submit" name="btn-pay" class="btn btn-primary">Thanh Toán </button>
-                                        </div>
-                                        <div>
-                                            <p> Tổng Cộng:
-                                                <span class="money"> <?= currency_format($gia_tien)?></span>
-                                            </p>
-                                            <textarea class="value_pay_of_customer_none moneyForm" type="text" name="tien_none"><?= $gia_tien?></textarea>
-                                            <input class="value_pay_of_customer_none" type="text" name="id_tour_lite_none" value="<?= $id_tour_lite?>">
-                                            <input class="value_pay_of_customer_none" type="text" name="ma_tour_none" value="<?= $ma_tour?>">
+                                    <div class="to" style="padding-top: 10px;">
+                                        <div class="cart-total">
+                                            <div class="">
+                                                <button type="submit" name="btn-pay" class="btn btn-primary" >Thanh Toán </button>
+                                            </div>
+                                            <div>
+                                                <p> Tổng Cộng:
+                                                    <span class="money"> <?= currency_format($gia_tien) ?></span>
+                                                </p>
+                                                <textarea class="value_pay_of_customer_none moneyForm" type="text" name="tien_none"><?= $gia_tien ?></textarea>
+                                                <input class="value_pay_of_customer_none" type="text" name="id_tour_lite_none" value="<?= $id_tour_lite ?>">
+                                                <input class="value_pay_of_customer_none" type="text" name="ma_tour_none" value="<?= $ma_tour ?>">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php endforeach ?>
 
                             </div>

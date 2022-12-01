@@ -90,24 +90,54 @@ function yesnoCheck() {
   }
 }
 //tinh tong
-function calculate() {
-  var pricebl = document.getElementById("pro");
-  var qtyinput = document.getElementById("qty");
-  var price = Number(pricebl.getAttribute("data-price"));
-  var qty = Number(qtyinput.value);
-  var moneyspan = document.querySelectorAll(".money");
-  var moneyForm = document.querySelectorAll(".moneyForm");
+var priceLon = document.getElementById("proLon");
+var priceNho = document.getElementById("proNho");
+var so_cho = document.getElementById("so_cho").getAttribute("data-so-cho");
+var data_price_lon = priceLon.getAttribute("data-price");
 
+var moneyspan = document.querySelectorAll(".money");
+var moneyForm = document.querySelectorAll(".moneyForm");
+var btn_pay = document.getElementsByName("btn-pay");
+
+function calculateLon() {
+  var qtyLon = document.getElementById("qtyLon").value;
+  var qtyNho = document.getElementById("qtyNho").value;
+  var qtyTotal = Number(qtyLon) + Number(qtyNho);
+  if (qtyTotal > so_cho) {
+    alert("Số chỗ vượt quá số chỗ còn ");
+    btn_pay.forEach((element) => {
+      element.setAttribute("disabled", true);
+    });
+  } else {
+    btn_pay.forEach((element) => {
+      element.removeAttribute("disabled");
+    });
+  }
   moneyspan.forEach((element) => {
-    var resultMoney = price * qty + "VND";
+    var resultMoney =
+      Number(priceLon.getAttribute("data-price")) * qtyLon + "VND";
     const format = resultMoney.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     element.innerHTML = format;
-    
   });
-  
+
   moneyForm.forEach((element) => {
-    var resultMoneyForm = price * qty
+    var resultMoneyForm = priceLon.getAttribute("data-price") * qtyLon;
     element.innerHTML = resultMoneyForm;
-    
   });
+}
+
+function calculateNho() {
+  var qtyLon = document.getElementById("qtyLon").value;
+  var qtyNho = document.getElementById("qtyNho").value;
+  var qtyTotal = Number(qtyLon) + Number(qtyNho);
+  if (qtyTotal > so_cho) {
+    alert("Số chỗ vượt quá số chỗ còn ");
+    btn_pay.forEach((element) => {
+      element.setAttribute("disabled", true);
+    });
+  } else {
+    btn_pay.forEach((element) => {
+      element.removeAttribute("disabled");
+    });
+  }
 }

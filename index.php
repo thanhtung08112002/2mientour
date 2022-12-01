@@ -97,6 +97,13 @@ switch ($url) {
             header("location: " . ROOT);
         }
         break;
+    case 'cart/cancel-success':
+        if (isset($_POST['btn-cancel'])) {
+            cancelTour($_GET['idthanhtoan'],$_GET['email']);
+        } else {
+            header("location: " . ROOT);
+        }
+        break;
     case 'admin':
         goToAdmin();
         break;
