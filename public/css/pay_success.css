@@ -1,0 +1,48 @@
+.payment-success{
+    margin-top: 4rem;
+}
+.payment-success{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+.payment-success-title{
+    background: #003d71;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.payment-successp-body{
+    font-size: 16px;
+    padding: 15px;
+}
+.payment-successp-body>p{
+    font-size: 16px;
+}
+.payment-successp-body .thanks{
+    color: #ffc10e;
+    font-weight: 700;
+}
+.payment-successp-body strong{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.payment-successp-body-tour .title-tour,.item-price{
+    font-size: 16px;
+}
+.payment-successp-body .money-tour{
+    text-align: right;
+}
+.payment-successp-body .money-tour .money{
+    font-size: 16px;
+}
+.break_line{
+    margin: 2rem auto;
+    height: 1px;
+    background: rgb(43, 42, 42);
+    width: 100%;
+}

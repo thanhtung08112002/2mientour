@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@font-face {
+    font-family: navFont-bold;
+    src: url("../font/text/Ubuntu/Ubuntu-Bold.ttf");
+  }
+  @font-face {
+    font-family: navFont-light;
+    src: url("../font/text/Ubuntu/Ubuntu-Light.ttf");
+  }
+:root {
+    --primary-color:  #003d71;
+    --color-rgba:rgba(0,61,113,.8);
+    --brand-color-secondary1: #374151;
+    --brand-color-secondary2: #fd4e5d;
+    --brand-color-secondary3: #000000;
+    --text-color: #182233;
+    --gray-color-black: #000000;
+    --gray-color-gray1: #1f2937;
+    --gray-color-gray2: #374151;
+    --gray-color-gray3: #4b5563;
+    --gray-color-gray4: #6b7280;
+    --gray-color-gray5: #9ca3af;
+    --gray-color-gray6: #d1d5db;
+    --gray-color-gray7: #f3f4f6;
+  }
+.container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+header {
+    position: fixed;
+    background-color: var(--primary-color);
+    margin-left: -15px;
+    margin-right: -15px;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.header_logo {
+    padding: 5px 0px;
+}
+
+.header_logo img {
+    width: 160px;
+    height: 57px;
+}
+.header_nav{
+  display: flex;
+  justify-content: flex-end;
+}
+.header_nav ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.header_nav ul li {
+    position: relative;
+    float: left;
+}
+
+.header_nav ul li a {
+    font-size: 1.8rem;
+    padding: 20px;
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+.header_nav-mien,.header_nav-mien ~ ul li a{
+    font-size: 1.8rem;
+    padding: 20px;
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    font-family: navFont-bold;
+    color: #000 !important;
+}
+.header_nav ul li a:hover {
+    color: #e5d419;
+}
+
+.header_nav li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    left: 0;
+    bottom: 0;
+    background-color: #ddf40f;
+    transform: scale(0, 1);
+    /*(độ lớn,độ cao)*/
+    transform-origin: 0 100%;
+    /*đi từ vị trí 0 -> 100%*/
+    transition: all 0.3s ease-in-out;
+}
+
+.header_nav li a:hover::after {
+    transform: scale(1, 1);
+    transition: all 0.3s ease-in-out;
+}
+
+.header_nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 150px;
+    background: #f2f4f9;
+    display: none;
+}
+
+.header_nav ul li ul li {
+    width: 100%;
+    border-top: 1px solid rgb(126, 117, 117);
+}
+
+.header_nav ul li ul li ul {
+    width: 200px;
+    left: 150px;
+    top: 0;
+}
+
+.header_nav ul li:focus-within>ul,
+.header_nav ul li:hover>ul {
+    display: initial;
+}
+
+#menu-nav {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: #e5d419;
+    cursor: pointer;
+    display: none;
+}
+
+
+  
