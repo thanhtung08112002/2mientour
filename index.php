@@ -98,6 +98,7 @@ switch ($url) {
             error_404();
         }
         break;
+        //có thanh toán vnp
     case 'cart/pay-success':
         if (isset($_POST['btn-pay']) && $_POST['payment_method'] == '3') {
             goVNPay($_POST);
@@ -108,6 +109,12 @@ switch ($url) {
             header("location: " . ROOT);
         }
         break;
+        // case 'vnpay_php/vnpay_return.php':
+        //     showVNPaySuccess($_GET);
+        //     break;
+            
+        //có thanh toán vnp
+
     case 'cart/cancel-success':
         if (isset($_POST['btn-cancel'])) {
             cancelTour($_GET['idthanhtoan'], $_GET['email']);
