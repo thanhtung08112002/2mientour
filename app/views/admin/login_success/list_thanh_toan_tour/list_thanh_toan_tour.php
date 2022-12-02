@@ -12,8 +12,9 @@
                 <th>SĐT</th>
                 <th>Email</th>
                 <th>Địa chỉ</th>
+                <th>Người lớn</th>
+                <th>Trẻ em</th>
                 <th>Phương thức thanh toán</th>
-                <th>Số lượng</th>
                 <th>Thành tiền</th>
                 <th>Chức năng</th>
             </tr>
@@ -30,8 +31,9 @@
                     <td><?= $sdt ?></td>
                     <td><?= $email ?></td>
                     <td><?= $dia_chi ?></td>
+                    <td><?= $nguoi_lon ?></td>
+                    <td><?= $tre_em ?></td>
                     <td><?= $ten_phuong_thuc ?></td>
-                    <td><?= $so_luong ?></td>
                     <td><?= $thanh_tien ?></td>
                     <td>
                         <a href="edit_thanh_toan?id=<?= $id_thanh_toan ?>" class="link-action btn-default" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a> |
