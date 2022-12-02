@@ -25,6 +25,7 @@ require_once 'app/controllers/admin/list.php';
 require_once 'app/controllers/client/phpMailer_pay_success.php';
 require_once 'app/controllers/client/controllers.php';
 require_once 'app/controllers/client/page_home.php';
+require_once 'app/controllers/client/introduction.php';
 require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/list_tour.php';
 require_once 'app/controllers/client/list_diem_den.php';
@@ -46,6 +47,8 @@ require_once 'app/models/account_admin.php';
 require_once 'app/models/dang_ky_nhan_uu_dai.php';
 require_once 'app/models/cart.php';
 require_once 'app/models/thanh_toan_tour.php';
+require_once 'app/models/dong_gop_y_kien.php';
+
 
 
 
@@ -80,6 +83,16 @@ switch ($url) {
     case 'lienhe':
         showContact();
         break;
+    case 'gioithieu':
+        showIntroduction();
+        break;
+    case 'send_note':
+        if (isset($_POST['btn-send'])) {
+            addNote();
+        } else {
+            header("location: " . ROOT);
+        }
+        break;
     case 'tour/tourdetail':
         if (isset($_GET['matour'])) {
             showTourDetail($_GET['matour']);
@@ -112,7 +125,7 @@ switch ($url) {
         // case 'vnpay_php/vnpay_return.php':
         //     showVNPaySuccess($_GET);
         //     break;
-            
+
         //có thanh toán vnp
 
     case 'cart/cancel-success':

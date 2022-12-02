@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?= ROOT?>public/css/resultSearch.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/contact.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/cart.css" />
+  <link rel="stylesheet" href="<?= ROOT?>public/css/introduction.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/pay_success.css" />
   <link rel="stylesheet" href="<?= ROOT?>public/css/responsive.css" />
   <title>2mientour</title>

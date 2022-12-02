@@ -1,0 +1,14 @@
+.banner-introduction {
+    position: relative;
+  }
+  .banner-introduction > h2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    color: #000;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
