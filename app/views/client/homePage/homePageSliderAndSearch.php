@@ -27,7 +27,7 @@
     <div class="search container">
       <form class="form_search" method="GET" action="tour/result-search">
         <select id="inputState" class="search_input" name="listCity">
-          <option value="">Thành phố</option>
+          <option value="">Tất cả</option>
           <?php
           foreach ($getAllThanhPho as $item) :
           ?>

@@ -26,7 +26,7 @@
                         <div class="contact">
                             <div class="contact-heading">
                                 <i class="fa fa-building-o"></i>
-                                Lien he
+                                Liên hệ
                             </div>
                             <div class="contact-content">
                                 <ul style="list-style: none; padding-left: 0">

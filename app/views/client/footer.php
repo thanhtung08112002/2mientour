@@ -23,11 +23,11 @@
           <h3>Du lịch <?= $ten_mien ?></h3>
 
           <ul>
-            <?php foreach ($getAgetAllMienWithCity as $item_thanh_pho) : ?>
+            <?php foreach ($getAllMienWithCity as $item_thanh_pho) : ?>
               <?php extract($item_thanh_pho) ?>
               <?php if ($item_thanh_pho['ma_mien'] == $item['ma_mien']) {?>
                 <!-- fixing -->
-               <li><a href="<?= ROOT.'diemden/ma-thanh-pho='.$ma_thanh_pho?>"> <?= $ten_thanh_pho?></a></li>
+               <li><a href="<?= ROOT?>tour/tourdetail?mamien=<?= $ma_mien ?>&&matour=<?= $ma_tour ?>&&tentour=<?= $ten_tour ?>"> <?= ucwords($ten_tour)?></a></li>
                 <!-- fixing -->
               <?php } ?>
             <?php endforeach ?>

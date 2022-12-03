@@ -2,6 +2,6 @@
 
 $mien =getAllMien();
 
-$getAgetAllMienWithCity =getAllMienWithCity();
+$getAllMienWithCity =getAllMienWithCity();
 
 ?>

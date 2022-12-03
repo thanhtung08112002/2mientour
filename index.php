@@ -9,12 +9,14 @@ require_once 'app/config.php';
 #Controllers admin
 require_once 'app/controllers/admin/controllers_admin.php';
 require_once 'app/controllers/admin/admin.php';
+require_once 'app/controllers/admin/admin_list_tour.php';
 require_once 'app/controllers/admin/admin_page.php';
 require_once 'app/controllers/admin/mien.php';
 require_once 'app/controllers/admin/thanhpho.php';
 require_once 'app/controllers/admin/list.php';
 
-
+#Models admin
+require_once 'app/models/admin_list_tour.php';
 
 
 
@@ -30,6 +32,7 @@ require_once 'app/controllers/client/tour_detail.php';
 require_once 'app/controllers/client/list_tour.php';
 require_once 'app/controllers/client/list_diem_den.php';
 require_once 'app/controllers/client/contact.php';
+require_once 'app/controllers/client/news.php';
 require_once 'app/controllers/client/cart.php';
 require_once 'app/controllers/client/error_404.php';
 require_once 'app/controllers/client/congthanhtoan.php';
@@ -42,12 +45,15 @@ require_once 'app/models/thong_tin_cong_ty.php';
 require_once 'app/models/khoa_tour_chi_tiet.php';
 require_once 'app/models/thanh_pho.php';
 require_once 'app/models/slider.php';
+require_once 'app/models/news.php';
 require_once 'app/models/mien.php';
 require_once 'app/models/account_admin.php';
 require_once 'app/models/dang_ky_nhan_uu_dai.php';
 require_once 'app/models/cart.php';
 require_once 'app/models/thanh_toan_tour.php';
 require_once 'app/models/dong_gop_y_kien.php';
+require_once 'app/models/vnpay.php';
+
 
 
 
@@ -83,6 +89,9 @@ switch ($url) {
     case 'lienhe':
         showContact();
         break;
+    case 'tintuc':
+        showNews();
+        break;
     case 'gioithieu':
         showIntroduction();
         break;
@@ -96,6 +105,13 @@ switch ($url) {
     case 'tour/tourdetail':
         if (isset($_GET['matour'])) {
             showTourDetail($_GET['matour']);
+        } else {
+            header("location: " . ROOT);
+        }
+        break;
+    case 'tintuc/tintucdetail':
+        if (isset($_GET['id'])) {
+            showTintucDetail($_GET['id']);
         } else {
             header("location: " . ROOT);
         }
@@ -114,6 +130,7 @@ switch ($url) {
         //có thanh toán vnp
     case 'cart/pay-success':
         if (isset($_POST['btn-pay']) && $_POST['payment_method'] == '3') {
+
             goVNPay($_POST);
         } else
         if (isset($_POST['btn-pay'])) {
@@ -122,9 +139,9 @@ switch ($url) {
             header("location: " . ROOT);
         }
         break;
-        // case 'vnpay_php/vnpay_return.php':
-        //     showVNPaySuccess($_GET);
-        //     break;
+    case 'vnpay_php/vnpay_return.php':
+        showVNPaySuccess();
+        break;
 
         //có thanh toán vnp
 
@@ -135,23 +152,7 @@ switch ($url) {
             header("location: " . ROOT);
         }
         break;
-    case 'admin':
-        goToAdmin();
-        break;
-    case 'admin_page':
-        if (isset($_SESSION['login_success'])) {
-            admin_page();
-        } else {
-            error_404();
-        }
-        break;
-    case 'check_login':
-        if (isset($_POST['btn-login'])) {
-            checkLogin();
-        } else {
-            error_404();
-        }
-        break;
+
 
     case 'tour/result-search':
         if (isset($_GET['btn_search_tour'])) {
@@ -183,9 +184,61 @@ switch ($url) {
 
 
         //admin
+    case 'admin':
+        goToAdmin();
+        break;
+
+    case 'check_login':
+        if (isset($_POST['btn-login'])) {
+            checkLogin();
+        } else {
+            error_404();
+        }
+        break;
+    case 'admin_page':
+        if (isset($_SESSION['login_success'])) {
+            admin_page();
+        } else {
+            error_404();
+        }
+        break;
     case "admin_page/mien":
         showMien();
         break;
+
+
+        //danh sách tour
+    case "admin_list_tour":
+        show_admin_list();
+        break;
+    case "admin_list_tour/":
+        if ($_GET['ma-mien']) {
+            show_admin_list_mien($_GET['ma-mien']);
+            break;
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+    case "admin_list_tour/mien/":
+        if ($_GET['ma-thanh-pho']) {
+            show_admin_list_tour($_GET['ma-thanh-pho']);
+            break;
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+    case "admin_list_tour/mien/thanh_pho/":
+        if ($_GET['ma-tour']) {
+            show_admin_list_tour_detail($_GET['ma-tour']);
+            break;
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+    case "admin_list_tour/add-tour":
+        show_admin_add_tour();
+        break;
+
+        //end danh sách tour
+
+
 
     case "admin_page/thanhpho":
         if (isset($_GET['mamien'])) {
@@ -205,7 +258,10 @@ switch ($url) {
             showListThanhToan($_GET['matour']);
         }
         break;
-        break;
+
+
+
+
         //fix
     case 'fix':
         fix();

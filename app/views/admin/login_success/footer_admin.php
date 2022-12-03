@@ -8,6 +8,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <!-- Bootstrap core JavaScript-->
+    <script src="<?= ROOT?>public/js/vendor/jquery/jquery.min.js"></script>
+    <script src="<?= ROOT?>public/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?= ROOT?>public/js/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?= ROOT?>public/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="<?= ROOT?>public/js/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?= ROOT?>public/js/demo/chart-area-demo.js"></script>
+    <script src="<?= ROOT?>public/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

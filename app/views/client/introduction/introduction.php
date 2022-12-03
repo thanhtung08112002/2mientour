@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="introduce-img">
-                        <img alt="Thư ngỏ tổng giám đốc" src="<?=ROOT?>public/images/thu.png">
+                        <img alt="Thư ngỏ tổng giám đốc" src="<?=ROOT?>public/images/thu.jpg">
                     </div>
                 </div>
             </div>

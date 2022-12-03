@@ -10,7 +10,7 @@ require_once 'app/controllers/client/controllers.php';
 require_once 'app/models/thanh_toan_tour.php';
 function showPaySuccess()
 {
-    if (isset($_POST['btn-pay'])) {
+    if (isset($_POST['btn-pay']) ) {
         extract($_POST);
         $data = [
             $ma_tour_none,
@@ -34,11 +34,11 @@ function showPaySuccess()
         $content_email = "<p>2 miền tour cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.</p>
         <p> Thông tin đơn tour của bạn gồm:<br>
         
-        -Du lịch ".ucwords($ten_tour)."<br>
-        -Ngày khởi hành ".date_handler($ngay_khoi_hanh)."<br>
+        -Du lịch " . ucwords($ten_tour) . "<br>
+        -Ngày khởi hành " . date_handler($ngay_khoi_hanh) . "<br>
         -Người lớn: $nguoi_lon người<br>
         -Trẻ em: $tre_em người<br>
-        -Tổng tiền thanh toán: ".currency_format($thanh_tien)."<br>
+        -Tổng tiền thanh toán: " . currency_format($thanh_tien) . "<br>
         Thông tin liên hệ<br>
         -Họ tên: $ho_ten <br>
         -Số điện thoại $sdt <br>
@@ -64,7 +64,8 @@ function showPaySuccess()
         render('pay_success', ['getThanhToanTourGanNhat' => $getThanhToanTourGanNhat]);
     }
 }
-function cancelTour($id_thanh_toan,$email){
+function cancelTour($id_thanh_toan, $email)
+{
     extract($_POST);
     $getThanhToanTourGanNhat = getThanhToanTourGanNhat();
     foreach ($getThanhToanTourGanNhat as $item) {
@@ -72,7 +73,7 @@ function cancelTour($id_thanh_toan,$email){
     }
     extract($infor);
     cancelTourThanhToan($id_thanh_toan);
- 
+
     $subject_email = 'Thông báo hủy tour thành công từ 2 miền tour';
     $content_email = "<p>2 miền tour cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.</p>
     <p> Lý do hủy tour của bạn:<br> $content_cancel</p>

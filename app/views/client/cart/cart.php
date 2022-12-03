@@ -64,16 +64,11 @@
                                             <input type="radio" onclick="yesnoCheck();" name="payment_method" value="3" id="payonline" />
                                             <label for="">Thanh Toán Online</label>
                                             <div id="payment_payonline" style="display:none" class=" payment_info">
-                                                <p>THÔNG TIN THANH TOÁN
+                                                <p>HÌNH THỨC THANH TOÁN
                                                     <br>
-                                                    <strong>Trụ Sở:</strong>
-                                                    <?= $dia_chi_cong_ty ?>
+                                                    <strong>Thanh toán bằng VNPAY</strong>
                                                     <br>
-                                                    <strong> Số Điện Thoại:</strong>
-                                                    <a href="tel:<?= $fax ?>"> <?= $fax ?></a>
-                                                    <br>
-                                                    <strong> Email:</strong>
-                                                    <a href="mailto:<?= $email_cong_ty ?>"><?= $email_cong_ty ?></a>
+                                                    <Strong style="color:red">Vui lòng kiểm tra tour trước khi thanh toán</Strong>
                                                 </p>
                                             </div>
                                         </div>

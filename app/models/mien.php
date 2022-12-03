@@ -12,17 +12,38 @@ function getAllMien() {
 //lấy toàn bộ bảng thành phố với miền
 function getAllMienWithCity() {
     $conn = connection();
-    $sql = "SELECT * from du_lich_trong_nuoc dltn join du_lich_theo_thanh_pho dlttp on dltn.ma_mien = dlttp.ma_mien ";
+    $sql = "SELECT * from du_lich_trong_nuoc dltn join du_lich_theo_thanh_pho dlttp on dltn.ma_mien = dlttp.ma_mien JOIN khoa_tour_chi_tiet ON khoa_tour_chi_tiet.ma_thanh_pho = dlttp.ma_thanh_pho ";
     $stmt = $conn -> prepare($sql);
     $stmt -> execute();
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//lấy toàn bộ bảng thành phố với miền
+function getInforWithMaMien($value_list) {
+    $conn = connection();
+    $sql = "SELECT * from du_lich_trong_nuoc WHERE ma_mien = '$value_list' ";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+//lấy toàn danh sách tour của  miền
+function filterTourWithMaMien($value_list) {
+    $conn = connection();
+    $sql = "SELECT * FROM `du_lich_trong_nuoc` JOIN du_lich_theo_thanh_pho on du_lich_theo_thanh_pho.ma_mien = du_lich_trong_nuoc.ma_mien JOIN khoa_tour_chi_tiet ON khoa_tour_chi_tiet.ma_thanh_pho = du_lich_theo_thanh_pho.ma_thanh_pho WHERE du_lich_trong_nuoc.ma_mien = '$value_list'";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
 
 //lấy thông tin với mã miền
-function getInforWithMaMien($mamien) {
+function getInforCityWithMaMien($mamien) {
     $conn = connection();
-    $sql = "SELECT * from du_lich_trong_nuoc WHERE ma_mien = '$mamien'";
+    $sql = "SELECT * from du_lich_theo_thanh_pho WHERE ma_mien = '$mamien'";
     $stmt = $conn -> prepare($sql);
     $stmt -> execute();
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
@@ -30,10 +51,10 @@ function getInforWithMaMien($mamien) {
 }
 
 
-//lọc tour với mã miền
-function filterTourWithMaMien($mamien) {
+//lọc tour với mã thành phố
+function filterTourWithMaThanhPho($mathanhpho) {
     $conn = connection();
-    $sql = "SELECT * FROM du_lich_theo_thanh_pho JOIN khoa_tour_chi_tiet ON du_lich_theo_thanh_pho.ma_thanh_pho = khoa_tour_chi_tiet.ma_thanh_pho WHERE ma_mien = '$mamien'";
+    $sql = "SELECT * FROM du_lich_theo_thanh_pho JOIN khoa_tour_chi_tiet ON du_lich_theo_thanh_pho.ma_thanh_pho = khoa_tour_chi_tiet.ma_thanh_pho JOIN dia_diem_khoi_hanh ON khoa_tour_chi_tiet.ma_dia_diem_khoi_hanh = dia_diem_khoi_hanh.ma_dia_diem_khoi_hanh JOIN danh_sach_tour_hot ON danh_sach_tour_hot.ma_so_hot = khoa_tour_chi_tiet.ma_so_hot WHERE du_lich_theo_thanh_pho.ma_thanh_pho = '$mathanhpho'";
     $stmt = $conn -> prepare($sql);
     $stmt -> execute();
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);

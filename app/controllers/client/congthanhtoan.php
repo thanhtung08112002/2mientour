@@ -22,7 +22,7 @@ function goVNPay($value)
     //end config
 
     $vnp_TxnRef = time(); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-    $vnp_OrderInfo = 'Thanh toán tour bằng vnpay';
+    $vnp_OrderInfo = "Thanh toán tour bằng vnpay";
     $vnp_OrderType = 'other';
     $vnp_Amount =  $tien_none * 100;
     $vnp_Locale = 'vn';
@@ -63,7 +63,7 @@ function goVNPay($value)
         "vnp_OrderInfo" => $vnp_OrderInfo,
         "vnp_OrderType" => $vnp_OrderType,
         "vnp_ReturnUrl" => $vnp_Returnurl,
-        "vnp_TxnRef" => $vnp_TxnRef
+        "vnp_TxnRef" => $vnp_TxnRef,
         // "vnp_ExpireDate" => $vnp_ExpireDate,
         // "vnp_Bill_Mobile" => $vnp_Bill_Mobile,
         // "vnp_Bill_Email" => $vnp_Bill_Email,
@@ -72,10 +72,7 @@ function goVNPay($value)
         // "vnp_Bill_Address" => $vnp_Bill_Address,
         // "vnp_Bill_City" => $vnp_Bill_City,
         // "vnp_Bill_Country" => $vnp_Bill_Country,
-        // "vnp_Inv_Phone" => $vnp_Inv_Phone,
-        // "vnp_Inv_Email" => $vnp_Inv_Email,
-        // "vnp_Inv_Customer" => $vnp_Inv_Customer,
-        // "vnp_Inv_Address" => $vnp_Inv_Address,
+   
         // "vnp_Inv_Company" => $vnp_Inv_Company,
         // "vnp_Inv_Taxcode" => $vnp_Inv_Taxcode,
         // "vnp_Inv_Type" => $vnp_Inv_Type
@@ -113,26 +110,27 @@ function goVNPay($value)
     );
     if (isset($_POST['payment_method'])) {
         header('Location: ' . $vnp_Url);
-        die();
     } else {
         echo json_encode($returnData);
     }
 }
-// function showVNPaySuccess($_GET)
-// {
+function showVNPaySuccess()
+{
+    
+    render('VNPaySuccess');
+    $data = [$_GET['vnp_TransactionNo'],$_GET['vnp_TxnRef'],substr($_GET['vnp_Amount'],0,-2),$_GET['vnp_BankCode'],$_GET['vnp_OrderInfo'],'thành công','không',$_GET['vnp_PayDate']];
+    addVNPay($data);
+}
 
-//     render('showVNPaySuccess',['value_VNPay' => $_GET]);
-// }
-
-// vnp_Amount=600000000&
+// vnp_Amount=2000000000&
 // vnp_BankCode=NCB&
-// vnp_BankTranNo=VNP13893057&
+// vnp_BankTranNo=VNP13893921&
 // vnp_CardType=ATM&
 // vnp_OrderInfo=Thanh+toán+tour+bằng+vnpay&
-// vnp_PayDate=20221202121725&
+// vnp_PayDate=20221203144240&
 // vnp_ResponseCode=00&
 // vnp_TmnCode=LVBGWK85&
-// vnp_TransactionNo=13893057&
+// vnp_TransactionNo=13893921&
 // vnp_TransactionStatus=00&
-// vnp_TxnRef=1669958228&
-// vnp_SecureHash=ff3080a3b79c1c15d107dd58c5bebb5a666199d07e22711339cecbdb6d096dbf03cc9aa98a13c00747731295012eab164b6b40f5dbb693ba665cabf76c3e3cc7
+// vnp_TxnRef=1670053340&
+// vnp_SecureHash=dda4dc4fa09f521d513f9aa08f4cf5839aae8321ffe408c27507d266210359d6e6b314b2f36b18319055fd5b50ceb239e349a3f83d1c4a16f948d925aeef00e7

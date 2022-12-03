@@ -84,7 +84,7 @@ function informationTour($ma_tour) {
 //tourdetail
 function tourDetail($ma_tour) {
     $conn = connection();
-    $sql = "SELECT * FROM khoa_tour_lite ktl join chi_tiet_tour_lite cttl on ktl.id_tour_lite = cttl.id_tour_lite WHERE ktl.ma_tour = '$ma_tour' ";
+    $sql = "SELECT * FROM khoa_tour_chi_tiet ktct join chi_tiet_tour_lite cttl on ktct.ma_tour = cttl.ma_tour WHERE ktct.ma_tour = '$ma_tour' ";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
