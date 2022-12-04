@@ -17,7 +17,7 @@
         <div class="login ">
             <form class="shadow" action="check_login" method="POST">
                 <div class="logo">
-                    <img src="./public/images/logo_header.jpg" alt="" class="img-thumbnail">
+                    <img src="./public/images/logo.png" alt="" class="img-thumbnail">
                     <h3 class=" text-center">
                         Đăng Nhập
                     </h3>

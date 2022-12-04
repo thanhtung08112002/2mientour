@@ -22,7 +22,7 @@ function nhan_vien_delete($id)
 function nhan_vien_insert($data = [])
 {
     $conn = connection();
-    $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES(?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
         header("location:list_nhan_vien");
@@ -32,11 +32,10 @@ function nhan_vien_insert($data = [])
 function add_number($valueAddNumber)
 {
     $conn = connection();
-    $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES (?, ?, ?, ?, ?, ?,?)";
+    $sql = "INSERT INTO `ban_quan_ly_theo_mien` (`ma_mien`,`ten_quan_ly_mien`, `sdt`, `que_quan`, `anh_dai_dien`, `ma_chuc_vu`, `ngay_thang_nam_sinh`) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($valueAddNumber)) {
         header("Location:list_nhan_vien");
-
     }
 }
 // fuction save edit nhân viên
@@ -48,6 +47,16 @@ function save_edit_list($data = [], $id)
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
         header("Location:list_nhan_vien");
-     
     }
 }
+
+
+// function nhan_vien_id($ma_quan_ly_mien)
+// {
+//     $conn = connection();
+//     $sql = "SELECT * FROM ban_quan_ly_theo_mien bqltm JOIN chuc_vu cv on bqltm.ma_chuc_vu = cv.ma_chuc_vu WHERE ma_quan_ly_mien = ?";
+//     $stmt = $conn->prepare($sql);
+//     $stmt->execute([$ma_quan_ly_mien]);
+//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+//     return $result;
+// }

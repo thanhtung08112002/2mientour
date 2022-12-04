@@ -8,7 +8,7 @@ function admin_page() {
 function delete_nhan_vien($id)
 {
     nhan_vien_delete($id);
-    header("Location:admin_page");
+    header("Location:list_nhan_vien");
 }
 // thêm nhân viên
 function show_them_nhan_vien()
@@ -66,3 +66,12 @@ function save_edit_nhan_vien($id)
     save_edit_list($data, $id);
     // var_dump($_POST);
 }
+
+
+// function test(){
+//     $ma_quan_ly_mien = $_GET['ma_quan_ly_mien'];
+//     $khac_hang = nhan_vien_id($ma_quan_ly_mien);
+     
+//     render_admin("edit_nhan_vien", ['khac_hang' => $khac_hang]);
+
+// }

@@ -11,16 +11,11 @@ require_once 'app/controllers/admin/admin.php';
 require_once 'app/controllers/admin/ban_quan_ly.php';
 require_once 'app/controllers/admin/account_admin.php';
 require_once 'app/controllers/admin/thanh_toan_tour.php';
-
-
-
-
-
+require_once 'app/controllers/admin/anh_tour.php';
+require_once 'app/controllers/admin/chuc_vu.php';
 
 
 #Views admin
-
-
 
 #Controllers client
 require_once 'app/controllers/client/controllers.php';
@@ -48,12 +43,7 @@ require_once 'app/models/du_lich_trong_nuoc.php';
 require_once 'app/models/thanh_toan_tour.php';
 require_once 'app/models/ma_giam_gia.php';
 require_once 'app/models/phuong_thuc_thanh_toan.php';
-
-
-
-
-
-
+require_once 'app/models/anh_tour.php';
 
 
 
@@ -77,6 +67,14 @@ switch ($url) {
         // trang đăng nhập admin
     case 'admin':
         goToAdmin();
+        break;
+        // trang đăng xuất admin
+    case 'logout':
+        if (isset($_SESSION['login_success'])) {
+            logout();
+        } else {
+            error_404();
+        }
         break;
         // chức năng đăng nhập
     case 'tourdetail':
@@ -239,8 +237,102 @@ switch ($url) {
             error_404();
         }
         break;
-
-
+        // bảng ảnh tour
+    case 'list_anh_tour':
+        if (isset($_SESSION['login_success'])) {
+            show_get_all_anh_tour();
+        } else {
+            error_404();
+        }
+        break;
+        // thêm  ảnh
+    case 'add_anh_tour':
+        if (isset($_SESSION['login_success'])) {
+            show_add_anh_tour();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_anh_tour':
+        if (isset($_SESSION['login_success'])) {
+            save_add_anh_tour();
+        } else {
+            error_404();
+        }
+        break;
+        // xóa ảnh
+    case 'delete_anh':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            delete_anh($id);
+        } else {
+            error_404();
+        }
+        break;
+        // edit ảnh
+    case 'edit_anh':
+        if (isset($_SESSION['login_success'])) {
+            show_edit_anh_tour();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_edit_anh':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            save_edit_anh($id);
+        } else {
+            error_404();
+        }
+        break;
+        // bảng chức vụ
+    case 'list_chuc_vu':
+        if (isset($_SESSION['login_success'])) {
+            show_list_chuc_vu();
+        } else {
+            error_404();
+        }
+        break;
+        // xóa chức vụ
+    case 'delete_chuc_vu':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            delete_chuc_vu($id);
+        } else {
+            error_404();
+        }
+        break;
+        // sửa chức vụ
+    case 'edit_chuc_vu':
+        if (isset($_SESSION['login_success'])) {
+            show_edit_chuc_vu();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_edit_chuc_vu':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            save_edit_chuc_vu($id);
+        } else {
+            error_404();
+        }
+        break;
+        // thêm chức vụ
+    case 'add_chuc_vu':
+        if (isset($_SESSION['login_success'])) {
+            show_add_chuc_vu();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_chuc_vu':
+        if (isset($_SESSION['login_success'])) {
+            save_add_chuc_vu();
+        } else {
+            error_404();
+        }
+        break;
     case 'tour/result-search':
         if (isset($_POST['btn_search_tour'])) {
             searchTour();

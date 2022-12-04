@@ -8,7 +8,7 @@
     <!-- bảng -->
     <div class="board">
         <div class="headline">
-            <h2>Thêm tài khoản</h2>
+            <h2>Thêm Thanh Toán Tour</h2>
         </div>
         <form action="save_account" method="post" enctype="multipart/form-data">
             <div class="row">
@@ -31,10 +31,11 @@
                     </div>
                 </div>
             </div>
-            <button class="btn" type="submit" name="btn_insert">Thêm</button>
+            <button class="btn btn-primary" type="submit" name="btn_insert">Thêm</button>
             <button class="btn"><a href="list_accounts">Danh sách</a></button>
         </form>
     </div>
-
     <!-- end bảng -->
+
+
 </article>

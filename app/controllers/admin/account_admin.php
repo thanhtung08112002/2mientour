@@ -43,3 +43,9 @@ function save_add_account()
     // var_dump($_POST);
     // echo"hello";
 }
+// đăng xuất
+function logout()
+{
+    session_unset();
+    header("location: admin");
+}
