@@ -29,9 +29,9 @@ function delete_tour()
 }
 
 
-function schedule_tour($id_tour_lite){
+function schedule_tour($ma_tour){
     $conn = connection();
-    $sql = "SELECT * FROM `chi_tiet_tour_lite` WHERE `id_tour_lite` = $id_tour_lite";
+    $sql = "SELECT * FROM `chi_tiet_tour_lite` WHERE ma_tour =  '$ma_tour'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

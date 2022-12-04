@@ -39,5 +39,36 @@
     </div>
     <br>
     <h2 class="h3 mb-2 text-gray-800">Lịch trình tour du lịch</h2>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã tour</th>
+                            <th>Ngày</th>
+                            <th>Nội dung ngày</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
+                        <?php $i = 1; ?>
+
+                        <?php foreach ($schedule_tour as $item) : ?>
+                            <?php extract($item) ?>
+                            <tr>
+                                <td><?= $i++ ?></td>
+                                <td><?= $ma_tour ?></td>
+                                <td><?= $ngay ?></td>
+                                <td><?= $noi_dung_ngay?></td>
+                                <td><a href="<?= ROOT?>admin_list_tour/mien/thanh_pho/?id-lich-trinh=<?= $id?>">Sửa</a>||<a href="">Xóa</a></td>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
