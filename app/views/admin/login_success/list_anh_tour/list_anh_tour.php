@@ -13,6 +13,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>STT</th>
                     <th>ID</th>
                     <th>Mã Tour</th>
                     <th>Ảnh</th>
@@ -20,8 +21,11 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1 ?>
                 <?php foreach ($anh_tour as $at) : ?>
                     <tr>
+                        <td><?= $i++ ?></td>
+
                         <td><?= $at['id'] ?></td>
                         <td><?= $at['ma_tour'] ?></td>
                         <td>

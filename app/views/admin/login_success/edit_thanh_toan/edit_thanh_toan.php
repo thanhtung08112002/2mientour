@@ -58,8 +58,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="">Số lượng</label>
-                        <input class="form-control" type="text" name="so_luong" placeholder="Theo phần trăm">
+                        <label for="">Trẻ em</label>
+                        <input class="form-control" type="text" name="tre_em">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Người lớn</label>
+                        <input class="form-control" type="text" name="nguoi_lon">
                     </div>
                     <div class="form-group">
                         <label for="">Thành tiền</label>

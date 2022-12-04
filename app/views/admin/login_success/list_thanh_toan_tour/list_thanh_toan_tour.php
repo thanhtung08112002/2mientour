@@ -13,16 +13,16 @@
         <table class="table">
             <thead>
                 <tr>
+                    <td>STT</td>
                     <td>ID Thanh Toán</td>
-                    <td>Mã Tour</td>
-                    <td>Tên thành phố</td>
+                    <td>Tên Tour</td>
                     <td>Họ Tên</td>
                     <td>Số Điện Thoại</td>
                     <td>Email</td>
                     <td>Địa Chỉ</td>
-                    <td>ID Mã Giảm Giá</td>
+                    <td>Người lớn</td>
+                    <td>Trẻ em</td>
                     <td>Phương Thức Thanh Toán</td>
-                    <td>Số Lượng</td>
                     <td>Thành Tiền</td>
                     <td>Chức năng</td>
                 </tr>
@@ -56,7 +56,6 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button class="btn" type="submit" name="btn_insert"><a href="#" class="btn-primary">Thêm</a></button>
     </div>
 
     <!-- end bảng -->

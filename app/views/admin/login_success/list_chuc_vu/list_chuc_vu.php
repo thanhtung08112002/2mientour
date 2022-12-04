@@ -13,14 +13,17 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>STT</th>
                     <th>Mã chức vụ</th>
                     <th>Tên chức vụ</th>
                     <th>Chức năng</th>
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1 ?>
                 <?php foreach ($chuc_vu as $cv) : ?>
                     <tr>
+                        <td><?= $i++ ?></td>
                         <td><?= $cv['ma_chuc_vu'] ?></td>
                         <td><?= $cv['ten_chuc_vu'] ?></td>
                         <td>

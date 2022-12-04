@@ -13,6 +13,12 @@ require_once 'app/controllers/admin/account_admin.php';
 require_once 'app/controllers/admin/thanh_toan_tour.php';
 require_once 'app/controllers/admin/anh_tour.php';
 require_once 'app/controllers/admin/chuc_vu.php';
+require_once 'app/controllers/admin/danh_sach_tour_hot.php';
+require_once 'app/controllers/admin/dia_diem_khoi_hanh.php';
+require_once 'app/controllers/admin/thong_tin_cong_ty.php';
+
+
+
 
 
 #Views admin
@@ -44,6 +50,10 @@ require_once 'app/models/thanh_toan_tour.php';
 require_once 'app/models/ma_giam_gia.php';
 require_once 'app/models/phuong_thuc_thanh_toan.php';
 require_once 'app/models/anh_tour.php';
+require_once 'app/models/danh_sach_tour_hot.php';
+require_once 'app/models/dia_diem_khoi_hanh.php';
+
+
 
 
 
@@ -83,9 +93,6 @@ switch ($url) {
         } else {
             error_404();
         }
-        break;
-    case 'admin':
-        goToAdmin();
         break;
 
     case 'check_login':
@@ -329,6 +336,88 @@ switch ($url) {
     case 'save_chuc_vu':
         if (isset($_SESSION['login_success'])) {
             save_add_chuc_vu();
+        } else {
+            error_404();
+        }
+        break;
+        // trang tour hot
+    case 'list_tour_hot':
+        if (isset($_SESSION['login_success'])) {
+            show_tour_hot();
+        } else {
+            error_404();
+        }
+        break;
+        //  trang địa điểm khởi hành
+    case 'list_dia_diem':
+        if (isset($_SESSION['login_success'])) {
+            show_all_dia_diem();
+        } else {
+            error_404();
+        }
+        break;
+        // xóa địa điểm
+    case 'delete_dia_diem':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            delete_dia_diem($id);
+        } else {
+            error_404();
+        }
+        break;
+        // sửa địa điểm
+    case 'edit_dia_diem':
+        if (isset($_SESSION['login_success'])) {
+            show_edit_dia_diem();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_edit_dia_diem':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            save_edit_dia_diem($id);
+        } else {
+            error_404();
+        }
+        break;
+        // thêm địa điểm
+    case 'add_dia_diem':
+        if (isset($_SESSION['login_success'])) {
+            show_add_dia_diem();
+        } else {
+            error_404();
+        }
+        break;
+
+    case 'save_dia_diem':
+        if (isset($_SESSION['login_success'])) {
+            save_add_dia_diem();
+        } else {
+            error_404();
+        }
+        break;
+
+        //  trang thông tin công ty
+    case 'list_thong_tin':
+        if (isset($_SESSION['login_success'])) {
+            show_get_thong_tin();
+        } else {
+            error_404();
+        }
+        break;
+        // sửa thông tin công ty
+    case 'edit_thong_tin':
+        if (isset($_SESSION['login_success'])) {
+            show_edit_thong_tin();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_edit_thong_tin':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            save_edit_thong_tin_cong_ty($id);
         } else {
             error_404();
         }

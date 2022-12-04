@@ -13,6 +13,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>STT</th>
                     <th>ID</th>
                     <th>Mã Miền</th>
                     <th>Tên quản lý miền</th>
@@ -25,8 +26,10 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1 ?>
                 <?php foreach ($ban_quan_ly as $bql) : ?>
                     <tr>
+                        <td><?= $i++ ?></td>
                         <td><?= $bql['ma_quan_ly_mien'] ?></td>
                         <td><?= $bql['ma_mien'] ?></td>
                         <td><?= $bql['ten_quan_ly_mien'] ?></td>
@@ -50,7 +53,7 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button class="btn " type="submit" name="btn_insert"><a href="add_nhan_vien" class="btn-primary">Thêm</a></button> 
+        <button class="btn " type="submit" name="btn_insert"><a href="add_nhan_vien" class="btn-primary">Thêm</a></button>
     </div>
 
     <!-- end bảng -->

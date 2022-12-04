@@ -8,32 +8,31 @@
     <!-- bảng -->
     <div class="board">
         <div class="headline">
-            <h2>DANH SÁCH ACCOUNTS</h2>
+            <h2>DANH SÁCH ĐỊA ĐIỂM</h2>
         </div>
         <table class="table">
             <thead>
                 <tr>
                     <th>STT</th>
-                    <th>ID Accounts</th>
-                    <th>Tài khoản</th>
-                    <th>Mật khẩu</th>
+                    <th>Mã địa điểm khởi hành</th>
+                    <th>Tên địa điểm khởi hành</th>
                     <th>Chức năng</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $i = 1 ?>
-                <?php foreach ($accounts as $acs) : ?>
+                <?php foreach ($dia_diem_khoi_hanh as $ddkh) : ?>
+         
                     <tr>
                         <td><?= $i++ ?></td>
-                        <td><?= $acs['id_account'] ?></td>
-                        <td><?= $acs['tai_khoan'] ?></td>
-                        <td><?= $acs['mat_khau'] ?></td>
+                        <td><?= $ddkh['ma_dia_diem_khoi_hanh'] ?></td>
+                        <td><?= $ddkh['ten_dia_diem_khoi_hanh'] ?></td>
                         <td>
                             <div class="click-action">
-                                <a href="edit_account&id=<?= $acs['id_account'] ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
+                                <a href="edit_dia_diem&id=<?= $ddkh['ma_dia_diem_khoi_hanh'] ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
                             </div>
                             <div>
-                                <a href="delete_tai_khoan&id=<?= $acs['id_account'] ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+                                <a href="delete_dia_diem&id=<?= $ddkh['ma_dia_diem_khoi_hanh'] ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                             </div>
 
                         </td>
@@ -41,7 +40,7 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button class="btn" type="submit" name="btn_insert"><a href="add_account" class="btn-primary">Thêm</a></button>
+        <button class="btn " type="submit" name="btn_insert"><a href="add_dia_diem" class="btn-primary">Thêm</a></button>
     </div>
 
     <!-- end bảng -->

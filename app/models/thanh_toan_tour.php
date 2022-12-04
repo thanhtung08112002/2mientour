@@ -24,7 +24,7 @@ function thanh_toan_tour_delete($id)
 function save_edit_list_thanh_toan($data = [], $id)
 {
     $conn = connection();
-    $sql =  "UPDATE `thanh_toan_tour` SET `ma_tour`=?,`ho_ten`=?,`sdt`=?,`email`=?,`dia_chi`=?,`phuong_thuc_thanh_toan`=?,`so_luong`=?,`thanh_tien`=? WHERE `thanh_toan_tour`.`id_thanh_toan` = $id";
+    $sql =  "UPDATE `thanh_toan_tour` SET `ma_tour`=?,`ho_ten`=?,`sdt`=?,`email`=?,`dia_chi`=?,`phuong_thuc_thanh_toan`=?,`nguoi_lon`=?,`tre_em`=?,`thanh_tien`=? WHERE `thanh_toan_tour`.`id_thanh_toan` = $id";
     $stmt = $conn->prepare($sql);
     if ($stmt->execute($data)) {
         header("Location:list_thanh_toan_tour");
@@ -35,7 +35,7 @@ function save_edit_list_thanh_toan($data = [], $id)
 function payTour($data)
 {
     $conn = connection();
-    $sql = "INSERT INTO `thanh_toan_tour` (`ma_tour`, `id_tour_lite`, `ho_ten`, `sdt`, `email`, `dia_chi`, `phuong_thuc_thanh_toan`, `so_luong`, `thanh_tien`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO `thanh_toan_tour` (`ma_tour`, `id_tour_lite`, `ho_ten`, `sdt`, `email`, `dia_chi`, `phuong_thuc_thanh_toan`, `nguoi_lon`,`tre_em, `thanh_tien`) VALUES (?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute($data);
 }
