@@ -89,3 +89,12 @@ function thanhToanTourFull($ma_tour) {
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function getAllTour() {
+    $conn = connection();
+    $sql = "SELECT * FROM du_lich_trong_nuoc JOIN  du_lich_theo_thanh_pho ON du_lich_trong_nuoc.ma_mien = du_lich_theo_thanh_pho.ma_mien JOIN khoa_tour_chi_tiet ON du_lich_theo_thanh_pho.ma_thanh_pho = khoa_tour_chi_tiet.ma_thanh_pho JOIN dia_diem_khoi_hanh ON khoa_tour_chi_tiet.ma_dia_diem_khoi_hanh = dia_diem_khoi_hanh.ma_dia_diem_khoi_hanh JOIN danh_sach_tour_hot ON danh_sach_tour_hot.ma_so_hot = khoa_tour_chi_tiet.ma_so_hot ORDER BY du_lich_trong_nuoc.ma_mien DESC";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

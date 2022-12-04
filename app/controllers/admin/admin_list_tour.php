@@ -11,11 +11,7 @@ function show_admin_list_tour($ma_mien) {
     $filterTourWithMaThanhPho = filterTourWithMaThanhPho($ma_mien);
     render_admin('list_tour_thanh_pho', ['filterTourWithMaThanhPho' => $filterTourWithMaThanhPho]);
 }
-function show_admin_list_tour_detail($ma_tour) {
-    $filterTourDetail = filterTourDetail($ma_tour);
-    $schedule_tour = schedule_tour($ma_tour);
-    render_admin('list_tour_detail', ['filterTourDetail' => $filterTourDetail,'schedule_tour' => $schedule_tour]);
-}
+
 function show_admin_add_tour() {
     // $admin_add_tour = admin_add_tour();
     // $add_tour = add_tour();

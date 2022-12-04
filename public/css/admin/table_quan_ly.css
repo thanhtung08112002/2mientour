@@ -1,0 +1,85 @@
+.board .headline {
+    padding: 10px;
+    font-weight: 600;
+}
+
+.headline h2 {
+    font-size: 2rem;
+}
+
+header h1 {
+    padding: 40px 30px;
+    background-color: rgb(78, 245, 203);
+    color: rgb(139, 7, 7);
+    border-radius: 10px;
+}
+
+.board .table thead {
+    background: #F9FAFB;
+}
+
+
+.table {
+    text-align: center;
+}
+
+table thead th {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.table tbody td {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 1rem;
+}
+
+
+
+.btn-warning {
+    margin-bottom: 1rem;
+}
+
+.click-action {
+    margin-bottom: 2rem;
+}
+
+
+
+.board a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+
+.table tbody tr td img {
+    width: 150px;
+}
+
+.table tbody tr td a {
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.board button a {
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+
+.btn {
+    margin-top: 1.5rem;
+    border: none;
+}
+
+.btn-warning {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}

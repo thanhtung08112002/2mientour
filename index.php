@@ -14,6 +14,8 @@ require_once 'app/controllers/admin/admin_page.php';
 require_once 'app/controllers/admin/mien.php';
 require_once 'app/controllers/admin/thanhpho.php';
 require_once 'app/controllers/admin/list.php';
+require_once 'app/controllers/admin/admin_quan_ly_tour.php';
+
 
 #Models admin
 require_once 'app/models/admin_list_tour.php';
@@ -53,6 +55,10 @@ require_once 'app/models/cart.php';
 require_once 'app/models/thanh_toan_tour.php';
 require_once 'app/models/dong_gop_y_kien.php';
 require_once 'app/models/vnpay.php';
+require_once 'app/models/loai_tour.php';
+require_once 'app/models/dia_diem_khoi_hanh.php';
+
+
 
 
 
@@ -203,8 +209,46 @@ switch ($url) {
         }
         break;
     case "admin_page/mien":
-        showMien();
+        if (isset($_SESSION['login_success'])) {
+            showMien();
+        } else {
+            error_404();
+        }
         break;
+
+        //quản lý tour du lịch
+    case "quan_ly_tour":
+        if (isset($_SESSION['login_success'])) {
+            showAllTour();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/add-tour":
+        if (isset($_SESSION['login_success'])) {
+            showAddTour();
+        } else {
+            error_404();
+        }
+        break;
+
+    case "quan_ly_tour/add-tour/check":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert'])) {
+            check();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/delete-tour":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert'])) {
+            check();
+        } else {
+            error_404();
+        }
+        break;
+        //quản lý tour du lịch
+
+
 
 
         //danh sách tour
@@ -225,7 +269,7 @@ switch ($url) {
         } else {
             header("location:" . ROOT . 'admin_page');
         }
-    case "admin_list_tour/mien/thanh_pho/":
+    case "quan_ly_tour/detail-tour/":
         if ($_GET['ma-tour']) {
             show_admin_list_tour_detail($_GET['ma-tour']);
             break;
