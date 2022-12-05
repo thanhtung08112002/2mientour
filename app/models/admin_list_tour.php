@@ -1,6 +1,6 @@
 <?php
 
-function add_tour($data_du_lich_thanh_pho, $data_khoa_tour_chi_tiet, $data_khoa_tour_lite)
+function add_tour_to_db($data_du_lich_thanh_pho, $data_khoa_tour_chi_tiet, $data_khoa_tour_lite)
 {
     $conn = connection();
     $sql_du_lich_thanh_pho = "INSERT INTO  du_lich_theo_thanh_pho (`ma_thanh_pho`,`ma_mien`,`ten_thanh_pho`) VALUES (?,?,?)";
@@ -18,27 +18,32 @@ function add_tour($data_du_lich_thanh_pho, $data_khoa_tour_chi_tiet, $data_khoa_
     }
 }
 
-function delete_tour()
+function delete_tour_in_db($ma_tour, $ma_thanh_pho)
 {
     $conn = connection();
-    $sql_khoa_tour_lite = " DELETE FROM   khoa_tour_lite WHERE id_tour_lite = 22";
-    $sql_khoa_tour_chi_tiet = " DELETE FROM   khoa_tour_chi_tiet WHERE ma_tour = 'T_HCM03'";
-    $sql_du_lich_thanh_pho = " DELETE FROM   du_lich_theo_thanh_pho WHERE ma_thanh_pho = 'BRVT'";
+    $sql_chi_tiet_tour_lite = " DELETE FROM   chi_tiet_tour_lite WHERE ma_tour ='$ma_tour'";
+    $sql_anh_tour = " DELETE FROM   anh_tour WHERE ma_tour ='$ma_tour'";
+    $sql_khoa_tour_lite = " DELETE FROM   khoa_tour_lite WHERE ma_tour ='$ma_tour'";
+    $sql_khoa_tour_chi_tiet = " DELETE FROM   khoa_tour_chi_tiet WHERE ma_tour = '$ma_tour'";
+    $sql_du_lich_thanh_pho = " DELETE FROM   du_lich_theo_thanh_pho WHERE ma_thanh_pho = '$ma_thanh_pho'";
+    $stmt_chi_tiet_tour_lite = $conn->prepare($sql_chi_tiet_tour_lite);
+    $stmt_anh_tour = $conn->prepare($sql_anh_tour);
     $stmt_khoa_tour_lite = $conn->prepare($sql_khoa_tour_lite);
     $stmt_khoa_tour_chi_tiet = $conn->prepare($sql_khoa_tour_chi_tiet);
     $stmt_du_lich_thanh_pho = $conn->prepare($sql_du_lich_thanh_pho);
-    $stmt_khoa_tour_lite->execute();
-    $stmt_khoa_tour_chi_tiet->execute();
-    $stmt_du_lich_thanh_pho->execute();
+    if ($stmt_chi_tiet_tour_lite->execute()) {
+        if ($stmt_anh_tour->execute()) {
+            if ($stmt_khoa_tour_lite->execute()) {
+                if ($stmt_khoa_tour_chi_tiet->execute()) {
+                    if ($stmt_du_lich_thanh_pho->execute()) {
+                        header("Location: " . ROOT . "quan_ly_tour");
+                    }
+                }
+            }
+        }
+    }
 }
 
 
-function schedule_tour($ma_tour)
-{
-    $conn = connection();
-    $sql = "SELECT * FROM `chi_tiet_tour_lite` WHERE ma_tour =  '$ma_tour'";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
-}
+
+

@@ -57,6 +57,12 @@ require_once 'app/models/dong_gop_y_kien.php';
 require_once 'app/models/vnpay.php';
 require_once 'app/models/loai_tour.php';
 require_once 'app/models/dia_diem_khoi_hanh.php';
+require_once 'app/models/anh_tour.php';
+require_once 'app/models/lich_trinh_tour.php';
+require_once 'app/models/khoi_hanh.php';
+
+
+
 
 
 
@@ -234,16 +240,84 @@ switch ($url) {
 
     case "quan_ly_tour/add-tour/check":
         if (isset($_SESSION['login_success']) && isset($_POST['btn_insert'])) {
-            check();
+            add_tour();
         } else {
             error_404();
         }
         break;
-    case "quan_ly_tour/delete-tour":
-        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert'])) {
-            check();
+    case "quan_ly_tour/delete-tour/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['ma-thanh-pho'])) {
+            delete_tour();
         } else {
             error_404();
+        }
+        break;
+    case "quan_ly_tour/add-chi-tiet-tour/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour'])) {
+            switch ($_GET['thu-muc']) {
+                case 'khoihanh':
+                    show_add_detail($_GET['thu-muc']);
+                    break;
+                case 'lichtrinh':
+                    show_add_detail($_GET['thu-muc']);
+                    break;
+                case 'anh':
+                    show_add_detail($_GET['thu-muc']);
+                    break;
+            }
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/add-khoi-hanh":
+        if (isset($_SESSION['login_success']) && isset($_POST['ma_tour'])) {
+            add_khoi_hanh();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/add-lich-trinh":
+        if (isset($_SESSION['login_success']) && isset($_POST['ma_tour'])) {
+            add_lich_trinh();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/add-anh":
+        if (isset($_SESSION['login_success']) && isset($_POST['ma_tour'])) {
+            add_anh();
+        } else {
+            error_404();
+        }
+        break;
+
+
+    case "quan_ly_tour/delete-khoi-hanh/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
+            delete_khoi_hanh();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/delete-lich-trinh/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
+            delete_lich_trinh();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/delete-anh/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
+            delete_anh();
+        } else {
+            error_404();
+        }
+    case "quan_ly_tour/detail-tour/":
+        if ($_GET['ma-tour']) {
+            show_admin_list_tour_detail($_GET['ma-tour']);
+            break;
+        } else {
+            header("location:" . ROOT . 'admin_page');
         }
         break;
         //quản lý tour du lịch
@@ -269,13 +343,14 @@ switch ($url) {
         } else {
             header("location:" . ROOT . 'admin_page');
         }
-    case "quan_ly_tour/detail-tour/":
+    case "admin_list_tour/mien/thanh_pho/":
         if ($_GET['ma-tour']) {
-            show_admin_list_tour_detail($_GET['ma-tour']);
+            show_admin_list_detail_tour_lite($_GET['ma-tour']);
             break;
         } else {
             header("location:" . ROOT . 'admin_page');
         }
+
     case "admin_list_tour/add-tour":
         show_admin_add_tour();
         break;
@@ -302,7 +377,6 @@ switch ($url) {
             showListThanhToan($_GET['matour']);
         }
         break;
-
 
 
 

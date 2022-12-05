@@ -31,10 +31,8 @@
                         <td><?= $i++ ?></td>
                         <td><?= $ten_mien ?></td>
                         <td><?= $ma_thanh_pho ?></td>
-
                         <td><?= $ten_thanh_pho ?></td>
                         <td><?= $ma_tour ?></td>
-
                         <td><?= $ten_tour ?></td>
                         <td><?= $phuong_tien ?></td>
                         <td><?= $ten_dia_diem_khoi_hanh ?></td>
@@ -47,7 +45,7 @@
                                 <a href="<?= ROOT ?>quan_ly_tour/edit/?ma-tour=<?= $ma_tour ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
                             </div>
                             <div>
-                                <a href="<?= ROOT ?>quan_ly_tour/delete-tour/?ma-tour=<?= $ma_tour ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+                                <a href="<?= ROOT ?>quan_ly_tour/delete-tour/?ma-tour=<?= $ma_tour ?>&ma-thanh-pho=<?= $ma_thanh_pho?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                             </div>
 
                         </td>

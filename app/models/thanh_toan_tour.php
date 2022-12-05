@@ -45,3 +45,23 @@ function cancelTourThanhToan( $id_thanh_toan) {
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 }
+
+
+function tong_tien_thanh_toan_khac_vnpay() {
+    $conn = connection();
+    $sql = "SELECT SUM(thanh_tien) as tong_tien_thanh_toan_binh_thuong FROM `thanh_toan_tour`  ";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function thong_ke_so_luong_tour_thanh_toan() {
+    $conn = connection();
+    $sql = "SELECT COUNT(*) as so_luong, ma_tour FROM `thanh_toan_tour` GROUP BY ma_tour ORDER BY so_luong DESC";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+

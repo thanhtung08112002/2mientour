@@ -18,3 +18,11 @@ function show_admin_add_tour() {
     $delete_tour = delete_tour();
     render_admin('add_tour');
 }
+
+function show_admin_list_detail_tour_lite($ma_tour)
+{
+    $imgTourDetail = imgTourDetail($ma_tour);
+    $filterTourDetail = filterTourDetail($ma_tour);
+    $schedule_tour = schedule_tour($ma_tour);
+    render_admin('list_detail_tour', ['filterTourDetail' => $filterTourDetail, 'schedule_tour' => $schedule_tour, 'imgTourDetail' => $imgTourDetail]);
+}

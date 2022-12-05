@@ -10,6 +10,17 @@ function getAllKhoaTour()
     return $result;
 }
 
+function tong_so_tour_hien_co()
+{
+    $conn = connection();
+    $sql = "SELECT COUNT(*) as tong_so_tour_hien_co FROM du_lich_trong_nuoc dltn JOIN du_lich_theo_thanh_pho dltp ON dltn.ma_mien = dltp.ma_mien JOIN khoa_tour_chi_tiet ktct ON ktct.ma_thanh_pho = dltp.ma_thanh_pho JOIN dia_diem_khoi_hanh ddkh ON ddkh.ma_dia_diem_khoi_hanh = ktct.ma_dia_diem_khoi_hanh ;SELECT * FROM `thanh_toan_tour`";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+
 //lấy 3 tour bảng tour chi tiết liên kết với bảng địa điểm khởi hành và khóa tour lite
 function get3KhoaTourMienNam()
 {

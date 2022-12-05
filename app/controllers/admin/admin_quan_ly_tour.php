@@ -11,19 +11,21 @@ function showAddTour()
     $getDiaiemKhoiHanh = getDiaiemKhoiHanh();
     render_admin('form_add_tour', ['getLoaiTour' => $getLoaiTour, 'getAllMien' => $getAllMien, 'getDiaiemKhoiHanh' => $getDiaiemKhoiHanh]);
 }
-function check()
+function add_tour()
 {
-    echo "<pre>";
-    var_dump($_POST);
-    var_dump($_FILES);
+    $flag = true;
     extract($_POST);
-    $name_img = $_FILES['anh_dai_dien_tour']['name'];
-    $data_du_lich_thanh_pho =[
+    $image = $_FILES['anh_dai_dien_tour'];
+    $name_img = $image['name'];
+    $dir_file = mb_strtolower(pathinfo($name_img, PATHINFO_EXTENSION));
+
+    $file_arr = ['jpg', 'jepg', 'png'];
+    $data_du_lich_thanh_pho = [
         $ma_thanh_pho,
         $mien,
         $ten_thanh_pho
     ];
-    $data_khoa_tour_chi_tiet =[
+    $data_khoa_tour_chi_tiet = [
         $ma_tour,
         $ma_thanh_pho,
         $ten_tour,
@@ -39,11 +41,107 @@ function check()
         $ngay_khoi_hanh,
         $so_cho
     ];
-    add_tour($data_du_lich_thanh_pho,$data_khoa_tour_chi_tiet,$data_khoa_tour_lite);
+    $getAllTour = getAllTour();
+    foreach ($getAllTour as $item) {
+        if ($ma_tour == $item['ma_tour'] && $ma_thanh_pho == $item['ma_thanh_pho']) {
+            setcookie('ma_error', "Mã đã tồn tại", time() + 3);
+            $flag = false;
+            header("location: " . ROOT . "quan_ly_tour/add-tour");
+        } else if ($ma_tour == $item['ma_tour'] || $ma_thanh_pho == $item['ma_thanh_pho']) {
+
+            setcookie('ma_error', "Mã đã tồn tại", time() + 3);
+            $flag = false;
+
+            header("location: " . ROOT . "quan_ly_tour/add-tour");
+        }
+    }
+    if (!in_array($dir_file, $file_arr)) {
+        setcookie('img_error', "file không đúng định dạng", time() + 3);
+        $flag = false;
+        header("location: " . ROOT . "quan_ly_tour/add-tour");
+    }
+    if ($flag) {
+
+        move_uploaded_file($image['tmp_name'], "public/images/imgs_tour/" . $name_img);
+        add_tour_to_db($data_du_lich_thanh_pho, $data_khoa_tour_chi_tiet, $data_khoa_tour_lite);
+    }
+}
+function delete_tour()
+{
+    $getAllTour = getAllTour();
+    foreach ($getAllTour as $item) {
+        if ($_GET['ma-tour'] == $item['ma_tour']) {
+            unlink("public/images/imgs_tour/" . $item['anh_dai_dien_tour']);
+        }
+    }
+    delete_tour_in_db($_GET['ma-tour'], $_GET['ma-thanh-pho']);
 }
 
-function show_admin_list_tour_detail($ma_tour) {
+function show_admin_list_tour_detail($ma_tour)
+{
+    $imgTourDetail = imgTourDetail($ma_tour);
     $filterTourDetail = filterTourDetail($ma_tour);
     $schedule_tour = schedule_tour($ma_tour);
-    render_admin('detail-tour', ['filterTourDetail' => $filterTourDetail,'schedule_tour' => $schedule_tour]);
+    render_admin('detail-tour', ['filterTourDetail' => $filterTourDetail, 'schedule_tour' => $schedule_tour, 'imgTourDetail' => $imgTourDetail]);
+}
+function show_add_detail($thu_muc)
+{
+    render_admin('showAdddetail', ['thu_muc' => $thu_muc]);
+}
+function add_khoi_hanh()
+{
+    extract($_POST);
+    add_tour_khoi_hanh($ma_tour, $ngay_khoi_hanh, $so_cho);
+}
+function add_lich_trinh()
+{
+    extract($_POST);
+    add_tour_lich_trinh($ma_tour, $ngay, $noi_dung);
+}
+function add_anh()
+{
+    $flag = true;
+    $file_arr = ['jpg', 'jepg', 'png'];
+    echo "<pre>";
+    extract($_POST);
+    $imgs = $_FILES['anh_tour'];
+    $anh = $imgs['name'];
+    $i = 0;
+    foreach ($anh as $item) {
+        var_dump($ma_tour);
+        var_dump($item);
+        $dir_file = mb_strtolower(pathinfo($item, PATHINFO_EXTENSION));
+        var_dump($dir_file);
+        if (!in_array($dir_file, $file_arr)) {
+            setcookie('img_error', "file không đúng định dạng", time() + 3);
+            $flag = false;
+            header("location: " . ROOT . "quan_ly_tour/add-chi-tiet-tour/?thu-muc=anh&ma-tour=$ma_tour");
+        }
+        if ($flag) {
+
+            move_uploaded_file($imgs['tmp_name'][$i++], "public/images/imgs_tour/" . $item);
+            add_anh_tour($ma_tour, $item);
+        }
+    }
+}
+
+
+function delete_khoi_hanh()
+{
+    delete_tour_khoi_hanh($_GET['ma-tour'], $_GET['id']);
+}
+function delete_lich_trinh()
+{
+    delete_tour_lich_trinh($_GET['ma-tour'],$_GET['id']);
+}
+function delete_anh()
+{
+    $selectImgTourDetail = selectImgTourDetail($_GET['id']);
+    foreach($selectImgTourDetail as $item) {
+        if ($_GET['id'] == $item['id']) {
+            var_dump($item['id']);
+            unlink("public/images/imgs_tour/" . $item['anh']);
+        }
+    }
+    delete_anh_tour($_GET['ma-tour'],$_GET['id']);
 }

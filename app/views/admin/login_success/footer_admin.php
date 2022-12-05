@@ -1,4 +1,5 @@
 </article>
+
 <script src="<?= ROOT?>public/js/admin.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -25,7 +26,16 @@
     <!-- Page level custom scripts -->
     <script src="<?= ROOT?>public/js/demo/chart-area-demo.js"></script>
     <script src="<?= ROOT?>public/js/demo/chart-pie-demo.js"></script>
-
+    <script>
+        var editor = CKEDITOR.replace('noi_dung', {
+            filebrowserBrowseUrl: '<?= ROOT ?>ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: '<?= ROOT ?>ckfinder/ckfinder.html?type=Images',
+            filebrowserUploadUrl: '<?= ROOT ?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserImageUploadUrl: '<?= ROOT ?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            height: 500,
+        })
+        CKFinder.setupCKEditor(editor);
+    </script>
 </body>
 
 </html>

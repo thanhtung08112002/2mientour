@@ -12,9 +12,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <!-- Custom styles for this template-->
     <link href="<?= ROOT ?>public/css/admin/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= ROOT ?>public/css/admin/table_quan_ly.css" rel="stylesheet">
+    <script src="<?= ROOT ?>ckeditor/ckeditor.js"></script>
+    <script src="<?= ROOT ?>ckfinder/ckfinder.js"></script>
 
     <title>Hello admin 2 miền tour</title>
 </head>
@@ -37,11 +40,11 @@
             <nav class="menu_nav">
                 <ul>
                     <li><a href="<?= ROOT ?>admin_page">Trang chủ</a></li>
-                    <li><a href="<?= ROOT ?>quan_ly_tour">Quản lý tour du lịch</a></li>
                     <li><a href="<?= ROOT ?>admin_list_tour">Danh sách tour du lịch</a></li>
                     <li><a href="#">Khách hàng</a></li>
                     <li><a href="#">Loại Hàng</a></li>
                     <li><a href="#">Bình luận</a></li>
+                    <li><a href="<?= ROOT ?>quan_ly_tour">Quản lý tour du lịch</a></li>
                     <li><a href="#">Thống kê</a></li>
                     <li><a href="#">Sign out</a></li>
 
