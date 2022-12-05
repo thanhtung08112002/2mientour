@@ -1,10 +1,4 @@
 <article>
-    <div class="horizontal-menu">
-        <div class="user">
-            <p class="user-name">Mot Hai Ba</p>
-            <img src="images.jfif" alt="">
-        </div>
-    </div>
     <!-- bảng -->
     <div class="board">
         <div class="headline">

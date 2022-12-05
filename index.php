@@ -16,6 +16,8 @@ require_once 'app/controllers/admin/chuc_vu.php';
 require_once 'app/controllers/admin/danh_sach_tour_hot.php';
 require_once 'app/controllers/admin/dia_diem_khoi_hanh.php';
 require_once 'app/controllers/admin/thong_tin_cong_ty.php';
+require_once 'app/controllers/admin/slider.php';
+
 
 
 
@@ -418,6 +420,54 @@ switch ($url) {
         if (isset($_SESSION['login_success'])) {
             $id = $_GET['id'];
             save_edit_thong_tin_cong_ty($id);
+        } else {
+            error_404();
+        }
+        break;
+        // trang slider
+    case 'list_slider':
+        if (isset($_SESSION['login_success'])) {
+            show_all_sliders();
+        } else {
+            error_404();
+        }
+        break;
+        // xóa slider
+    case 'delete_slider':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            delete_slider($id);
+        } else {
+            error_404();
+        }
+        break;
+        // sửa slider
+    case 'edit_slider':
+        if (isset($_SESSION['login_success'])) {
+            show_edit_sliders();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_edit_slider':
+        if (isset($_SESSION['login_success'])) {
+            $id = $_GET['id'];
+            save_edit_sliders($id);
+        } else {
+            error_404();
+        }
+        break;
+        // thêm  slider
+    case 'add_anh_slider':
+        if (isset($_SESSION['login_success'])) {
+            show_add_sliders();
+        } else {
+            error_404();
+        }
+        break;
+    case 'save_add_slider':
+        if (isset($_SESSION['login_success'])) {
+            save_add_slider();
         } else {
             error_404();
         }

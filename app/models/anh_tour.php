@@ -43,7 +43,7 @@ function add_anh($valueAddanh)
 }
 
 
-// fuction save edit nhân viên
+// fuction save edit ảnh
 function save_edit_tour($data = [], $id)
 {
     $conn = connection();

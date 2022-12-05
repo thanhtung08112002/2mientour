@@ -8,9 +8,9 @@
     <!-- bảng -->
     <div class="board">
         <div class="headline">
-            <h2>Sửa ảnh</h2>
+            <h2>Thêm slider</h2>
         </div>
-        <form action="save_edit_anh&id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data">
+        <form action="save_slider" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -18,15 +18,8 @@
                         <input class="form-control" type="text" name="id" readonly placeholder="Auto number" disabled>
                     </div>
                     <div class="form-group">
-                        <label for="">Loại mã tour</label>
-                        <select class="form-control" name="ma_tour" id="">
-                            <option value="0">Chọn loại mã tour</option>
-                            <?php foreach ($khoa_tour_chi_tiet as $ktct) : ?>
-                                <option value="<?= $ktct['ma_tour'] ?>">
-                                    <?= $ktct['ten_tour'] ?>
-                                </option>
-                            <?php endforeach ?>
-                        </select>
+                        <label for="">URL</label>
+                        <input class="form-control" type="text" name="url">
                     </div>
                     <div class="form-group">
                         <label for="">Ảnh</label>
