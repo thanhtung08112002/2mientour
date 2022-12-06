@@ -325,6 +325,7 @@ img {
   font-weight: 700;
   margin-bottom: 5px;
   padding: 5px 0;
+  font-size: 1.8rem;
 }
 
 .schedule-step-icon {
@@ -343,7 +344,9 @@ img {
   display: block;
   animation: growDown 300ms ease-in-out forwards;
 }
-
+.schedule-step-seemore p{
+  font-size: 1.6rem;
+}
 @keyframes growDown {
   0% {
     transform: scaleY(0);
@@ -645,3 +648,45 @@ img {
   font-size: 25px;
   text-decoration: none;
 }
+/* bắt đầu sửa file tour_detail */
+tr td{
+  font-size: 1.5rem;
+}
+
+.td-button{
+  text-align: center;
+}
+
+.td-button a{
+  font-size: 1.5rem;
+  color: #fff;
+}
+.buy-now-time,
+.buy-now-title{
+  color: white;
+}
+.buy-now-time{
+  font-size: 16px;
+}
+.buy-now-title-time{
+  margin-top: 10px;
+}
+/* kết thức sửa file */
+
+.tour-info-phone {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* sửa css file tour_detail */
+.schedule-time,
+.schedule-icon i {
+  font-size: 1.8rem;
+  color: #ffc10e;
+}
+
+.schedule-title {
+  font-size: 1.8rem;
+  color: #ffca42;
+}
+/* kết thúc sửa file tour_detail */

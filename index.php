@@ -16,6 +16,8 @@ require_once 'app/controllers/admin/list.php';
 require_once 'app/controllers/admin/admin_quan_ly_tour.php';
 
 
+
+
 #Models admin
 require_once 'app/models/admin_list_tour.php';
 
@@ -59,6 +61,7 @@ require_once 'app/models/dia_diem_khoi_hanh.php';
 require_once 'app/models/anh_tour.php';
 require_once 'app/models/lich_trinh_tour.php';
 require_once 'app/models/khoi_hanh.php';
+
 
 
 
@@ -290,7 +293,7 @@ switch ($url) {
         }
         break;
 
-
+        //delele
     case "quan_ly_tour/delete-khoi-hanh/":
         if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
             delete_khoi_hanh();
@@ -311,6 +314,53 @@ switch ($url) {
         } else {
             error_404();
         }
+        //delete
+        //edit
+    case "quan_ly_tour/edit-khoi-hanh/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
+            editDetail();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/edit-lich-trinh/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
+            editDetail();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/edit-anh/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-tour']) && isset($_GET['id'])) {
+            editDetail();
+        } else {
+            error_404();
+        }
+    case "quan_ly_tour/save-edit-khoi-hanh":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_detail'])) {
+            edit_khoi_hanh();
+        } else {
+            error_404();
+        }
+        break;
+    case "quan_ly_tour/save-edit-lich-trinh":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_detail'])) {
+            edit_lich_trinh();
+        } else {
+            error_404();
+        }
+        break;
+        // đang làm
+    case "quan_ly_tour/save-edit-anh":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_detail'])) {
+            edit_anh();
+        } else {
+            error_404();
+        }
+        break;
+        // đang làm
+
+        //edit
     case "quan_ly_tour/detail-tour/":
         if ($_GET['ma-tour']) {
             show_admin_list_tour_detail($_GET['ma-tour']);
@@ -378,10 +428,7 @@ switch ($url) {
     case "admin_page/list":
         showListWithMien();
         break;
-        //fix
-    case 'fix':
-        fix();
-        break;
+
     default:
         error_404();
 }

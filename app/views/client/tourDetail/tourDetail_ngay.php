@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="schedule-step-seemore">
-                                <?= $noi_dung_ngay ?>
+                               <p> <?= $noi_dung_ngay ?></p>
                             </div>
                         </div>
                     <?php endforeach ?>

@@ -35,3 +35,23 @@ function delete_anh_tour($ma_tour,$id)
     header("location:".ROOT."quan_ly_tour/detail-tour/?ma-tour=$ma_tour");
    } 
 }
+
+function getAnhId($id)
+{
+    $conn = connection();
+    $sql = "SELECT * FROM `anh_tour` WHERE id =  '$id'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function save_edit_anh($data, $ma_tour)
+{
+    $conn = connection();
+    $sql = "UPDATE `anh_tour` SET `anh`=? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute($data)) {
+        header("location:" . ROOT . "quan_ly_tour/detail-tour/?ma-tour=$ma_tour");
+    }
+}

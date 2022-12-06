@@ -157,6 +157,64 @@ function edit_khoa_tour_chi_tiet()
     render_admin('edit_khoa_tour_chi_tiet', ['getTourWithMaTour' => $getTourWithMaTour, 'getDiaiemKhoiHanh' => $getDiaiemKhoiHanh, 'getLoaiTour' => $getLoaiTour]);
 }
 
+function editDetail()
+{
+    $id = $_GET['id'];
+    $getKhoaTourLite = getKhoaTourLite($id);
+    $getChiTietTourLiteId = getChiTietTourLiteId($id);
+    $getAnhId = getAnhId($id);
+    $thu_muc = $_GET['thu-muc'];
+    render_admin('showEditDetail', ['thu_muc' => $thu_muc, 'getKhoaTourLite' => $getKhoaTourLite, 'getChiTietTourLiteId' => $getChiTietTourLiteId, 'getAnhId' => $getAnhId]);
+}
+function edit_khoi_hanh()
+{
+    extract($_POST);
+    $data = [
+        $ngay_khoi_hanh,
+        $so_cho,
+        $id_tour_lite
+    ];
+    save_edit_khoi_hanh($data, $ma_tour);
+}
+function edit_lich_trinh()
+{
+    extract($_POST);
+    $data = [
+        $ngay,
+        $noi_dung,
+        $id
+    ];
+    save_edit_lich_trinh($data, $ma_tour);
+}
+function edit_anh()
+{
+
+    $flag = true;
+    $file_arr = ['jpg', 'jepg', 'png'];
+    echo "<pre>";
+    extract($_POST);
+    $img = $_FILES['anh_tour'];
+    $anh = $img['name'];
+    $data = [
+        $anh,
+        $id
+    ];
+        $dir_file = mb_strtolower(pathinfo($anh, PATHINFO_EXTENSION));
+        if (!in_array($dir_file, $file_arr)) {
+            setcookie('img_error', "file không đúng định dạng", time() + 3);
+            $flag = false;
+            header("location: " . ROOT . "quan_ly_tour/edit-khoi-hanh/?thu-muc=anh&ma-tour=$ma_tour&id=$id");
+        }
+        if ($flag) {
+            unlink("public/images/imgs_tour/" . $anh_hien_tai);
+            move_uploaded_file($img['tmp_name'], "public/images/imgs_tour/" . $anh);
+            save_edit_anh($data, $ma_tour);
+        }
+    
+}
+
+//edit
+
 function check_and_save_khoa_tour_chi_tiet()
 {
     $ma_tour = $_GET['ma-tour'];
@@ -174,7 +232,7 @@ function check_and_save_khoa_tour_chi_tiet()
         $anh_dai_dien_tour,
         $gia_tien,
         $loai_tour,
-         $ma_tour
+        $ma_tour
     ];
     if (!in_array($dir_file, $file_arr)) {
         setcookie('img_error', "file không đúng định dạng", time() + 3);
@@ -184,6 +242,6 @@ function check_and_save_khoa_tour_chi_tiet()
     if ($flag) {
         move_uploaded_file($img['tmp_name'], "public/images/imgs_tour/" . $anh_dai_dien_tour);
         unlink("public/images/imgs_tour/" . $anh_ban_dau);
-        edit_khoa_tour_chi_tiet_with_ma_tour( $data);
+        edit_khoa_tour_chi_tiet_with_ma_tour($data);
     }
 }
