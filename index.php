@@ -12,7 +12,6 @@ require_once 'app/controllers/admin/admin.php';
 require_once 'app/controllers/admin/admin_list_tour.php';
 require_once 'app/controllers/admin/admin_page.php';
 require_once 'app/controllers/admin/mien.php';
-require_once 'app/controllers/admin/thanhpho.php';
 require_once 'app/controllers/admin/list.php';
 require_once 'app/controllers/admin/admin_quan_ly_tour.php';
 
@@ -320,6 +319,22 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+    case "quan_ly_tour/edit-tour/":
+        if ($_GET['ma-tour']) {
+            edit_khoa_tour_chi_tiet();
+            break;
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "quan_ly_tour/edit-tour/check/":
+        if ($_GET['ma-tour']) {
+            check_and_save_khoa_tour_chi_tiet();
+            break;
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
         //quản lý tour du lịch
 
 
@@ -359,27 +374,10 @@ switch ($url) {
 
 
 
-    case "admin_page/thanhpho":
-        if (isset($_GET['mamien'])) {
-            showThanhphoThuoc($_GET['mamien']);
-        } else if (isset($_GET['matour'])) {
-            showThoiGianTour($_GET['matour']);
-        }
-        break;
 
     case "admin_page/list":
         showListWithMien();
         break;
-    case "admin_page/listdetail":
-        if (isset($_GET['mamien'])) {
-            showlistdetail($_GET['mamien']);
-        } else if (isset($_GET['matour'])) {
-            showListThanhToan($_GET['matour']);
-        }
-        break;
-
-
-
         //fix
     case 'fix':
         fix();

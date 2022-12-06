@@ -1,3 +1,5 @@
+<!-- thuộc mục quản lý tour du lịch -->
+<!-- cho phép thêm sửa xóa khởi hành, lịch trình và ảnh -->
 <article>
 
     <!-- bảng -->

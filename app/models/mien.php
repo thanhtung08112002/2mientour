@@ -81,6 +81,8 @@ function filterTourOfMien($ma_mien) {
     return $result;
 }
 
+
+//checking
 function thanhToanTourFull($ma_tour) {
     $conn = connection();
     $sql = "SELECT * FROM `thanh_toan_tour` JOIN khoa_tour_lite ON khoa_tour_lite.id_tour_lite = thanh_toan_tour.id_tour_lite JOIN phuong_thuc_thanh_toan on phuong_thuc_thanh_toan.phuong_thuc_thanh_toan = thanh_toan_tour.phuong_thuc_thanh_toan WHERE thanh_toan_tour.`ma_tour` = '$ma_tour'";
@@ -89,6 +91,7 @@ function thanhToanTourFull($ma_tour) {
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+//checking
 
 function getAllTour() {
     $conn = connection();

@@ -1,3 +1,6 @@
+<!-- thuộc mục quản lý tour du lịch -->
+<!-- form thêm tour  -->
+
 <article>
 
     <!-- bảng -->

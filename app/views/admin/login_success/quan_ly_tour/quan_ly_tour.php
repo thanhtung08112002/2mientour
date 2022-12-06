@@ -1,3 +1,5 @@
+<!-- thuộc mụa quản lý danh sách tour -->
+<!-- cho phép thêm sửa xóa tour -->
 <article>
     <!-- bảng -->
     <div class="board">
@@ -42,7 +44,7 @@
                         <td><?= currency_format($gia_tien) ?></td>
                         <td>
                             <div class="click-action">
-                                <a href="<?= ROOT ?>quan_ly_tour/edit/?ma-tour=<?= $ma_tour ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
+                                <a href="<?= ROOT ?>quan_ly_tour/edit-tour/?ma-tour=<?= $ma_tour ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
                             </div>
                             <div>
                                 <a href="<?= ROOT ?>quan_ly_tour/delete-tour/?ma-tour=<?= $ma_tour ?>&ma-thanh-pho=<?= $ma_thanh_pho?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>

@@ -1,3 +1,7 @@
+<!-- thuộc mục quản lý tour du lịch -->
+<!--  hiện thị và cho phép thêm sửa xóa danh sách tour chi tiết gồm ngày khởi hành, lịch trình và ảnh -->
+
+
 <div class="container-fluid">
 
     <!-- Page Heading -->

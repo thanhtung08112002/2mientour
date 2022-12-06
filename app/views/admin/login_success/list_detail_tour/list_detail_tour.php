@@ -1,3 +1,6 @@
+<!-- thuộc mục danh sách tour du lịch -->
+<!-- chỉ hiện danh sách tour chi tiết gồm ngày khởi hành, lịch trình và ảnh -->
+
 <div class="container-fluid">
 
     <!-- Page Heading -->

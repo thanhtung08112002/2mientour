@@ -1,3 +1,5 @@
+<!-- thuộc mục danh sách tour du lịch -->
+<!-- hiện thị thông tin về miền -->
 <div class="container-fluid">
 
     <!-- Page Heading -->

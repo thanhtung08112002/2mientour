@@ -132,3 +132,23 @@ function getAllTourHot($matourhot) {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//lấy tour theo mã tour
+function getTourWithMaTour($ma_tour) {
+    $conn = connection();
+    $sql = "SELECT * FROM khoa_tour_chi_tiet join dia_diem_khoi_hanh on khoa_tour_chi_tiet.ma_dia_diem_khoi_hanh = dia_diem_khoi_hanh.ma_dia_diem_khoi_hanh join danh_sach_tour_hot on danh_sach_tour_hot.ma_so_hot = khoa_tour_chi_tiet.ma_so_hot WHERE ma_tour = '$ma_tour' ";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+//edit
+function edit_khoa_tour_chi_tiet_with_ma_tour($data) {
+    $conn = connection();
+    $sql = "UPDATE `khoa_tour_chi_tiet` SET `ten_tour`= ?,`phuong_tien`=?,`ma_dia_diem_khoi_hanh`=?,`thoi_gian_di`=?,`anh_dai_dien_tour`=?,`gia_tien`=?,`ma_so_hot`=? WHERE ma_tour = ?";
+    $stmt = $conn->prepare($sql);
+    if($stmt->execute($data)){
+        header("location:".ROOT."quan_ly_tour");
+    }
+}
