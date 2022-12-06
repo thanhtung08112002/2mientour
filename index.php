@@ -428,7 +428,12 @@ switch ($url) {
     case "admin_page/list":
         showListWithMien();
         break;
-
+    case "admin_page/sign_out/":
+        if (isset($_GET['sign-out'])) {
+          sign_out();
+        }
+        
+        break;
     default:
         error_404();
 }

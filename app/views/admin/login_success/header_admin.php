@@ -41,12 +41,13 @@
                 <ul>
                     <li><a href="<?= ROOT ?>admin_page">Trang chủ</a></li>
                     <li><a href="<?= ROOT ?>admin_list_tour">Danh sách tour du lịch</a></li>
-                    <li><a href="#">Khách hàng</a></li>
-                    <li><a href="#">Loại Hàng</a></li>
-                    <li><a href="#">Bình luận</a></li>
                     <li><a href="<?= ROOT ?>quan_ly_tour">Quản lý tour du lịch</a></li>
-                    <li><a href="#">Thống kê</a></li>
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="<?= ROOT ?>admin_list_customer">Khách hàng</a></li>
+                    <li><a href="<?= ROOT ?>admin_list_employee">Nhân viên</a></li>
+                    <li><a href="<?= ROOT ?>admin_list_promotion">Ưu đãi</a></li>
+                    <li><a href="<?= ROOT ?>admin_list_idea">Đóng góp ý kiến của khách hàng</a></li>
+                    <li><a href="#">Tin Tức</a></li>
+                    <li><a href="<?= ROOT ?>admin_page/sign_out/?sign-out=done">Sign out</a></li>
 
                 </ul>
             </nav>

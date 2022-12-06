@@ -58,10 +58,17 @@ function tong_tien_thanh_toan_khac_vnpay() {
 
 function thong_ke_so_luong_tour_thanh_toan() {
     $conn = connection();
-    $sql = "SELECT COUNT(*) as so_luong, ma_tour FROM `thanh_toan_tour` GROUP BY ma_tour ORDER BY so_luong DESC";
+    $sql = "SELECT COUNT(*) as so_luong,  ten_tour FROM `thanh_toan_tour` JOIN khoa_tour_chi_tiet ON khoa_tour_chi_tiet.ma_tour = thanh_toan_tour.ma_tour GROUP BY khoa_tour_chi_tiet.ma_tour ORDER BY so_luong DESC";
     $stmt = $conn -> prepare($sql);
     $stmt -> execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
-
+function thong_ke_gia_tien_tour() {
+    $conn = connection();
+    $sql = "SELECT ten_tour,gia_tien FROM `khoa_tour_chi_tiet` ORDER BY gia_tien ASC";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

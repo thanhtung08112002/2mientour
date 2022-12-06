@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -77,10 +77,10 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Tổng số lượng tour hiện có</div>
-                                <?php foreach ($tong_so_tour_hien_co as $item) : ?>
-                                    <?php extract($item) ?>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $tong_so_tour_hien_co ?> tour</div>
-                                <?php endforeach ?>
+                            <?php foreach ($tong_so_tour_hien_co as $item) : ?>
+                                <?php extract($item) ?>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $tong_so_tour_hien_co ?> tour</div>
+                            <?php endforeach ?>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -94,75 +94,92 @@
     <!-- Content Row -->
 
     <div class="row">
+        <div class="bieu_do">
+            <!-- Pie Chart -->
+            <div class=" col-xl-4 col-lg-5">
+                <div class="card shadow mb-4">
 
-        <!-- Area Chart -->
-        <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                            google.charts.load("current", {
+                                packages: ["corechart"]
+                            });
+                            google.charts.setOnLoadCallback(drawChart);
+
+                            function drawChart() {
+                                var data = google.visualization.arrayToDataTable([
+
+                                    ['Mã tour', 'Số lượng'],
+                                    <?php foreach ($thong_ke_so_luong_tour_thanh_toan as $item) : ?>
+                                        <?php extract($item) ?>["<?= $ten_tour ?>", <?= $so_luong ?>],
+                                    <?php endforeach ?>
+                                ]);
+                                var options = {
+                                    title: 'Thống kê số lương tour đã thanh toán',
+                                    is3D: true,
+                                };
+
+                                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                                chart.draw(data, options);
+                            }
+                        </script>
+
+                        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+
                     </div>
                 </div>
             </div>
-        </div>
+            <div class=" col-xl-4 col-lg-5">
+                <div class="card shadow mb-4">
+                    <script type="text/javascript">
+                        google.charts.load("current", {
+                            packages: ['corechart']
+                        });
+                        google.charts.setOnLoadCallback(drawChart);
 
-        <!-- Pie Chart -->
-        <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                    <div class="dropdown no-arrow">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
-                        <canvas id="myPieChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Direct
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Social
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Referral
-                        </span>
-                    </div>
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                ["Element", "Density", {
+                                    role: "style"
+                                }],
+                                <?php foreach ($thong_ke_gia_tien_tour as $item) : ?>
+                                    <?php extract($item) ?>["<?= $ten_tour ?>", <?= $gia_tien ?>, "#3366cc"],
+                                <?php endforeach ?>
+                            ]);
+
+                            var view = new google.visualization.DataView(data);
+                            view.setColumns([0, 1,
+                                {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                },
+                                2
+                            ]);
+
+                            var options = {
+                                title: "Thống kê giá tiền tăng dần theo tour (VNĐ)",
+                                width: 600,
+                                height: 400,
+                                bar: {
+                                    groupWidth: "95%"
+                                },
+                                legend: {
+                                    position: "none"
+                                },
+                            };
+                            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                            chart.draw(view, options);
+                        }
+                    </script>
+                    <div id="columnchart_values" style="width: 400px; height: 300px;"></div>
                 </div>
             </div>
         </div>
     </div>
-
 
 
 </div>

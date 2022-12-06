@@ -114,3 +114,9 @@ article .board {
   font-size: 4rem;
   margin: 2rem;
 }
+
+/* biểu đồ */
+.bieu_do {
+  display: flex;
+  justify-content: space-between;
+}

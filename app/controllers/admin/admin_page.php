@@ -8,5 +8,12 @@ function admin_page()
     $tien_vnpay = $tong_tien_thanh_toan_vnpay[0]['tong_tien_thanh_toan_online'];
     $tong = $tien_khac_vnpay + $tien_vnpay;
     $getAllThanhToanTour = getAllThanhToanTour();
-    render_admin('pageAdmin', ['getAllThanhToanTour' => $getAllThanhToanTour, 'tong_tien_thanh_toan_vnpay' => $tong_tien_thanh_toan_vnpay, 'tong_tien_thanh_toan_khac_vnpay' => $tong_tien_thanh_toan_khac_vnpay,'tong'=>$tong,'tong_so_tour_hien_co'=>$tong_so_tour_hien_co]);
+    $thong_ke_so_luong_tour_thanh_toan = thong_ke_so_luong_tour_thanh_toan();
+    $thong_ke_gia_tien_tour = thong_ke_gia_tien_tour();
+    render_admin('pageAdmin', ['getAllThanhToanTour' => $getAllThanhToanTour, 'tong_tien_thanh_toan_vnpay' => $tong_tien_thanh_toan_vnpay, 'tong_tien_thanh_toan_khac_vnpay' => $tong_tien_thanh_toan_khac_vnpay, 'tong' => $tong, 'tong_so_tour_hien_co' => $tong_so_tour_hien_co, 'thong_ke_so_luong_tour_thanh_toan' => $thong_ke_so_luong_tour_thanh_toan, 'thong_ke_gia_tien_tour' => $thong_ke_gia_tien_tour]);
+}
+function sign_out()
+{
+    unset($_SESSION['login_success']);
+    header('location:' . ROOT);
 }
