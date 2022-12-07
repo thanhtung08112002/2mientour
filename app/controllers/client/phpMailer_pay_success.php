@@ -12,6 +12,7 @@ function showPaySuccess()
 {
     if (isset($_POST['btn-pay']) ) {
         extract($_POST);
+        $date = date('Y-m-d H:i:s');
         $data = [
             $ma_tour_none,
             $id_tour_lite_none,
@@ -22,7 +23,9 @@ function showPaySuccess()
             $payment_method,
             $nguoi_lon,
             $tre_em,
-            $tien_none
+            $tien_none,
+            $date
+
         ];
         payTour($data);
         $getThanhToanTourGanNhat = getThanhToanTourGanNhat();
@@ -44,7 +47,9 @@ function showPaySuccess()
         -Số điện thoại $sdt <br>
         -Email:   $email<br>
         -Địa chỉ: $dia_chi <br>
-        Phương thức thanh toán: <br>$ten_phuong_thuc</p> </p>
+        Phương thức thanh toán: <br>$ten_phuong_thuc</p> <br>
+        Thời gian thanh toán: <br>$thoi_gian_thanh_toan</p>
+
         <p> Mọi thắc mắc xin vui lòng gọi số hotline <a href='tel:19008188'>19008188</a></p>";
         $mail = new PHPMailer(true);
         $mail->CharSet = 'UTF-8';

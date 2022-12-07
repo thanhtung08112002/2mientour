@@ -14,6 +14,11 @@ require_once 'app/controllers/admin/admin_page.php';
 require_once 'app/controllers/admin/mien.php';
 require_once 'app/controllers/admin/list.php';
 require_once 'app/controllers/admin/admin_quan_ly_tour.php';
+require_once 'app/controllers/admin/admin_list_receipt_customer.php';
+require_once 'app/controllers/admin/admin_list_nhan_vien.php';
+require_once 'app/controllers/admin/admin_list_dong_gop.php';
+
+
 
 
 
@@ -61,6 +66,9 @@ require_once 'app/models/dia_diem_khoi_hanh.php';
 require_once 'app/models/anh_tour.php';
 require_once 'app/models/lich_trinh_tour.php';
 require_once 'app/models/khoi_hanh.php';
+require_once 'app/models/nhan_vien.php';
+
+
 
 
 
@@ -422,7 +430,35 @@ switch ($url) {
 
         //end danh sách tour
 
+        //hóa đơn khách hàng
+    case "admin_list_receipt_customer":
+        if (isset($_SESSION['login_success'])) {
+            showAllReceiptCustomer();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end hóa đơn khách hàng
 
+        //nhân viên
+    case "admin_list_employee":
+        if (isset($_SESSION['login_success'])) {
+            showAllNhanVien();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end nhân viên
+
+        //đóng góp ý kiến
+    case "admin_list_idea":
+        if (isset($_SESSION['login_success'])) {
+            showDongGopY();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end đóng góp ý kiến
 
 
     case "admin_page/list":
@@ -430,9 +466,9 @@ switch ($url) {
         break;
     case "admin_page/sign_out/":
         if (isset($_GET['sign-out'])) {
-          sign_out();
+            sign_out();
         }
-        
+
         break;
     default:
         error_404();

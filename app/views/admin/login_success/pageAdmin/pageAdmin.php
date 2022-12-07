@@ -126,7 +126,7 @@
                             }
                         </script>
 
-                        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+                        <div id="piechart_3d" style="width: 800px; height: 500px;"></div>
 
                     </div>
                 </div>

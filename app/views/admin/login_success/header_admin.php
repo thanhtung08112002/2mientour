@@ -42,7 +42,7 @@
                     <li><a href="<?= ROOT ?>admin_page">Trang chủ</a></li>
                     <li><a href="<?= ROOT ?>admin_list_tour">Danh sách tour du lịch</a></li>
                     <li><a href="<?= ROOT ?>quan_ly_tour">Quản lý tour du lịch</a></li>
-                    <li><a href="<?= ROOT ?>admin_list_customer">Khách hàng</a></li>
+                    <li><a href="<?= ROOT ?>admin_list_receipt_customer">Đơn thanh toán của khách hàng</a></li>
                     <li><a href="<?= ROOT ?>admin_list_employee">Nhân viên</a></li>
                     <li><a href="<?= ROOT ?>admin_list_promotion">Ưu đãi</a></li>
                     <li><a href="<?= ROOT ?>admin_list_idea">Đóng góp ý kiến của khách hàng</a></li>

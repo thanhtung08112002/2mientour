@@ -30,6 +30,9 @@
                 <div class="break_line"></div>
                 <strong>Phương Thức Thanh Toán:</strong>
                 <p> <?= $ten_phuong_thuc ?></p>
+                <strong>Thời gian thanh toán:</strong>
+                <p> <?= $thoi_gian_thanh_toan ?></p>
+
             </div>
         <?php endforeach ?>
 
