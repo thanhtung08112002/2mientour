@@ -17,6 +17,12 @@ require_once 'app/controllers/admin/admin_quan_ly_tour.php';
 require_once 'app/controllers/admin/admin_list_receipt_customer.php';
 require_once 'app/controllers/admin/admin_list_nhan_vien.php';
 require_once 'app/controllers/admin/admin_list_dong_gop.php';
+require_once 'app/controllers/admin/admin_list_promotion.php';
+require_once 'app/controllers/admin/admin_list_news.php';
+require_once 'app/controllers/admin/admin_list_register_promotion.php';
+
+
+
 
 
 
@@ -67,6 +73,8 @@ require_once 'app/models/anh_tour.php';
 require_once 'app/models/lich_trinh_tour.php';
 require_once 'app/models/khoi_hanh.php';
 require_once 'app/models/nhan_vien.php';
+require_once 'app/models/ma_uu_dai.php';
+
 
 
 
@@ -459,6 +467,43 @@ switch ($url) {
         }
         break;
         //end đóng góp ý kiến
+
+        //ưu đãi
+    case "admin_list_promotion":
+        if (isset($_SESSION['login_success'])) {
+            showAllPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end ưu đãi
+
+  //tin tức
+  case "admin_list_news":
+    if (isset($_SESSION['login_success'])) {
+        showAllNews();
+    } else {
+        header("location:" . ROOT . 'admin_page');
+    }
+    break;
+    case "admin_list_news/detail/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            showAllNewsDetail();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    //end tin tức
+
+ //Đăng ký nhận ưu đãi
+ case "admin_list_register_promotion":
+    if (isset($_SESSION['login_success'])) {
+        showAllRegisterPromotion();
+    } else {
+        header("location:" . ROOT . 'admin_page');
+    }
+    break;
+    //end Đăng ký nhận ưu đãi
 
 
     case "admin_page/list":

@@ -15,3 +15,4 @@ function addRegister($data = [])
     $stmt = $conn->prepare($sql);
     $stmt->execute($data);
 }
+
