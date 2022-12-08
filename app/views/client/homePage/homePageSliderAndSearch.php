@@ -8,7 +8,7 @@
         <?php $i++; ?>
         <?php $active = 'active' ?>
         <div class="carousel-item <?= $i == 1 ? $active : "" ?>">
-          <a href="#<?= $url ?>"><img class="d-block w-100 m-15" src="<?= ROOT ?>public/images/<?= $anh ?>" alt="First slide"></a>
+          <a href="<?= $url ?>"><img class="d-block w-100 m-15" src="<?= ROOT ?>public/images/<?= $anh ?>" alt="First slide"></a>
         </div>
       <?php endforeach ?>
 

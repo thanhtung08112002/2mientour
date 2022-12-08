@@ -20,6 +20,9 @@ require_once 'app/controllers/admin/admin_list_dong_gop.php';
 require_once 'app/controllers/admin/admin_list_promotion.php';
 require_once 'app/controllers/admin/admin_list_news.php';
 require_once 'app/controllers/admin/admin_list_register_promotion.php';
+require_once 'app/controllers/admin/admin_list_slider.php';
+require_once 'app/controllers/admin/admin_add_new.php';
+
 
 
 
@@ -478,14 +481,14 @@ switch ($url) {
         break;
         //end ưu đãi
 
-  //tin tức
-  case "admin_list_news":
-    if (isset($_SESSION['login_success'])) {
-        showAllNews();
-    } else {
-        header("location:" . ROOT . 'admin_page');
-    }
-    break;
+        //tin tức
+    case "admin_list_news":
+        if (isset($_SESSION['login_success'])) {
+            showAllNews();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
     case "admin_list_news/detail/":
         if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
             showAllNewsDetail();
@@ -493,18 +496,41 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
-    //end tin tức
+    case "admin_list_news/add_new":
+        if (isset($_SESSION['login_success'])) {
+            showAddNew();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_news/add_new/check":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert_new'])) {
+            checkAddNew();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end tin tức
 
- //Đăng ký nhận ưu đãi
- case "admin_list_register_promotion":
-    if (isset($_SESSION['login_success'])) {
-        showAllRegisterPromotion();
-    } else {
-        header("location:" . ROOT . 'admin_page');
-    }
-    break;
-    //end Đăng ký nhận ưu đãi
+        //Đăng ký nhận ưu đãi
+    case "admin_list_register_promotion":
+        if (isset($_SESSION['login_success'])) {
+            showAllRegisterPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end Đăng ký nhận ưu đãi
 
+        //Slider
+    case "admin_list_slider":
+        if (isset($_SESSION['login_success'])) {
+            showAllSlider();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        //end Slider
 
     case "admin_page/list":
         showListWithMien();

@@ -12,7 +12,7 @@
                                     <div class="general-news">
                                         <div class="news-content">
                                             <div class="news-tour-img">
-                                                <a href="<?= ROOT?>tintuc/tintucdetail?id=<?= $id?>"><img src="<?= ROOT ?>public/images/<?= $anh_dai_dien_tin_tuc?>"class=" img-thumbnail" alt=""></a>
+                                                <a href="<?= ROOT?>tintuc/tintucdetail?id=<?= $id?>"><img src="<?= ROOT ?>public/images/imgs_news/<?= $anh_dai_dien_tin_tuc?>"class=" img-thumbnail" alt=""></a>
                                             </div>
                                             <div class="news-info-tour ">
                                                 <div class="caption-news">

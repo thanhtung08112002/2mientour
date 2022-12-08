@@ -18,3 +18,14 @@ function getNewDetail($id)
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+
+function addNew($data)
+{
+    $conn = connection();
+    $sql = "INSERT INTO `tin_tuc`( `tieu_de`, `noi_dung_dau`, `anh_dai_dien_tin_tuc`, `ngay_dang`) VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute($data)) {
+        header('location:'.ROOT."admin_list_news");
+    };
+}
