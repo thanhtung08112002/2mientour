@@ -510,6 +510,20 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+    case "admin_list_news/add-news-detail/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            showAddNewDetail();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_news/add-news-detail/check":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert_news_detail'])) {
+            checkAddNewDetail();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
         //end tin tức
 
         //Đăng ký nhận ưu đãi

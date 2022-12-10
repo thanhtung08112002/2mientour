@@ -52,6 +52,18 @@
     })
     CKFinder.setupCKEditor(editor);
 </script>
+
+<script>
+    var editor = CKEDITOR.replace('noi_dung_tin_tuc_chi_tiet', {
+        filebrowserBrowseUrl: '<?= ROOT ?>ckfinder/ckfinder.html',
+        filebrowserImageBrowseUrl: '<?= ROOT ?>ckfinder/ckfinder.html?type=Images',
+        filebrowserUploadUrl: '<?= ROOT ?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl: '<?= ROOT ?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        height: 500,
+    })
+    CKFinder.setupCKEditor(editor);
+</script>
 </body>
+
 
 </html>

@@ -40,9 +40,6 @@
                         <td><?= currency_format($thanh_tien)  ?></td>
                         <td> <?= $thoi_gian_thanh_toan ?></td>
                         <td>
-                            <div class="click-action">
-                                <a href="" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
-                            </div>
                             <div>
                                 <a href="" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                             </div>

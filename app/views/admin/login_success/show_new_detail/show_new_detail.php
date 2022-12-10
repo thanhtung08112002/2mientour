@@ -29,7 +29,8 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button class="btn " type="submit" name="btn_insert"><a href="add_nhan_vien" class="btn-primary">Thêm</a></button>
+        <button class="btn " type="submit" ><a href="<?= ROOT?>admin_list_news/add-news-detail/?id=<?= $_GET['id']?>" class="btn-primary">Thêm</a></button>
+        <button class="btn "> <a href="<?= ROOT?>admin_list_news" class="btn-primary">Danh sách tin tức</a></button>
     </div>
 
     <!-- end bảng -->

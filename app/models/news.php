@@ -29,3 +29,11 @@ function addNew($data)
         header('location:'.ROOT."admin_list_news");
     };
 }
+function addNewsDetail($data,$id) {
+    $conn = connection();
+    $sql = "INSERT INTO `tin_tuc_chi_tiet`(`id`, `content`) VALUES (?,?)";
+    $stmt = $conn->prepare($sql);
+    if ($stmt->execute($data)) {
+        header('location:'.ROOT."admin_list_news/detail/?id=$id");
+    };  
+}

@@ -27,3 +27,14 @@ function checkAddNew() {
         addNew($data);
     }
 }
+function showAddNewDetail() {
+    render_admin('form_add_news_detail');
+}
+function checkAddNewDetail() {
+    extract($_POST);
+    $data = [
+        $id,
+        $noi_dung_tin_tuc_chi_tiet
+    ];
+    addNewsDetail($data,$id);
+}
