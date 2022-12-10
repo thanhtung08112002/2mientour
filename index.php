@@ -587,6 +587,47 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+        // add
+    case "admin_list_slider/add_slider":
+        if (isset($_SESSION['login_success'])) {
+            formAddSlider();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_slider/add_slider/check_slider":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert_slider'])) {
+            add_slider();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end add
+        // delete
+    case "admin_list_slider/delete_slider/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            deleteSlider();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end delete
+        // edit slider
+    case "admin_list_slider/edit_slider/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            formEditSlider();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_slider/edit_slider/check_slider":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_slider'])) {
+            editSlider();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end edit slider
         //end Slider
 
     case "admin_page/list":

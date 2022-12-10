@@ -23,14 +23,14 @@
                         <td><?= $anh ?></td>
                         <td><?= $url ?></td>
                         <td>
-                            <a href="" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
-                            <a href="" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+                            <a href="<?= ROOT?>admin_list_slider/edit_slider/?id=<?= $id?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
+                            <a href="<?= ROOT?>admin_list_slider/delete_slider/?id=<?= $id?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                         </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button class="btn " type="submit" name="btn_insert"><a href="add_nhan_vien" class="btn-primary">Thêm</a></button>
+        <button class="btn " type="submit" name="btn_insert"><a href="<?= ROOT?>admin_list_slider/add_slider" class="btn-primary">Thêm</a></button>
     </div>
 
     <!-- end bảng -->
