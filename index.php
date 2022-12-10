@@ -77,6 +77,7 @@ require_once 'app/models/lich_trinh_tour.php';
 require_once 'app/models/khoi_hanh.php';
 require_once 'app/models/nhan_vien.php';
 require_once 'app/models/ma_uu_dai.php';
+require_once 'app/models/chuc_vu.php';
 
 
 
@@ -455,6 +456,41 @@ switch ($url) {
     case "admin_list_employee":
         if (isset($_SESSION['login_success'])) {
             showAllNhanVien();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_employee/add":
+        if (isset($_SESSION['login_success'])) {
+            formAddNhanVien();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_employee/add/check":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert_employee'])) {
+            addNhanVien();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_employee/delete/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            deleteNhanVien();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_employee/edit/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            formEditNhanVien();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_employee/edit/check":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_employee'])) {
+            editNhanVien();
         } else {
             header("location:" . ROOT . 'admin_page');
         }
