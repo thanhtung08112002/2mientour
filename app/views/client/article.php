@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-6">
-                <form action="register_promotion" class=" form-inline form_register_promotion " method="POST">
+                <form action="<?=ROOT?>register_promotion" class=" form-inline form_register_promotion " method="POST">
                     <div class="form-group-email">
                         <input type="email" class="form-control " placeholder="Email" name="email" required>
                     </div>

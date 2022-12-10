@@ -534,6 +534,13 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+    case "admin_list_register_promotion/delete/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            deleteRegisterPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
         //end Đăng ký nhận ưu đãi
 
         //Slider

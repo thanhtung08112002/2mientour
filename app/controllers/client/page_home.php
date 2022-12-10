@@ -12,10 +12,12 @@ function showHome()
 
 function addEmailRegiterPromotion()
 {
+    $date = date("Y-m-d H:i:s");
     $flag = false;
     extract($_POST);
     $data = [
-        $email
+        $email,
+        $date
     ];
     $getInforRegister = getInforRegister($email);
     foreach ($getInforRegister as $item) {
