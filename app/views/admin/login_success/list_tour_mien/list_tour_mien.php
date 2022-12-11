@@ -27,7 +27,7 @@
                                 <td><?= $i++ ?></td>
                                 <td><?= $ma_thanh_pho ?></td>
                                 <td><?= $ten_thanh_pho ?></td>
-                                <td><a href="<?= ROOT ?>admin_list_tour/mien/?ma-thanh-pho=<?= $ma_thanh_pho ?>">Chi tiết</a></td>
+                                <td ><a class="btn btn-primary" href="<?= ROOT ?>admin_list_tour/mien/?ma-thanh-pho=<?= $ma_thanh_pho ?>">Chi tiết</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>

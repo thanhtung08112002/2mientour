@@ -28,10 +28,10 @@
                         <td><?= $noi_dung_dau ?></td>
                         <td><img src="<?= ROOT ?>public/images/imgs_news/<?= $anh_dai_dien_tin_tuc ?>" alt=""></td>
                         <td><?= date_handler($ngay_dang)?></td>
-                        <td><a href="<?=ROOT?>admin_list_news/detail/?id=<?= $id?>">Chi tiết</a></td>
-                        <td>
-                            <a href="" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
-                            <a href="" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+                        <td style=" width: 100px; " ><a href="<?=ROOT?>admin_list_news/detail/?id=<?= $id?>">Chi tiết</a></td>
+                        <td style="display: contents ;">
+                            <a style="margin-right:1rem ;" href="<?= ROOT ?>admin_list_news/edit_news/?id=<?= $id ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
+                            <a href="<?= ROOT ?>admin_list_news/delete_news/?id=<?= $id ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                         </td>
                     </tr>
                 <?php endforeach ?>

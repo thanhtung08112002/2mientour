@@ -21,16 +21,16 @@
                         <td><?= $i++ ?></td>
                         <td><?= $id_content ?></td>
                         <td><?= $content ?></td>
-                        <td>
-                            <a href="" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
-                            <a href="" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+                        <td style="display: contents ;">
+                            <a href="<?= ROOT ?>admin_list_news/edit_news_detail/?id_content=<?= $id_content ?>&id=<?= $id ?>" class="link-action btn-warning" onclick="return confirm('Bạn có muốn sửa không');">Sửa</a>
+                            <a href="<?= ROOT ?>admin_list_news/delete_news_detail/?id_content=<?= $id_content ?>&id=<?= $id ?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                         </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button class="btn " type="submit" ><a href="<?= ROOT?>admin_list_news/add-news-detail/?id=<?= $_GET['id']?>" class="btn-primary">Thêm</a></button>
-        <button class="btn "> <a href="<?= ROOT?>admin_list_news" class="btn-primary">Danh sách tin tức</a></button>
+        <button class="btn " type="submit"><a href="<?= ROOT ?>admin_list_news/add-news-detail/?id=<?= $_GET['id'] ?>" class="btn-primary">Thêm</a></button>
+        <button class="btn "> <a href="<?= ROOT ?>admin_list_news" class="btn-primary">Danh sách tin tức</a></button>
     </div>
 
     <!-- end bảng -->

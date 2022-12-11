@@ -450,6 +450,13 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+    case "admin_list_receipt_customer/delete/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            deleteReceiptCustomer();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
         //end hóa đơn khách hàng
 
         //nhân viên
@@ -515,6 +522,47 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+        // add ưu đãi
+    case "admin_list_promotion/add_promotion":
+        if (isset($_SESSION['login_success'])) {
+            showAddPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_promotion/add_promotion/check_promotion":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert_promotion'])) {
+            addPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end add ưu đãi
+        // edit ưu đãi
+    case "admin_list_promotion/edit_promotion/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id_giam_gia'])) {
+            showEditPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_promotion/edit_promotion/check_promotion":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_promotion'])) {
+            editPromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end edit ưu đãi
+        // delete ưu đãi
+    case "admin_list_promotion/delete_promotion/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id_giam_gia'])) {
+            deletePromotion();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end delete ưu đãi
         //end ưu đãi
 
         //tin tức
@@ -560,6 +608,56 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+        // edit tin tức chi tiết
+    case "admin_list_news/edit_news_detail/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id_content'])) {
+            showEditNewsDetail();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_news/edit_news_detail/check_news_detail/":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_news_detail']) && isset($_GET['id'])) {
+            editNewsDetail();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end edit tin tức chi tiết
+        // delete tin tức chi tiết
+    case "admin_list_news/delete_news_detail/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id_content']) && isset($_GET['id'])) {
+            deleteNewsDetail();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end delete tin tức chi tiết
+        // edit tin tức
+    case "admin_list_news/edit_news/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            showEditNews();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "admin_list_news/edit_news/check_news":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_edit_news'])) {
+            editMew();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end edit tin tức
+        // delete tin tức
+    case "admin_list_news/delete_news/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            deleteNew();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // end delete tin tức   
         //end tin tức
 
         //Đăng ký nhận ưu đãi

@@ -40,7 +40,7 @@
                                 <td><img src="<?= ROOT ?>public/images/imgs_tour/<?= $anh_dai_dien_tour ?>" alt=""></td>
                                 <td><?= $loai_tour ?></td>
                                 <td><?= $gia_tien ?></td>
-                                <td><a href="<?= ROOT ?>admin_list_tour/mien/thanh_pho/?ma-tour=<?= $ma_tour ?>">Chi tiết</a></td>
+                                <td><a  class="btn btn-primary" href="<?= ROOT ?>admin_list_tour/mien/thanh_pho/?ma-tour=<?= $ma_tour ?>">Chi tiết</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>

@@ -10,7 +10,7 @@ require_once 'app/controllers/client/controllers.php';
 require_once 'app/models/thanh_toan_tour.php';
 function showPaySuccess()
 {
-    if (isset($_POST['btn-pay']) ) {
+    if (isset($_POST['btn-pay'])) {
         extract($_POST);
         $date = date('Y-m-d H:i:s');
         $data = [
@@ -27,6 +27,23 @@ function showPaySuccess()
             $date
 
         ];
+        $code_promotion = '';
+        $type_promotion = '';
+        $getAllPromotion = getAllPromotion();
+        foreach ($getAllPromotion as $item) {
+            $id_number_max_arr = ($item['id_giam_gia']);
+            break;
+        }
+        $id_rand = rand(1, $id_number_max_arr);
+        foreach ($getAllPromotion as $item) {
+            if ( $id_rand == $item['id_giam_gia'] ) {
+                $type_promotion = ($item['loai_ma_giam_gia']);
+                $code_promotion = ($item['code']);
+                break;
+            }
+        }
+         $type_promotion_send_customer = $type_promotion==''?"Giảm 5% cho chuyến đi tiếp theo":$type_promotion;
+         $code_promotion_send_customer = $code_promotion==''?"1111232442":$code_promotion;
         payTour($data);
         $getThanhToanTourGanNhat = getThanhToanTourGanNhat();
         foreach ($getThanhToanTourGanNhat as $item) {
@@ -48,8 +65,10 @@ function showPaySuccess()
         -Email:   $email<br>
         -Địa chỉ: $dia_chi <br>
         Phương thức thanh toán: <br>$ten_phuong_thuc</p> <br>
-        Thời gian thanh toán: <br>$thoi_gian_thanh_toan</p>
-
+        Thời gian thanh toán: <br>$thoi_gian_thanh_toan
+        <br>
+        Mã ưu đãi của bạn: <br>$code_promotion_send_customer<br>$type_promotion_send_customer
+        </pre>
         <p> Mọi thắc mắc xin vui lòng gọi số hotline <a href='tel:19008188'>19008188</a></p>";
         $mail = new PHPMailer(true);
         $mail->CharSet = 'UTF-8';

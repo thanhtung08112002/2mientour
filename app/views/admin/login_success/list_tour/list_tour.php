@@ -25,7 +25,7 @@
                                 <td><?= $ma_mien ?></td>
                                 <td><?= $ten_mien ?></td>
                                 <td><?= $mo_ta ?></td>
-                                <td><a href="<?= ROOT ?>admin_list_tour/?ma-mien=<?= $ma_mien ?>">Chi tiết</a></td>
+                                <td style="    width: 100px;"><a class="btn btn-primary"  href="<?= ROOT ?>admin_list_tour/?ma-mien=<?= $ma_mien ?>">Chi tiết</a></td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>

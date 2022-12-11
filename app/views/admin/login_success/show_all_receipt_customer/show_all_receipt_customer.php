@@ -41,7 +41,7 @@
                         <td> <?= $thoi_gian_thanh_toan ?></td>
                         <td>
                             <div>
-                                <a href="" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
+                                <a href="<?= ROOT?>admin_list_receipt_customer/delete/?id=<?=$id_thanh_toan?>" class="link-action btn-danger" onclick="return confirm('Bạn có muốn xóa không');">Xóa</a>
                             </div>
 
                         </td>
