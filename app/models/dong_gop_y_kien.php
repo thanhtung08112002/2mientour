@@ -14,3 +14,10 @@ function getAllDongGop(){
     $result = $stmt -> fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+//delete
+function deleteYKien($id){
+    $conn = connection();
+    $sql = "DELETE FROM `dong_gop_y_kien` WHERE id = $id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+}

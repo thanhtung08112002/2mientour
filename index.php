@@ -512,6 +512,13 @@ switch ($url) {
             header("location:" . ROOT . 'admin_page');
         }
         break;
+    case "admin_list_idea/delete/":
+        if (isset($_SESSION['login_success']) && isset($_GET['id'])) {
+            deleteYKienCuaKhachHang();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
         //end đóng góp ý kiến
 
         //ưu đãi
