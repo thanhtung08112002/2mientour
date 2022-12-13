@@ -35,8 +35,7 @@
           <div class="col-3">
             <div class="header_logo">
               <a href="<?= ROOT ?>" class="header_logo"><img src="<?= ROOT ?>public/images/<?= $logo ?>" alt="" /></a>
-              <input type="checkbox" id="menu-nav">
-              <label for="menu-nav"><i class="fa fa-bars"></i></label>
+
             </div>
           </div>
           <div class="col-9">
