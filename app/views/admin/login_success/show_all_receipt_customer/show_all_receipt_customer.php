@@ -10,6 +10,7 @@
                     <td>STT</td>
                     <td>ID Thanh Toán</td>
                     <td>Tên Tour</td>
+                    <td>Ngày khởi hành</td>
                     <td>Họ Tên</td>
                     <td>Số Điện Thoại</td>
                     <td>Email</td>
@@ -30,6 +31,7 @@
                         <td><?= $i++ ?></td>
                         <td><?= $id_thanh_toan ?></td>
                         <td><?= $ten_tour ?></td>
+                        <td><?= date_handler($ngay_khoi_hanh)?></td>
                         <td><?= $ho_ten ?></td>
                         <td><?= $sdt ?></td>
                         <td><?= $email ?></td>

@@ -118,17 +118,57 @@ function add_anh()
 // delete
 function delete_tour()
 {
-    $getAllTour = getAllTour();
-    foreach ($getAllTour as $item) {
+    $flag = false;
+    $getAllThanhToanTour = getAllThanhToanTour();
+    foreach ($getAllThanhToanTour as $item) {
         if ($_GET['ma-tour'] == $item['ma_tour']) {
-            unlink("public/images/imgs_tour/" . $item['anh_dai_dien_tour']);
-        }
+            $flag = true;
+            break;
+        } 
     }
-    delete_tour_in_db($_GET['ma-tour'], $_GET['ma-thanh-pho']);
+    if ($flag == true) {
+        echo "<script>
+        
+        alert('có đơn đặt tour, vui lòng xóa đơn trước!')
+        
+        </script>";
+        echo '<a href=' . ROOT . 'quan_ly_tour' . ' class="btn btn-primary" style="font-size: 4rem"> Quay lại trang danh sách tour</a>';
+        echo '<br>';
+        echo '<a href=' . ROOT . 'admin_list_receipt_customer' . ' class="btn btn-primary" style="font-size: 4rem"> Chuyển sang mục đơn thanh toán</a>';
+    } else {
+        $getAllTour = getAllTour();
+        foreach ($getAllTour as $item) {
+            if ($_GET['ma-tour'] == $item['ma_tour']) {
+                unlink("public/images/imgs_tour/" . $item['anh_dai_dien_tour']);
+            }
+        }
+        delete_tour_in_db($_GET['ma-tour'], $_GET['ma-thanh-pho']);
+    }
 }
 function delete_khoi_hanh()
 {
-    delete_tour_khoi_hanh($_GET['ma-tour'], $_GET['id']);
+    $ma_tour = $_GET['ma-tour'];
+    $flag = false;
+    $getAllThanhToanTour = getAllThanhToanTour();
+    foreach ($getAllThanhToanTour as $item) {
+        if ($_GET['ma-tour'] == $item['ma_tour']) {
+            $flag = true;
+            break;
+        } 
+    }
+    if ($flag == true) {
+        echo "<script>
+        
+        alert('có đơn đặt tour, vui lòng xóa đơn trước!')
+        
+        </script>";
+        echo '<a href=' . ROOT . "quan_ly_tour/detail-tour/?ma-tour=$ma_tour" . ' class="btn btn-primary" style="font-size: 4rem"> Quay lại mục chi tiết tour</a>';
+          echo '<br>';
+        echo '<a href=' . ROOT . 'admin_list_receipt_customer' . ' class="btn btn-primary" style="font-size: 4rem"> Chuyển sang mục đơn thanh toán</a>';
+    } else {
+        delete_tour_khoi_hanh($ma_tour, $_GET['id']);
+    }
+   
 }
 function delete_lich_trinh()
 {

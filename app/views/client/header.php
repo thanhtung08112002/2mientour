@@ -64,6 +64,9 @@
                 <li><a href="<?= ROOT ?>lienhe">Liên hệ</a></li>
               </ul>
             </nav>
+            <div class="nav_small_devices">
+              <i class="fa-solid fa-bars"></i>
+            </div>
           </div>
         </div>
       </div>

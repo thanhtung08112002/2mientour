@@ -2,7 +2,7 @@
 <footer>
   <div class="container">
     <div class="row col_3">
-      <div class="col-3">
+      <div class="col-3 footer_contact_social_media_block">
         <div class="footer_contact_social_media">
           <a href="<?= ROOT?>"><img src="<?= ROOT?>public/images/<?= $logo ?>" alt="" /></a>
           <p>
@@ -18,7 +18,7 @@
       </div>
 
       <?php foreach ($mien as $item) : ?>
-        <div class="footer_top_games">
+        <div class="footer_top_games footer_list_tour">
           <?php extract($item) ?>
           <h3>Du lịch <?= $ten_mien ?></h3>
 
@@ -34,8 +34,8 @@
           </ul>
         </div>
       <?php endforeach ?>
-      <div class="col-3">
-        <div class="footer_top_games">
+      <div class="col-3 footer_list_contact_company">
+        <div class="footer_top_games ">
           <h3>Liên hệ:</h3>
           <ul style="list-style: none; padding-left: 0">
             <li>
