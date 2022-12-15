@@ -734,6 +734,18 @@ switch ($url) {
         break;
         // end edit slider
         //end Slider
+        // list vnpay
+    case "admin_list_receipt_customer_vnpay":
+        showListVNPay();
+        break;
+        case "admin_list_receipt_customer_vnpay/delete/":
+            if (isset($_SESSION['login_success']) && isset($_GET['magiaodich'])) {
+                deleteVNPay();
+            } else {
+                header("location:" . ROOT . 'admin_page');
+            }
+            break;
+        // list vnpay
 
     case "admin_page/list":
         showListWithMien();

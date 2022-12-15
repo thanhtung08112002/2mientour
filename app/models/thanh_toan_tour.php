@@ -72,3 +72,20 @@ function thong_ke_gia_tien_tour() {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+
+//vnpay
+function getAllVNPay() {
+    $conn = connection();
+    $sql = "SELECT * FROM `vnpay`";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+function deleteVNPayWithMaGD($magd) {
+    $conn = connection();
+    $sql = "DELETE FROM `vnpay` WHERE `ma_gd` = '$magd'";
+    $stmt = $conn -> prepare($sql);
+    $stmt -> execute();
+}

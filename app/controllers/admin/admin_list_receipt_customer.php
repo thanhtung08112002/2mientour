@@ -8,3 +8,14 @@ function deleteReceiptCustomer() {
     cancelTourThanhToan($id); 
     header('Location: '.ROOT."admin_list_receipt_customer");
 }
+//vnpay
+function showListVNPay() {
+    $getAllVNPay = getAllVNPay();
+    render_admin('show_list_vnpay', ['getAllVNPay' => $getAllVNPay]);
+}
+function deleteVNPay() {
+    $magd = $_GET['magiaodich'];
+    $deleteVNPayWithMaGD = deleteVNPayWithMaGD($magd);
+    header('Location: '.ROOT."admin_list_receipt_customer_vnpay");
+
+}
