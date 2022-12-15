@@ -42,6 +42,7 @@
                     <li><a href="<?= ROOT ?>admin_page">Trang chủ</a></li>
                     <li><a href="<?= ROOT ?>admin_list_tour">Danh sách tour du lịch</a></li>
                     <li><a href="<?= ROOT ?>quan_ly_tour">Quản lý tour du lịch</a></li>
+                    <li><a href="<?= ROOT ?>quan_ly_thanh_pho">Quản lý thành phố</a></li>
                     <li><a href="<?= ROOT ?>admin_list_receipt_customer">Đơn thanh toán của khách hàng</a></li>
                     <li><a href="<?= ROOT ?>admin_list_receipt_customer_vnpay">Đơn thanh toán VNPay</a></li>
                     <li><a href="<?= ROOT ?>admin_list_employee">Nhân viên</a></li>

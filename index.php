@@ -22,6 +22,8 @@ require_once 'app/controllers/admin/admin_list_news.php';
 require_once 'app/controllers/admin/admin_list_register_promotion.php';
 require_once 'app/controllers/admin/admin_list_slider.php';
 require_once 'app/controllers/admin/admin_add_new.php';
+require_once 'app/controllers/admin/admin_quan_ly_thanh_pho.php';
+
 
 
 
@@ -738,15 +740,41 @@ switch ($url) {
     case "admin_list_receipt_customer_vnpay":
         showListVNPay();
         break;
-        case "admin_list_receipt_customer_vnpay/delete/":
-            if (isset($_SESSION['login_success']) && isset($_GET['magiaodich'])) {
-                deleteVNPay();
-            } else {
-                header("location:" . ROOT . 'admin_page');
-            }
-            break;
+    case "admin_list_receipt_customer_vnpay/delete/":
+        if (isset($_SESSION['login_success']) && isset($_GET['magiaodich'])) {
+            deleteVNPay();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
         // list vnpay
 
+        // thành phố
+    case "quan_ly_thanh_pho":
+        showListThanhPho();
+        break;
+    case "quan_ly_thanh_pho/add":
+        if (isset($_SESSION['login_success'])) {
+            formAddThanhPho();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "quan_ly_thanh_pho/add/check":
+        if (isset($_SESSION['login_success']) && isset($_POST['btn_insert_city'])) {
+            addThanhPho();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+    case "quan_ly_thanh_pho/delete/":
+        if (isset($_SESSION['login_success']) && isset($_GET['ma-thanh-pho'])) {
+            deleteThanhPho();
+        } else {
+            header("location:" . ROOT . 'admin_page');
+        }
+        break;
+        // thành phố
     case "admin_page/list":
         showListWithMien();
         break;
