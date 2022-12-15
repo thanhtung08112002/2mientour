@@ -2,7 +2,7 @@
     <!-- bảng -->
     <div class="board">
         <div class="headline">
-            <h2>DANH SÁCH THANH TOÁN TOUR</h2>
+            <h2>DANH SÁCH THANH TOÁN VNPAY</h2>
         </div>
         <table class="table">
             <thead>

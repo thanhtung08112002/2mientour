@@ -6,10 +6,11 @@ function showAllTour()
 }
 function showAddTour()
 {
+    $getAllThanhPho = getAllThanhPho();
     $getAllMien = getAllMien();
     $getLoaiTour = getLoaiTour();
     $getDiaiemKhoiHanh = getDiaiemKhoiHanh();
-    render_admin('form_add_tour', ['getLoaiTour' => $getLoaiTour, 'getAllMien' => $getAllMien, 'getDiaiemKhoiHanh' => $getDiaiemKhoiHanh]);
+    render_admin('form_add_tour', ['getLoaiTour' => $getLoaiTour, 'getAllMien' => $getAllMien, 'getDiaiemKhoiHanh' => $getDiaiemKhoiHanh, 'getAllThanhPho' => $getAllThanhPho]);
 }
 //add
 function add_tour()
@@ -21,14 +22,9 @@ function add_tour()
     $dir_file = mb_strtolower(pathinfo($name_img, PATHINFO_EXTENSION));
 
     $file_arr = ['jpg', 'jepg', 'png'];
-    $data_du_lich_thanh_pho = [
-        $ma_thanh_pho,
-        $mien,
-        $ten_thanh_pho
-    ];
     $data_khoa_tour_chi_tiet = [
         $ma_tour,
-        $ma_thanh_pho,
+        $thanh_pho,
         $ten_tour,
         $phuong_tien,
         $dia_diem_khoi_hanh,
@@ -44,15 +40,9 @@ function add_tour()
     ];
     $getAllTour = getAllTour();
     foreach ($getAllTour as $item) {
-        if ($ma_tour == $item['ma_tour'] && $ma_thanh_pho == $item['ma_thanh_pho']) {
+        if ($ma_tour == $item['ma_tour']) {
             setcookie('ma_error', "Mã đã tồn tại", time() + 3);
             $flag = false;
-            header("location: " . ROOT . "quan_ly_tour/add-tour");
-        } else if ($ma_tour == $item['ma_tour'] || $ma_thanh_pho == $item['ma_thanh_pho']) {
-
-            setcookie('ma_error', "Mã đã tồn tại", time() + 3);
-            $flag = false;
-
             header("location: " . ROOT . "quan_ly_tour/add-tour");
         }
     }
@@ -64,7 +54,7 @@ function add_tour()
     if ($flag) {
 
         move_uploaded_file($image['tmp_name'], "public/images/imgs_tour/" . $name_img);
-        add_tour_to_db($data_du_lich_thanh_pho, $data_khoa_tour_chi_tiet, $data_khoa_tour_lite);
+        add_tour_to_db( $data_khoa_tour_chi_tiet, $data_khoa_tour_lite);
     }
 }
 

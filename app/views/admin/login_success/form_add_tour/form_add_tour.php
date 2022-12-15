@@ -11,25 +11,15 @@
         <form action="<?= ROOT ?>quan_ly_tour/add-tour/check" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <div class="col">
-
                     <div class="form-group">
-                        <label for="">Miền</label>
-                        <select name="mien" id="" required>
-                            <option value="">Vui lòng chọn miền</option>
-                            <?php foreach ($getAllMien as $item) : ?>
+                        <label for="">Thành phố</label>
+                        <select name="thanh_pho" id="" required>
+                            <option value="">Vui lòng chọn thành phố</option>
+                            <?php foreach ($getAllThanhPho as $item) : ?>
                                 <?php extract($item) ?>
-                                <option value="<?= $ma_mien ?>"><?= $ten_mien ?></option>
+                                <option value="<?= $ma_thanh_pho ?>"><?= $ten_thanh_pho ?></option>
                             <?php endforeach ?>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="ma_thanh_pho">Mã thành phố</label>
-                        <input type="text" class="form-control" name="ma_thanh_pho" id="ma_thanh_pho" placeholder="Ví dụ: HL" required>
-                        <p class="error_ma" style="color: red;"><?= isset($_COOKIE['ma_error']) ? $_COOKIE['ma_error'] : "" ?></p>
-                    </div>
-                    <div class="form-group">
-                        <label for="ten_thanh_pho">Thành phố</label>
-                        <input type="text" class="form-control" name="ten_thanh_pho" id="ten_thanh_pho" placeholder="Ví dụ: Hạ Long" required>
                     </div>
                     <div class="form-group">
                         <label for="ma_tour">Mã tour</label>
